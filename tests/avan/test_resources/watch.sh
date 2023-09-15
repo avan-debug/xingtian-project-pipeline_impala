@@ -1,0 +1,1 @@
+watch tail -n 25 $1

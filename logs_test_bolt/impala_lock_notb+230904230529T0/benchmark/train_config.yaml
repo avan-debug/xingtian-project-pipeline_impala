@@ -1,0 +1,66 @@
+agent:
+  agent_config:
+    complete_step: 20000
+    max_steps: 160
+  agent_name: AtariImpalaOpt
+  agent_num: 1
+alg:
+  alg_config:
+    BATCH_SIZE: 512
+    agent_num: 1
+    api_type: standalone
+    env_attr:
+      agent_ids: &id001
+      - 0
+      api_type: standalone
+      episode_limit: 300
+      n_actions: 7
+      n_agents: 2
+      obs_shape: 17
+      state_shape: 27
+    instance_num: 10
+    prepare_times_per_train: 1
+    train_per_checkpoint: 1
+  alg_name: IMPALAOpt
+  model_info:
+    actor:
+      action_dim: 4
+      input_dtype: uint8
+      model_config:
+        LR: 0.002
+        action_type: Categorical
+        agent_ids: *id001
+        api_type: standalone
+        episode_limit: 300
+        grad_norm_clip: 40.0
+        n_actions: 7
+        n_agents: 2
+        obs_shape: 17
+        sample_batch_step: 160
+        state_shape: 27
+      model_name: ImpalaCnnOpt
+      state_dim:
+      - 84
+      - 84
+      - 4
+      state_mean: 0.0
+      state_std: 255.0
+      type: learner
+archive_root: ./logs_test_bolt
+bm_board: null
+bm_eval: {}
+bm_id: impala_lock_notb
+config_yaml: /home/xys/xingtian-test/xingtian-project-pipeline_impala/logs_test_bolt/impala_lock_notb+230904230529T0/benchmark/train_config.yaml
+env:
+  env_info:
+    name: BreakoutNoFrameskip-v4
+    size: 5
+    vector_env_size: 5
+    vision: false
+    wait_num: 3
+  env_name: EnvPool
+  now_time: 1693839924.1354039
+eval_gap: 200
+record_csv: /home/xys/xingtian-test/xingtian-project-pipeline_impala/logs_test_bolt/impala_lock_notb+230904230529T0/benchmark/records.csv
+start_time: 2023-09-04 23:05:29.798236
+workspace: /home/xys/xingtian-test/xingtian-project-pipeline_impala/logs_test_bolt/impala_lock_notb+230904230529T0/benchmark

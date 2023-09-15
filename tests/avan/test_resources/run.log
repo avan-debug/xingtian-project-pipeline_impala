@@ -1,0 +1,61 @@
+WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+2023-09-11 14:50:31,035	INFO worker.py:1515 -- Started a local Ray instance. View the dashboard at [1m[32mhttp://127.0.0.1:8265 [39m[22m
+2023-09-11 14:50:33,409	WARNING function_trainable.py:620 -- Function checkpointing is disabled. This may result in unexpected behavior when using checkpointing features or certain schedulers. To enable, set the train function arguments to be `func(config, checkpoint_dir=None)`.
+2023-09-11 14:50:33,467	WARNING trial_runner.py:1583 -- You are trying to access _search_alg interface of TrialRunner in TrialScheduler, which is being restricted. If you believe it is reasonable for your scheduler to access this TrialRunner API, please reach out to Ray team on GitHub. A more strict API access pattern would be enforced starting 1.12s.0
+2023-09-11 14:50:38,779	WARNING tune.py:687 -- Stop signal received (e.g. via SIGINT/Ctrl+C), ending Ray Tune run. This will try to checkpoint the experiment state one last time. Press CTRL+C (or send SIGINT/SIGKILL/SIGTERM) to skip. 
+Traceback (most recent call last):
+  File "test_xt_with_tune.py", line 254, in <module>
+    results_grid = tuner.fit()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/tuner.py", line 234, in fit
+    return self._local_tuner.fit()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/impl/tuner_internal.py", line 283, in fit
+    analysis = self._fit_internal(trainable, param_space)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/impl/tuner_internal.py", line 381, in _fit_internal
+    **args,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/tune.py", line 724, in run
+    _report_progress(runner, progress_reporter)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/tune.py", line 125, in _report_progress
+    reporter.report(trials, done, sched_debug_str, executor_debug_str)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/progress_reporter.py", line 641, in report
+    print(self._progress_str(trials, done, *sys_info))
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/progress_reporter.py", line 347, in _progress_str
+    user_metrics = self._infer_user_metrics(trials, self._infer_limit)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/progress_reporter.py", line 396, in _infer_user_metrics
+    if not t.last_result:
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/experiment/trial.py", line 445, in last_result
+    self._get_default_result_or_future()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/experiment/trial.py", line 420, in _get_default_result_or_future
+    self._default_result_or_future = ray.get(self._default_result_or_future)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_private/client_mode_hook.py", line 105, in wrapper
+    return func(*args, **kwargs)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_private/worker.py", line 2274, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_private/worker.py", line 670, in get_objects
+    object_refs, self.current_task_id, timeout_ms
+  File "python/ray/_raylet.pyx", line 1211, in ray._raylet.CoreWorker.get_objects
+  File "python/ray/_raylet.pyx", line 173, in ray._raylet.check_status
+KeyboardInterrupt
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/subprocess.py", line 1019, in wait
+    return self._wait(timeout=timeout)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/subprocess.py", line 1647, in _wait
+    time.sleep(delay)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_private/node.py", line 1147, in _kill_process_type
+    wait=wait,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_private/node.py", line 1199, in _kill_process_impl
+    process.wait(timeout_seconds)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/subprocess.py", line 1032, in wait
+    self._wait(timeout=sigint_timeout)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/subprocess.py", line 1647, in _wait
+    time.sleep(delay)
+KeyboardInterrupt
+[2m[36m(train_xt pid=28902)[0m {'lr': 0.0018676955795315243, 'checkpoint_interval': 1}
+[2m[36m(train_xt pid=28902)[0m trail id ================= 81371_00000

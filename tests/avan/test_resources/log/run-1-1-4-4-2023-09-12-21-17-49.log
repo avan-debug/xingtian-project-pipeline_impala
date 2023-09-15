@@ -1,0 +1,1183 @@
+WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+ test_xt_with_tune.py:59: ExperimentalWarning:BoTorchSampler is experimental (supported from v2.4.0). The interface can change in the future.
+2023-09-12 21:18:01,504	INFO worker.py:1515 -- Started a local Ray instance. View the dashboard at [1m[32mhttp://127.0.0.1:8265 [39m[22m
+2023-09-12 21:18:03,487	WARNING function_trainable.py:620 -- Function checkpointing is disabled. This may result in unexpected behavior when using checkpointing features or certain schedulers. To enable, set the train function arguments to be `func(config, checkpoint_dir=None)`.
+2023-09-12 21:18:03,546	WARNING trial_runner.py:1583 -- You are trying to access _search_alg interface of TrialRunner in TrialScheduler, which is being restricted. If you believe it is reasonable for your scheduler to access this TrialRunner API, please reach out to Ray team on GitHub. A more strict API access pattern would be enforced starting 1.12s.0
+[2m[36m(train_xt pid=34346)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=34346)[0m Instructions for updating:
+[2m[36m(train_xt pid=34346)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=34346)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:18: 
+[2m[36m(train_xt pid=34346)[0m **************************************************
+[2m[36m(train_xt pid=34346)[0m  XT start work...
+[2m[36m(train_xt pid=34346)[0m Namespace(config_file='/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_16945246920763113.yaml', env_num=None, gpu=-1, group_num=None, lock=1, save_to_s3=None, size=None, speedup=None, start_core=None, task='train', verbosity='info', wait_num=None)
+[2m[36m(train_xt pid=34346)[0m **************************************************
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:18: init learner with:
+[2m[36m(train_xt pid=34346)[0m {'agent_para': {'agent_config': {'complete_step': 40000,
+[2m[36m(train_xt pid=34346)[0m                               'max_steps': 128},
+[2m[36m(train_xt pid=34346)[0m               'agent_name': 'AtariImpalaOpt',
+[2m[36m(train_xt pid=34346)[0m               'agent_num': 1},
+[2m[36m(train_xt pid=34346)[0m 'alg_para': {'alg_config': {'BATCH_SIZE': 512,
+[2m[36m(train_xt pid=34346)[0m                           'agent_num': 1,
+[2m[36m(train_xt pid=34346)[0m                           'api_type': 'standalone',
+[2m[36m(train_xt pid=34346)[0m                           'env_attr': {'agent_ids': [0],
+[2m[36m(train_xt pid=34346)[0m                                       'api_type': 'standalone',
+[2m[36m(train_xt pid=34346)[0m                                       'episode_limit': 300,
+[2m[36m(train_xt pid=34346)[0m                                       'n_actions': 7,
+[2m[36m(train_xt pid=34346)[0m                                       'n_agents': 2,
+[2m[36m(train_xt pid=34346)[0m                                       'obs_shape': 17,
+[2m[36m(train_xt pid=34346)[0m                                       'state_shape': 27},
+[2m[36m(train_xt pid=34346)[0m                           'instance_num': 5,
+[2m[36m(train_xt pid=34346)[0m                           'prepare_times_per_train': 1,
+[2m[36m(train_xt pid=34346)[0m                           'save_interval': 5,
+[2m[36m(train_xt pid=34346)[0m                           'save_model': True,
+[2m[36m(train_xt pid=34346)[0m                           'train_per_checkpoint': 1},
+[2m[36m(train_xt pid=34346)[0m             'alg_name': 'IMPALAOpt',
+[2m[36m(train_xt pid=34346)[0m             'model_info': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=34346)[0m                                    'input_dtype': 'uint8',
+[2m[36m(train_xt pid=34346)[0m                                    'model_config': {'LR': 0.003819002,
+[2m[36m(train_xt pid=34346)[0m                                                    'action_type': 'Categorical',
+[2m[36m(train_xt pid=34346)[0m                                                    'agent_ids': [0],
+[2m[36m(train_xt pid=34346)[0m                                                    'api_type': 'standalone',
+[2m[36m(train_xt pid=34346)[0m                                                    'episode_limit': 300,
+[2m[36m(train_xt pid=34346)[0m                                                    'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=34346)[0m                                                    'n_actions': 7,
+[2m[36m(train_xt pid=34346)[0m                                                    'n_agents': 2,
+[2m[36m(train_xt pid=34346)[0m                                                    'obs_shape': 17,
+[2m[36m(train_xt pid=34346)[0m                                                    'sample_batch_step': 128,
+[2m[36m(train_xt pid=34346)[0m                                                    'state_shape': 27},
+[2m[36m(train_xt pid=34346)[0m                                    'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=34346)[0m                                    'state_dim': [84,
+[2m[36m(train_xt pid=34346)[0m                                                 84,
+[2m[36m(train_xt pid=34346)[0m                                                 4],
+[2m[36m(train_xt pid=34346)[0m                                    'state_mean': 0.0,
+[2m[36m(train_xt pid=34346)[0m                                    'state_std': 255.0}}},
+[2m[36m(train_xt pid=34346)[0m 'benchmark': {'archive_root': '/home/xys/avan/xt_archive',
+[2m[36m(train_xt pid=34346)[0m              'id': 'ImpalaCnnOpt_now_time_16945246920763113',
+[2m[36m(train_xt pid=34346)[0m              'log_interval_to_train': 2},
+[2m[36m(train_xt pid=34346)[0m 'env_num': 5,
+[2m[36m(train_xt pid=34346)[0m 'env_para': {'env_info': {'name': 'BreakoutNoFrameskip-v4',
+[2m[36m(train_xt pid=34346)[0m                         'size': 5,
+[2m[36m(train_xt pid=34346)[0m                         'vector_env_size': 5,
+[2m[36m(train_xt pid=34346)[0m                         'vision': False,
+[2m[36m(train_xt pid=34346)[0m                         'wait_num': 4},
+[2m[36m(train_xt pid=34346)[0m             'env_name': 'EnvPool',
+[2m[36m(train_xt pid=34346)[0m             'now_time': '16945246920763113'},
+[2m[36m(train_xt pid=34346)[0m 'gpu': -1,
+[2m[36m(train_xt pid=34346)[0m 'group_num': 1,
+[2m[36m(train_xt pid=34346)[0m 'lock': 1,
+[2m[36m(train_xt pid=34346)[0m 'model_para': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=34346)[0m                        'input_dtype': 'uint8',
+[2m[36m(train_xt pid=34346)[0m                        'model_config': {'LR': 0.003819002,
+[2m[36m(train_xt pid=34346)[0m                                        'action_type': 'Categorical',
+[2m[36m(train_xt pid=34346)[0m                                        'agent_ids': [0],
+[2m[36m(train_xt pid=34346)[0m                                        'api_type': 'standalone',
+[2m[36m(train_xt pid=34346)[0m                                        'episode_limit': 300,
+[2m[36m(train_xt pid=34346)[0m                                        'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=34346)[0m                                        'n_actions': 7,
+[2m[36m(train_xt pid=34346)[0m                                        'n_agents': 2,
+[2m[36m(train_xt pid=34346)[0m                                        'obs_shape': 17,
+[2m[36m(train_xt pid=34346)[0m                                        'sample_batch_step': 128,
+[2m[36m(train_xt pid=34346)[0m                                        'state_shape': 27},
+[2m[36m(train_xt pid=34346)[0m                        'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=34346)[0m                        'state_dim': [84,
+[2m[36m(train_xt pid=34346)[0m                                     84,
+[2m[36m(train_xt pid=34346)[0m                                     4],
+[2m[36m(train_xt pid=34346)[0m                        'state_mean': 0.0,
+[2m[36m(train_xt pid=34346)[0m                        'state_std': 255.0}},
+[2m[36m(train_xt pid=34346)[0m 'node_config': [('127.0.0.1',
+[2m[36m(train_xt pid=34346)[0m                'dummy_user',
+[2m[36m(train_xt pid=34346)[0m                'dummy_password')],
+[2m[36m(train_xt pid=34346)[0m 'speedup': 3,
+[2m[36m(train_xt pid=34346)[0m 'start_core': 0}
+[2m[36m(train_xt pid=34346)[0m 
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:18: Init Broker server info:
+[2m[36m(train_xt pid=34346)[0m {'recv': {'port': 38657,
+[2m[36m(train_xt pid=34346)[0m         'type': 'PULL'},
+[2m[36m(train_xt pid=34346)[0m 'send': [{'port': 28754,
+[2m[36m(train_xt pid=34346)[0m         'type': 'PUSH'}]}
+[2m[36m(train_xt pid=34346)[0m 
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:18: start launching Broker with: import xt; from xt import start_broker; start_broker(0, 38657, 28754, '127.0.0.1', 'info')
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:18: launch local broker with lib success
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:19: **********
+[2m[36m(train_xt pid=34346)[0m workspace:
+[2m[36m(train_xt pid=34346)[0m 	/home/xys/avan/xt_archive/ImpalaCnnOpt_now_time_16945246920763113
+[2m[36m(train_xt pid=34346)[0m 
+[2m[36m(train_xt pid=34346)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=34346)[0m Instructions for updating:
+[2m[36m(train_xt pid=34346)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=34390)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=34390)[0m Instructions for updating:
+[2m[36m(train_xt pid=34390)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=34346)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:24: set verbosity in broker: info
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:24: init broker with id-0
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:24: share buf: plasma_store -m 400000000 -s /tmp/plasma_share34486
+[2m[36m(train_xt pid=34390)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:24: 
+[2m[36m(train_xt pid=34390)[0m **************************************************
+[2m[36m(train_xt pid=34390)[0m  XT start work...
+[2m[36m(train_xt pid=34390)[0m Namespace(config_file='/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_16945246988815055.yaml', env_num=None, gpu=-1, group_num=None, lock=1, save_to_s3=None, size=None, speedup=None, start_core=None, task='train', verbosity='info', wait_num=None)
+[2m[36m(train_xt pid=34390)[0m **************************************************
+[2m[36m(train_xt pid=34346)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34346)[0m   self.run()
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:24: init explorer with id: 0, buf_path: /tmp/plasma_share34486
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:25: init agent group for: explore
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:25: init learner with:
+[2m[36m(train_xt pid=34390)[0m {'agent_para': {'agent_config': {'complete_step': 40000,
+[2m[36m(train_xt pid=34390)[0m                               'max_steps': 128},
+[2m[36m(train_xt pid=34390)[0m               'agent_name': 'AtariImpalaOpt',
+[2m[36m(train_xt pid=34390)[0m               'agent_num': 1},
+[2m[36m(train_xt pid=34390)[0m 'alg_para': {'alg_config': {'BATCH_SIZE': 512,
+[2m[36m(train_xt pid=34390)[0m                           'agent_num': 1,
+[2m[36m(train_xt pid=34390)[0m                           'api_type': 'standalone',
+[2m[36m(train_xt pid=34390)[0m                           'env_attr': {'agent_ids': [0],
+[2m[36m(train_xt pid=34390)[0m                                       'api_type': 'standalone',
+[2m[36m(train_xt pid=34390)[0m                                       'episode_limit': 300,
+[2m[36m(train_xt pid=34390)[0m                                       'n_actions': 7,
+[2m[36m(train_xt pid=34390)[0m                                       'n_agents': 2,
+[2m[36m(train_xt pid=34390)[0m                                       'obs_shape': 17,
+[2m[36m(train_xt pid=34390)[0m                                       'state_shape': 27},
+[2m[36m(train_xt pid=34390)[0m                           'instance_num': 5,
+[2m[36m(train_xt pid=34390)[0m                           'prepare_times_per_train': 1,
+[2m[36m(train_xt pid=34390)[0m                           'save_interval': 5,
+[2m[36m(train_xt pid=34390)[0m                           'save_model': True,
+[2m[36m(train_xt pid=34390)[0m                           'train_per_checkpoint': 1},
+[2m[36m(train_xt pid=34390)[0m             'alg_name': 'IMPALAOpt',
+[2m[36m(train_xt pid=34390)[0m             'model_info': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=34390)[0m                                    'input_dtype': 'uint8',
+[2m[36m(train_xt pid=34390)[0m                                    'model_config': {'LR': 0.000272613,
+[2m[36m(train_xt pid=34390)[0m                                                    'action_type': 'Categorical',
+[2m[36m(train_xt pid=34390)[0m                                                    'agent_ids': [0],
+[2m[36m(train_xt pid=34390)[0m                                                    'api_type': 'standalone',
+[2m[36m(train_xt pid=34390)[0m                                                    'episode_limit': 300,
+[2m[36m(train_xt pid=34390)[0m                                                    'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=34390)[0m                                                    'n_actions': 7,
+[2m[36m(train_xt pid=34390)[0m                                                    'n_agents': 2,
+[2m[36m(train_xt pid=34390)[0m                                                    'obs_shape': 17,
+[2m[36m(train_xt pid=34390)[0m                                                    'sample_batch_step': 128,
+[2m[36m(train_xt pid=34390)[0m                                                    'state_shape': 27},
+[2m[36m(train_xt pid=34390)[0m                                    'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=34390)[0m                                    'state_dim': [84,
+[2m[36m(train_xt pid=34390)[0m                                                 84,
+[2m[36m(train_xt pid=34390)[0m                                                 4],
+[2m[36m(train_xt pid=34390)[0m                                    'state_mean': 0.0,
+[2m[36m(train_xt pid=34390)[0m                                    'state_std': 255.0}}},
+[2m[36m(train_xt pid=34390)[0m 'benchmark': {'archive_root': '/home/xys/avan/xt_archive',
+[2m[36m(train_xt pid=34390)[0m              'id': 'ImpalaCnnOpt_now_time_16945246988815055',
+[2m[36m(train_xt pid=34390)[0m              'log_interval_to_train': 2},
+[2m[36m(train_xt pid=34390)[0m 'env_num': 5,
+[2m[36m(train_xt pid=34390)[0m 'env_para': {'env_info': {'name': 'BreakoutNoFrameskip-v4',
+[2m[36m(train_xt pid=34390)[0m                         'size': 5,
+[2m[36m(train_xt pid=34390)[0m                         'vector_env_size': 5,
+[2m[36m(train_xt pid=34390)[0m                         'vision': False,
+[2m[36m(train_xt pid=34390)[0m                         'wait_num': 4},
+[2m[36m(train_xt pid=34390)[0m             'env_name': 'EnvPool',
+[2m[36m(train_xt pid=34390)[0m             'now_time': '16945246988815055'},
+[2m[36m(train_xt pid=34390)[0m 'gpu': -1,
+[2m[36m(train_xt pid=34390)[0m 'group_num': 1,
+[2m[36m(train_xt pid=34390)[0m 'lock': 1,
+[2m[36m(train_xt pid=34390)[0m 'model_para': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=34390)[0m                        'input_dtype': 'uint8',
+[2m[36m(train_xt pid=34390)[0m                        'model_config': {'LR': 0.000272613,
+[2m[36m(train_xt pid=34390)[0m                                        'action_type': 'Categorical',
+[2m[36m(train_xt pid=34390)[0m                                        'agent_ids': [0],
+[2m[36m(train_xt pid=34390)[0m                                        'api_type': 'standalone',
+[2m[36m(train_xt pid=34390)[0m                                        'episode_limit': 300,
+[2m[36m(train_xt pid=34390)[0m                                        'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=34390)[0m                                        'n_actions': 7,
+[2m[36m(train_xt pid=34390)[0m                                        'n_agents': 2,
+[2m[36m(train_xt pid=34390)[0m                                        'obs_shape': 17,
+[2m[36m(train_xt pid=34390)[0m                                        'sample_batch_step': 128,
+[2m[36m(train_xt pid=34390)[0m                                        'state_shape': 27},
+[2m[36m(train_xt pid=34390)[0m                        'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=34390)[0m                        'state_dim': [84,
+[2m[36m(train_xt pid=34390)[0m                                     84,
+[2m[36m(train_xt pid=34390)[0m                                     4],
+[2m[36m(train_xt pid=34390)[0m                        'state_mean': 0.0,
+[2m[36m(train_xt pid=34390)[0m                        'state_std': 255.0}},
+[2m[36m(train_xt pid=34390)[0m 'node_config': [('127.0.0.1',
+[2m[36m(train_xt pid=34390)[0m                'dummy_user',
+[2m[36m(train_xt pid=34390)[0m                'dummy_password')],
+[2m[36m(train_xt pid=34390)[0m 'speedup': 3,
+[2m[36m(train_xt pid=34390)[0m 'start_core': 10}
+[2m[36m(train_xt pid=34390)[0m 
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:25: Init Broker server info:
+[2m[36m(train_xt pid=34390)[0m {'recv': {'port': 25983,
+[2m[36m(train_xt pid=34390)[0m         'type': 'PULL'},
+[2m[36m(train_xt pid=34390)[0m 'send': [{'port': 21198,
+[2m[36m(train_xt pid=34390)[0m         'type': 'PUSH'}]}
+[2m[36m(train_xt pid=34390)[0m 
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:25: start launching Broker with: import xt; from xt import start_broker; start_broker(0, 25983, 21198, '127.0.0.1', 'info')
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:25: launch local broker with lib success
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:25: **********
+[2m[36m(train_xt pid=34390)[0m workspace:
+[2m[36m(train_xt pid=34390)[0m 	/home/xys/avan/xt_archive/ImpalaCnnOpt_now_time_16945246988815055
+[2m[36m(train_xt pid=34390)[0m 
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:26: explorer-0 start with sync interval-1
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:28: speedup(3): binding env 0 to CPU 0
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:28: init explorer with id: 1, buf_path: /tmp/plasma_share34486
+[2m[36m(train_xt pid=34390)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=34390)[0m Instructions for updating:
+[2m[36m(train_xt pid=34390)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=34456)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=34456)[0m Instructions for updating:
+[2m[36m(train_xt pid=34456)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:29: explorer-1 start with sync interval-1
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:31: speedup(3): binding env 1 to CPU 1
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:31: init explorer with id: 2, buf_path: /tmp/plasma_share34486
+[2m[36m(train_xt pid=34390)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:31: set verbosity in broker: info
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:31: init broker with id-0
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:31: share buf: plasma_store -m 400000000 -s /tmp/plasma_share35143
+[2m[36m(train_xt pid=34390)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34390)[0m   self.run()
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:31: init explorer with id: 0, buf_path: /tmp/plasma_share35143
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:31: init agent group for: explore
+[2m[36m(train_xt pid=34456)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:31: 
+[2m[36m(train_xt pid=34456)[0m **************************************************
+[2m[36m(train_xt pid=34456)[0m  XT start work...
+[2m[36m(train_xt pid=34456)[0m Namespace(config_file='/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_1694524705560289.yaml', env_num=None, gpu=-1, group_num=None, lock=1, save_to_s3=None, size=None, speedup=None, start_core=None, task='train', verbosity='info', wait_num=None)
+[2m[36m(train_xt pid=34456)[0m **************************************************
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:32: init learner with:
+[2m[36m(train_xt pid=34456)[0m {'agent_para': {'agent_config': {'complete_step': 40000,
+[2m[36m(train_xt pid=34456)[0m                               'max_steps': 128},
+[2m[36m(train_xt pid=34456)[0m               'agent_name': 'AtariImpalaOpt',
+[2m[36m(train_xt pid=34456)[0m               'agent_num': 1},
+[2m[36m(train_xt pid=34456)[0m 'alg_para': {'alg_config': {'BATCH_SIZE': 512,
+[2m[36m(train_xt pid=34456)[0m                           'agent_num': 1,
+[2m[36m(train_xt pid=34456)[0m                           'api_type': 'standalone',
+[2m[36m(train_xt pid=34456)[0m                           'env_attr': {'agent_ids': [0],
+[2m[36m(train_xt pid=34456)[0m                                       'api_type': 'standalone',
+[2m[36m(train_xt pid=34456)[0m                                       'episode_limit': 300,
+[2m[36m(train_xt pid=34456)[0m                                       'n_actions': 7,
+[2m[36m(train_xt pid=34456)[0m                                       'n_agents': 2,
+[2m[36m(train_xt pid=34456)[0m                                       'obs_shape': 17,
+[2m[36m(train_xt pid=34456)[0m                                       'state_shape': 27},
+[2m[36m(train_xt pid=34456)[0m                           'instance_num': 5,
+[2m[36m(train_xt pid=34456)[0m                           'prepare_times_per_train': 1,
+[2m[36m(train_xt pid=34456)[0m                           'save_interval': 5,
+[2m[36m(train_xt pid=34456)[0m                           'save_model': True,
+[2m[36m(train_xt pid=34456)[0m                           'train_per_checkpoint': 1},
+[2m[36m(train_xt pid=34456)[0m             'alg_name': 'IMPALAOpt',
+[2m[36m(train_xt pid=34456)[0m             'model_info': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=34456)[0m                                    'input_dtype': 'uint8',
+[2m[36m(train_xt pid=34456)[0m                                    'model_config': {'LR': 0.004085872,
+[2m[36m(train_xt pid=34456)[0m                                                    'action_type': 'Categorical',
+[2m[36m(train_xt pid=34456)[0m                                                    'agent_ids': [0],
+[2m[36m(train_xt pid=34456)[0m                                                    'api_type': 'standalone',
+[2m[36m(train_xt pid=34456)[0m                                                    'episode_limit': 300,
+[2m[36m(train_xt pid=34456)[0m                                                    'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=34456)[0m                                                    'n_actions': 7,
+[2m[36m(train_xt pid=34456)[0m                                                    'n_agents': 2,
+[2m[36m(train_xt pid=34456)[0m                                                    'obs_shape': 17,
+[2m[36m(train_xt pid=34456)[0m                                                    'sample_batch_step': 128,
+[2m[36m(train_xt pid=34456)[0m                                                    'state_shape': 27},
+[2m[36m(train_xt pid=34456)[0m                                    'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=34456)[0m                                    'state_dim': [84,
+[2m[36m(train_xt pid=34456)[0m                                                 84,
+[2m[36m(train_xt pid=34456)[0m                                                 4],
+[2m[36m(train_xt pid=34456)[0m                                    'state_mean': 0.0,
+[2m[36m(train_xt pid=34456)[0m                                    'state_std': 255.0}}},
+[2m[36m(train_xt pid=34456)[0m 'benchmark': {'archive_root': '/home/xys/avan/xt_archive',
+[2m[36m(train_xt pid=34456)[0m              'id': 'ImpalaCnnOpt_now_time_1694524705560289',
+[2m[36m(train_xt pid=34456)[0m              'log_interval_to_train': 2},
+[2m[36m(train_xt pid=34456)[0m 'env_num': 5,
+[2m[36m(train_xt pid=34456)[0m 'env_para': {'env_info': {'name': 'BreakoutNoFrameskip-v4',
+[2m[36m(train_xt pid=34456)[0m                         'size': 5,
+[2m[36m(train_xt pid=34456)[0m                         'vector_env_size': 5,
+[2m[36m(train_xt pid=34456)[0m                         'vision': False,
+[2m[36m(train_xt pid=34456)[0m                         'wait_num': 4},
+[2m[36m(train_xt pid=34456)[0m             'env_name': 'EnvPool',
+[2m[36m(train_xt pid=34456)[0m             'now_time': '1694524705560289'},
+[2m[36m(train_xt pid=34456)[0m 'gpu': -1,
+[2m[36m(train_xt pid=34456)[0m 'group_num': 1,
+[2m[36m(train_xt pid=34456)[0m 'lock': 1,
+[2m[36m(train_xt pid=34456)[0m 'model_para': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=34456)[0m                        'input_dtype': 'uint8',
+[2m[36m(train_xt pid=34456)[0m                        'model_config': {'LR': 0.004085872,
+[2m[36m(train_xt pid=34456)[0m                                        'action_type': 'Categorical',
+[2m[36m(train_xt pid=34456)[0m                                        'agent_ids': [0],
+[2m[36m(train_xt pid=34456)[0m                                        'api_type': 'standalone',
+[2m[36m(train_xt pid=34456)[0m                                        'episode_limit': 300,
+[2m[36m(train_xt pid=34456)[0m                                        'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=34456)[0m                                        'n_actions': 7,
+[2m[36m(train_xt pid=34456)[0m                                        'n_agents': 2,
+[2m[36m(train_xt pid=34456)[0m                                        'obs_shape': 17,
+[2m[36m(train_xt pid=34456)[0m                                        'sample_batch_step': 128,
+[2m[36m(train_xt pid=34456)[0m                                        'state_shape': 27},
+[2m[36m(train_xt pid=34456)[0m                        'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=34456)[0m                        'state_dim': [84,
+[2m[36m(train_xt pid=34456)[0m                                     84,
+[2m[36m(train_xt pid=34456)[0m                                     4],
+[2m[36m(train_xt pid=34456)[0m                        'state_mean': 0.0,
+[2m[36m(train_xt pid=34456)[0m                        'state_std': 255.0}},
+[2m[36m(train_xt pid=34456)[0m 'node_config': [('127.0.0.1',
+[2m[36m(train_xt pid=34456)[0m                'dummy_user',
+[2m[36m(train_xt pid=34456)[0m                'dummy_password')],
+[2m[36m(train_xt pid=34456)[0m 'speedup': 3,
+[2m[36m(train_xt pid=34456)[0m 'start_core': 20}
+[2m[36m(train_xt pid=34456)[0m 
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:32: Init Broker server info:
+[2m[36m(train_xt pid=34456)[0m {'recv': {'port': 28012,
+[2m[36m(train_xt pid=34456)[0m         'type': 'PULL'},
+[2m[36m(train_xt pid=34456)[0m 'send': [{'port': 21058,
+[2m[36m(train_xt pid=34456)[0m         'type': 'PUSH'}]}
+[2m[36m(train_xt pid=34456)[0m 
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:32: start launching Broker with: import xt; from xt import start_broker; start_broker(0, 28012, 21058, '127.0.0.1', 'info')
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:32: launch local broker with lib success
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:32: **********
+[2m[36m(train_xt pid=34456)[0m workspace:
+[2m[36m(train_xt pid=34456)[0m 	/home/xys/avan/xt_archive/ImpalaCnnOpt_now_time_1694524705560289
+[2m[36m(train_xt pid=34456)[0m 
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:32: explorer-2 start with sync interval-1
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:33: explorer-0 start with sync interval-1
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:34: speedup(3): binding env 2 to CPU 2
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:34: init explorer with id: 3, buf_path: /tmp/plasma_share34486
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:34: speedup(3): binding env 0 to CPU 10
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:34: init explorer with id: 1, buf_path: /tmp/plasma_share35143
+[2m[36m(train_xt pid=34456)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=34456)[0m Instructions for updating:
+[2m[36m(train_xt pid=34456)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:36: explorer-3 start with sync interval-1
+[2m[36m(train_xt pid=35153)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=35153)[0m Instructions for updating:
+[2m[36m(train_xt pid=35153)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:36: explorer-1 start with sync interval-1
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:37: speedup(3): binding env 3 to CPU 3
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:37: init explorer with id: 4, buf_path: /tmp/plasma_share34486
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:37: speedup(3): binding env 1 to CPU 11
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:37: init explorer with id: 2, buf_path: /tmp/plasma_share35143
+[2m[36m(train_xt pid=34456)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:38: set verbosity in broker: info
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:38: init broker with id-0
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:38: share buf: plasma_store -m 400000000 -s /tmp/plasma_share36591
+[2m[36m(train_xt pid=34456)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34456)[0m   self.run()
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:38: init explorer with id: 0, buf_path: /tmp/plasma_share36591
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:38: init agent group for: explore
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:39: explorer-4 start with sync interval-1
+[2m[36m(train_xt pid=35153)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:39: 
+[2m[36m(train_xt pid=35153)[0m **************************************************
+[2m[36m(train_xt pid=35153)[0m  XT start work...
+[2m[36m(train_xt pid=35153)[0m Namespace(config_file='/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_16945247133878348.yaml', env_num=None, gpu=-1, group_num=None, lock=1, save_to_s3=None, size=None, speedup=None, start_core=None, task='train', verbosity='info', wait_num=None)
+[2m[36m(train_xt pid=35153)[0m **************************************************
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:39: explorer-2 start with sync interval-1
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:40: init learner with:
+[2m[36m(train_xt pid=35153)[0m {'agent_para': {'agent_config': {'complete_step': 40000,
+[2m[36m(train_xt pid=35153)[0m                               'max_steps': 128},
+[2m[36m(train_xt pid=35153)[0m               'agent_name': 'AtariImpalaOpt',
+[2m[36m(train_xt pid=35153)[0m               'agent_num': 1},
+[2m[36m(train_xt pid=35153)[0m 'alg_para': {'alg_config': {'BATCH_SIZE': 512,
+[2m[36m(train_xt pid=35153)[0m                           'agent_num': 1,
+[2m[36m(train_xt pid=35153)[0m                           'api_type': 'standalone',
+[2m[36m(train_xt pid=35153)[0m                           'env_attr': {'agent_ids': [0],
+[2m[36m(train_xt pid=35153)[0m                                       'api_type': 'standalone',
+[2m[36m(train_xt pid=35153)[0m                                       'episode_limit': 300,
+[2m[36m(train_xt pid=35153)[0m                                       'n_actions': 7,
+[2m[36m(train_xt pid=35153)[0m                                       'n_agents': 2,
+[2m[36m(train_xt pid=35153)[0m                                       'obs_shape': 17,
+[2m[36m(train_xt pid=35153)[0m                                       'state_shape': 27},
+[2m[36m(train_xt pid=35153)[0m                           'instance_num': 5,
+[2m[36m(train_xt pid=35153)[0m                           'prepare_times_per_train': 1,
+[2m[36m(train_xt pid=35153)[0m                           'save_interval': 5,
+[2m[36m(train_xt pid=35153)[0m                           'save_model': True,
+[2m[36m(train_xt pid=35153)[0m                           'train_per_checkpoint': 1},
+[2m[36m(train_xt pid=35153)[0m             'alg_name': 'IMPALAOpt',
+[2m[36m(train_xt pid=35153)[0m             'model_info': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=35153)[0m                                    'input_dtype': 'uint8',
+[2m[36m(train_xt pid=35153)[0m                                    'model_config': {'LR': 0.002856556,
+[2m[36m(train_xt pid=35153)[0m                                                    'action_type': 'Categorical',
+[2m[36m(train_xt pid=35153)[0m                                                    'agent_ids': [0],
+[2m[36m(train_xt pid=35153)[0m                                                    'api_type': 'standalone',
+[2m[36m(train_xt pid=35153)[0m                                                    'episode_limit': 300,
+[2m[36m(train_xt pid=35153)[0m                                                    'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=35153)[0m                                                    'n_actions': 7,
+[2m[36m(train_xt pid=35153)[0m                                                    'n_agents': 2,
+[2m[36m(train_xt pid=35153)[0m                                                    'obs_shape': 17,
+[2m[36m(train_xt pid=35153)[0m                                                    'sample_batch_step': 128,
+[2m[36m(train_xt pid=35153)[0m                                                    'state_shape': 27},
+[2m[36m(train_xt pid=35153)[0m                                    'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=35153)[0m                                    'state_dim': [84,
+[2m[36m(train_xt pid=35153)[0m                                                 84,
+[2m[36m(train_xt pid=35153)[0m                                                 4],
+[2m[36m(train_xt pid=35153)[0m                                    'state_mean': 0.0,
+[2m[36m(train_xt pid=35153)[0m                                    'state_std': 255.0}}},
+[2m[36m(train_xt pid=35153)[0m 'benchmark': {'archive_root': '/home/xys/avan/xt_archive',
+[2m[36m(train_xt pid=35153)[0m              'id': 'ImpalaCnnOpt_now_time_16945247133878348',
+[2m[36m(train_xt pid=35153)[0m              'log_interval_to_train': 2},
+[2m[36m(train_xt pid=35153)[0m 'env_num': 5,
+[2m[36m(train_xt pid=35153)[0m 'env_para': {'env_info': {'name': 'BreakoutNoFrameskip-v4',
+[2m[36m(train_xt pid=35153)[0m                         'size': 5,
+[2m[36m(train_xt pid=35153)[0m                         'vector_env_size': 5,
+[2m[36m(train_xt pid=35153)[0m                         'vision': False,
+[2m[36m(train_xt pid=35153)[0m                         'wait_num': 4},
+[2m[36m(train_xt pid=35153)[0m             'env_name': 'EnvPool',
+[2m[36m(train_xt pid=35153)[0m             'now_time': '16945247133878348'},
+[2m[36m(train_xt pid=35153)[0m 'gpu': -1,
+[2m[36m(train_xt pid=35153)[0m 'group_num': 1,
+[2m[36m(train_xt pid=35153)[0m 'lock': 1,
+[2m[36m(train_xt pid=35153)[0m 'model_para': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=35153)[0m                        'input_dtype': 'uint8',
+[2m[36m(train_xt pid=35153)[0m                        'model_config': {'LR': 0.002856556,
+[2m[36m(train_xt pid=35153)[0m                                        'action_type': 'Categorical',
+[2m[36m(train_xt pid=35153)[0m                                        'agent_ids': [0],
+[2m[36m(train_xt pid=35153)[0m                                        'api_type': 'standalone',
+[2m[36m(train_xt pid=35153)[0m                                        'episode_limit': 300,
+[2m[36m(train_xt pid=35153)[0m                                        'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=35153)[0m                                        'n_actions': 7,
+[2m[36m(train_xt pid=35153)[0m                                        'n_agents': 2,
+[2m[36m(train_xt pid=35153)[0m                                        'obs_shape': 17,
+[2m[36m(train_xt pid=35153)[0m                                        'sample_batch_step': 128,
+[2m[36m(train_xt pid=35153)[0m                                        'state_shape': 27},
+[2m[36m(train_xt pid=35153)[0m                        'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=35153)[0m                        'state_dim': [84,
+[2m[36m(train_xt pid=35153)[0m                                     84,
+[2m[36m(train_xt pid=35153)[0m                                     4],
+[2m[36m(train_xt pid=35153)[0m                        'state_mean': 0.0,
+[2m[36m(train_xt pid=35153)[0m                        'state_std': 255.0}},
+[2m[36m(train_xt pid=35153)[0m 'node_config': [('127.0.0.1',
+[2m[36m(train_xt pid=35153)[0m                'dummy_user',
+[2m[36m(train_xt pid=35153)[0m                'dummy_password')],
+[2m[36m(train_xt pid=35153)[0m 'speedup': 3,
+[2m[36m(train_xt pid=35153)[0m 'start_core': 30}
+[2m[36m(train_xt pid=35153)[0m 
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:40: Init Broker server info:
+[2m[36m(train_xt pid=35153)[0m {'recv': {'port': 35469,
+[2m[36m(train_xt pid=35153)[0m         'type': 'PULL'},
+[2m[36m(train_xt pid=35153)[0m 'send': [{'port': 33568,
+[2m[36m(train_xt pid=35153)[0m         'type': 'PUSH'}]}
+[2m[36m(train_xt pid=35153)[0m 
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:40: start launching Broker with: import xt; from xt import start_broker; start_broker(0, 35469, 33568, '127.0.0.1', 'info')
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:40: launch local broker with lib success
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:40: explorer-0 start with sync interval-1
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:40: **********
+[2m[36m(train_xt pid=35153)[0m workspace:
+[2m[36m(train_xt pid=35153)[0m 	/home/xys/avan/xt_archive/ImpalaCnnOpt_now_time_16945247133878348
+[2m[36m(train_xt pid=35153)[0m 
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:40: speedup(3): binding env 4 to CPU 4
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:41: speedup(3): binding env 2 to CPU 12
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:41: init explorer with id: 3, buf_path: /tmp/plasma_share35143
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:41: speedup(3): binding env 0 to CPU 20
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:41: init explorer with id: 1, buf_path: /tmp/plasma_share36591
+[2m[36m(train_xt pid=35153)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=35153)[0m Instructions for updating:
+[2m[36m(train_xt pid=35153)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:42: explorer-3 start with sync interval-1
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:43: explorer-1 start with sync interval-1
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:44: speedup(3): binding env 3 to CPU 13
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:44: init explorer with id: 4, buf_path: /tmp/plasma_share35143
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:44: speedup(3): binding env 1 to CPU 21
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:44: init explorer with id: 2, buf_path: /tmp/plasma_share36591
+[2m[36m(train_xt pid=34346)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:176: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34346)[0m   broker_item.send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=34346)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34346)[0m   self.run()
+[2m[36m(train_xt pid=34346)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:178: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34346)[0m   self.send_broker[broker_id].send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:45: Task: T0         | Train_count:         6 | Steps:      3559 | Elapsed time: 23 seconds
+[2m[36m(train_xt pid=34346)[0m mean_env_step_ms:         3.404058	mean_explore_ms:         974.14422	mean_inference_ms:        3.453608	mean_loop_time_ms:      209.345937
+[2m[36m(train_xt pid=34346)[0m mean_prepare_data_ms:     1.317024	mean_restore_model_ms:     52.4261	mean_train_time_ms:     314.450162	mean_wait_model_ms:     7660.58197
+[2m[36m(train_xt pid=34346)[0m mean_wait_sample_ms:    3051.338536	step_per_second:             150.0	train_loss:               0.913583	train_reward_avg:              2.5
+[2m[36m(train_xt pid=34346)[0m 
+[2m[36m(train_xt pid=35153)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:45: set verbosity in broker: info
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:45: init broker with id-0
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:45: share buf: plasma_store -m 400000000 -s /tmp/plasma_share38787
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:46: explorer-4 start with sync interval-1
+[2m[36m(train_xt pid=35153)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=35153)[0m   self.run()
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:46: init explorer with id: 0, buf_path: /tmp/plasma_share38787
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:46: init agent group for: explore
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:46: explorer-2 start with sync interval-1
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:47: speedup(3): binding env 4 to CPU 14
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:47: speedup(3): binding env 2 to CPU 22
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:47: init explorer with id: 3, buf_path: /tmp/plasma_share36591
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:48: explorer-0 start with sync interval-1
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:49: speedup(3): binding env 0 to CPU 30
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:49: init explorer with id: 1, buf_path: /tmp/plasma_share38787
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:49: explorer-3 start with sync interval-1tune_system ================== True
+with_samper ================== True
+== Status ==
+Current time: 2023-09-12 21:18:10 (running for 00:00:07.16)
+Memory usage on this node: 13.5/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 10.0/80 CPUs, 0.4/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (3 PENDING, 1 RUNNING)
+
+
+[2m[36m(train_xt pid=34346)[0m {'lr': 0.003819001547868878, 'checkpoint_interval': 1}
+[2m[36m(train_xt pid=34346)[0m trail id ================= cdc12_00000
+[2m[36m(train_xt pid=34346)[0m =================tune_system=========================
+[2m[36m(train_xt pid=34346)[0m =================with_samper=========================
+[2m[36m(train_xt pid=34346)[0m =======================env_pool_size======================5
+[2m[36m(train_xt pid=34346)[0m =======================env_pool_wait_nums======================4
+[2m[36m(train_xt pid=34346)[0m get max throughput start_core============================= 0
+[2m[36m(train_xt pid=34346)[0m yaml_filepath ================== /home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_16945246920763113.yaml
+[2m[36m(train_xt pid=34346)[0m run_log ======================== /tmp/test_opt_bys16945246920763113.log
+== Status ==
+Current time: 2023-09-12 21:18:17 (running for 00:00:13.97)
+Memory usage on this node: 14.1/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 20.0/80 CPUs, 0.8/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (2 PENDING, 2 RUNNING)
+
+
+[2m[36m(train_xt pid=34390)[0m {'lr': 0.00027261323381466197, 'checkpoint_interval': 1}
+[2m[36m(train_xt pid=34390)[0m trail id ================= cdc12_00001
+[2m[36m(train_xt pid=34390)[0m =================tune_system=========================
+[2m[36m(train_xt pid=34390)[0m =================with_samper=========================
+[2m[36m(train_xt pid=34346)[0m start_core ======================================== 0
+[2m[36m(train_xt pid=34390)[0m =======================env_pool_size======================5
+[2m[36m(train_xt pid=34390)[0m =======================env_pool_wait_nums======================4
+[2m[36m(train_xt pid=34390)[0m get max throughput start_core============================= 10
+[2m[36m(train_xt pid=34346)[0m plasma_store -m 1000000000 -s /tmp/plasma34402
+[2m[36m(train_xt pid=34346)[0m self.time_record_filename ============= /tmp/16945246920763113
+[2m[36m(train_xt pid=34390)[0m yaml_filepath ================== /home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_16945246988815055.yaml
+[2m[36m(train_xt pid=34390)[0m run_log ======================== /tmp/test_opt_bys16945246988815055.log
+== Status ==
+Current time: 2023-09-12 21:18:24 (running for 00:00:20.63)
+Memory usage on this node: 15.6/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 30.0/80 CPUs, 1.2000000000000002/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (1 PENDING, 3 RUNNING)
+
+
+[2m[36m(train_xt pid=34456)[0m {'lr': 0.00408587239345324, 'checkpoint_interval': 1}
+[2m[36m(train_xt pid=34456)[0m trail id ================= cdc12_00002
+[2m[36m(train_xt pid=34456)[0m =================tune_system=========================
+[2m[36m(train_xt pid=34456)[0m =================with_samper=========================
+[2m[36m(train_xt pid=34346)[0m plasma_store -m 100000000 -s /tmp/plasma34486T0
+[2m[36m(train_xt pid=34390)[0m start_core ======================================== 10
+[2m[36m(train_xt pid=34456)[0m =======================env_pool_size======================5
+[2m[36m(train_xt pid=34456)[0m =======================env_pool_wait_nums======================4
+[2m[36m(train_xt pid=34456)[0m get max throughput start_core============================= 20
+[2m[36m(train_xt pid=34390)[0m plasma_store -m 1000000000 -s /tmp/plasma34947
+[2m[36m(train_xt pid=34390)[0m self.time_record_filename ============= /tmp/16945246988815055
+[2m[36m(train_xt pid=34456)[0m yaml_filepath ================== /home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_1694524705560289.yaml
+[2m[36m(train_xt pid=34456)[0m run_log ======================== /tmp/test_opt_bys1694524705560289.log
+[2m[36m(train_xt pid=34390)[0m plasma_store -m 100000000 -s /tmp/plasma35143T0
+== Status ==
+Current time: 2023-09-12 21:18:32 (running for 00:00:28.49)
+Memory usage on this node: 17.4/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+[2m[36m(train_xt pid=35153)[0m {'lr': 0.0028565563725272253, 'checkpoint_interval': 1}
+[2m[36m(train_xt pid=35153)[0m trail id ================= cdc12_00003
+[2m[36m(train_xt pid=35153)[0m =================tune_system=========================
+[2m[36m(train_xt pid=35153)[0m =================with_samper=========================
+[2m[36m(train_xt pid=34456)[0m start_core ======================================== 20
+[2m[36m(train_xt pid=34456)[0m plasma_store -m 1000000000 -s /tmp/plasma35758
+[2m[36m(train_xt pid=34456)[0m self.time_record_filename ============= /tmp/1694524705560289
+[2m[36m(train_xt pid=35153)[0m =======================env_pool_size======================5
+[2m[36m(train_xt pid=35153)[0m =======================env_pool_wait_nums======================4
+[2m[36m(train_xt pid=35153)[0m get max throughput start_core============================= 30
+[2m[36m(train_xt pid=35153)[0m yaml_filepath ================== /home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_16945247133878348.yaml
+[2m[36m(train_xt pid=35153)[0m run_log ======================== /tmp/test_opt_bys16945247133878348.log
+== Status ==
+Current time: 2023-09-12 21:18:37 (running for 00:00:33.50)
+Memory usage on this node: 18.8/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+[2m[36m(train_xt pid=34456)[0m plasma_store -m 100000000 -s /tmp/plasma36591T0
+[2m[36m(train_xt pid=35153)[0m start_core ======================================== 30
+[2m[36m(train_xt pid=35153)[0m plasma_store -m 1000000000 -s /tmp/plasma37370
+[2m[36m(train_xt pid=35153)[0m self.time_record_filename ============= /tmp/16945247133878348
+== Status ==
+Current time: 2023-09-12 21:18:42 (running for 00:00:38.50)
+Memory usage on this node: 20.5/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+[2m[36m(train_xt pid=35153)[0m plasma_store -m 100000000 -s /tmp/plasma38787T0
+== Status ==
+Current time: 2023-09-12 21:18:47 (running for 00:00:43.51)
+Memory usage on this node: 21.9/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-12 21:18:52 (running for 00:00:48.51)
+Memory usage on this node: 23.6/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:50: Task: T0         | Train_count:        26 | Steps:     13646 | Elapsed time: 28 seconds
+[2m[36m(train_xt pid=34346)[0m mean_env_step_ms:           3.1304	mean_explore_ms:        890.811563	mean_inference_ms:        3.268677	mean_loop_time_ms:      238.642979
+[2m[36m(train_xt pid=34346)[0m mean_prepare_data_ms:     1.429892	mean_restore_model_ms:   35.188943	mean_train_time_ms:      37.834144	mean_wait_model_ms:     5165.253758
+[2m[36m(train_xt pid=34346)[0m mean_wait_sample_ms:    191.821587	step_per_second:             478.0	train_loss:              33.573189	train_reward_avg:         1.683333
+[2m[36m(train_xt pid=34346)[0m 
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:50: speedup(3): binding env 3 to CPU 23
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:51: init explorer with id: 4, buf_path: /tmp/plasma_share36591
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:51: explorer-1 start with sync interval-1
+[2m[36m(train_xt pid=34390)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:176: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34390)[0m   broker_item.send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=34390)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34390)[0m   self.run()
+[2m[36m(train_xt pid=34390)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:178: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34390)[0m   self.send_broker[broker_id].send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:52: Task: T0         | Train_count:         6 | Steps:      3430 | Elapsed time: 24 seconds
+[2m[36m(train_xt pid=34390)[0m mean_env_step_ms:         3.756303	mean_explore_ms:        1004.406174	mean_inference_ms:        3.539188	mean_loop_time_ms:      249.120871
+[2m[36m(train_xt pid=34390)[0m mean_prepare_data_ms:     1.367671	mean_restore_model_ms:   48.600793	mean_train_time_ms:     338.982378	mean_wait_model_ms:       6741.901
+[2m[36m(train_xt pid=34390)[0m mean_wait_sample_ms:    3112.992491	step_per_second:             140.0	train_loss:              63.634056	train_reward_avg:             0.75
+[2m[36m(train_xt pid=34390)[0m 
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:52: speedup(3): binding env 1 to CPU 31
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:52: init explorer with id: 2, buf_path: /tmp/plasma_share38787
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:52: explorer-4 start with sync interval-1
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:54: speedup(3): binding env 4 to CPU 24
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:54: explorer-2 start with sync interval-1
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:55: Task: T0         | Train_count:        46 | Steps:     24043 | Elapsed time: 33 seconds
+[2m[36m(train_xt pid=34346)[0m mean_env_step_ms:         3.096248	mean_explore_ms:        868.134347	mean_inference_ms:        3.222264	mean_loop_time_ms:      250.917065
+[2m[36m(train_xt pid=34346)[0m mean_prepare_data_ms:      1.49436	mean_restore_model_ms:   27.090419	mean_train_time_ms:      42.430627	mean_wait_model_ms:     3860.699285
+[2m[36m(train_xt pid=34346)[0m mean_wait_sample_ms:    198.896134	step_per_second:             717.0	train_loss:              42.012539	train_reward_avg:         1.641667
+[2m[36m(train_xt pid=34346)[0m 
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:55: speedup(3): binding env 2 to CPU 32
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:55: init explorer with id: 3, buf_path: /tmp/plasma_share38787
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:57: explorer-3 start with sync interval-1
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:57: Task: T0         | Train_count:        26 | Steps:     13737 | Elapsed time: 29 seconds
+[2m[36m(train_xt pid=34390)[0m mean_env_step_ms:         3.607059	mean_explore_ms:        970.837057	mean_inference_ms:         3.50948	mean_loop_time_ms:       266.09391
+[2m[36m(train_xt pid=34390)[0m mean_prepare_data_ms:     1.460004	mean_restore_model_ms:   37.819982	mean_train_time_ms:      40.267885	mean_wait_model_ms:     5179.915994
+[2m[36m(train_xt pid=34390)[0m mean_wait_sample_ms:    215.673053	step_per_second:             463.0	train_loss:              83.687202	train_reward_avg:         1.183333
+[2m[36m(train_xt pid=34390)[0m 
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:58: speedup(3): binding env 3 to CPU 33
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:58: init explorer with id: 4, buf_path: /tmp/plasma_share38787
+[2m[36m(train_xt pid=34456)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:176: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34456)[0m   broker_item.send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=34456)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34456)[0m   self.run()
+[2m[36m(train_xt pid=34456)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:178: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34456)[0m   self.send_broker[broker_id].send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:18:59: Task: T0         | Train_count:         6 | Steps:      3460 | Elapsed time: 24 seconds
+[2m[36m(train_xt pid=34456)[0m mean_env_step_ms:         3.790878	mean_explore_ms:        1036.632776	mean_inference_ms:        3.712969	mean_loop_time_ms:      245.178938
+[2m[36m(train_xt pid=34456)[0m mean_prepare_data_ms:     1.385212	mean_restore_model_ms:   58.136415	mean_train_time_ms:     372.677497	mean_wait_model_ms:     7585.660315
+[2m[36m(train_xt pid=34456)[0m mean_wait_sample_ms:    3097.683396	step_per_second:             141.0	train_loss:              41.039364	train_reward_avg:              2.8
+[2m[36m(train_xt pid=34456)[0m 
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:00: Task: T0         | Train_count:        66 | Steps:     34160 | Elapsed time: 38 seconds
+[2m[36m(train_xt pid=34346)[0m mean_env_step_ms:         3.138822	mean_explore_ms:        875.454034	mean_inference_ms:        3.280558	mean_loop_time_ms:      268.262982
+[2m[36m(train_xt pid=34346)[0m mean_prepare_data_ms:     1.511455	mean_restore_model_ms:   22.432668	mean_train_time_ms:      41.963255	mean_wait_model_ms:     3130.694679
+[2m[36m(train_xt pid=34346)[0m mean_wait_sample_ms:    216.282761	step_per_second:             878.0	train_loss:             -61.173107	train_reward_avg:         1.583333
+[2m[36m(train_xt pid=34346)[0m 
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:01: explorer-4 start with sync interval-1
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:01: speedup(3): binding env 4 to CPU 34
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:03: Task: T0         | Train_count:        46 | Steps:     24014 | Elapsed time: 35 seconds
+[2m[36m(train_xt pid=34390)[0m mean_env_step_ms:         3.514864	mean_explore_ms:        957.628568	mean_inference_ms:        3.574448	mean_loop_time_ms:      280.973613
+[2m[36m(train_xt pid=34390)[0m mean_prepare_data_ms:     1.576996	mean_restore_model_ms:   26.864092	mean_train_time_ms:      36.286342	mean_wait_model_ms:     3600.60068
+[2m[36m(train_xt pid=34390)[0m mean_wait_sample_ms:    234.124994	step_per_second:             680.0	train_loss:             -71.773178	train_reward_avg:         1.621429
+[2m[36m(train_xt pid=34390)[0m 
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:04: Task: T0         | Train_count:        26 | Steps:     13753 | Elapsed time: 29 seconds
+[2m[36m(train_xt pid=34456)[0m mean_env_step_ms:         3.620472	mean_explore_ms:         987.46106	mean_inference_ms:        3.639306	mean_loop_time_ms:       276.16632
+[2m[36m(train_xt pid=34456)[0m mean_prepare_data_ms:     1.598346	mean_restore_model_ms:   38.722813	mean_train_time_ms:      40.172553	mean_wait_model_ms:     5200.510234
+[2m[36m(train_xt pid=34456)[0m mean_wait_sample_ms:    223.488903	step_per_second:             458.0	train_loss:                9.36039	train_reward_avg:             1.35
+[2m[36m(train_xt pid=34456)[0m 
+[2m[36m(train_xt pid=34346)[0m /tmp/plasma34402:   
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:05: broker status timeout!
+[2m[36m(train_xt pid=34346)[0m /tmp/plasma_share34486:
+[2m[36m(train_xt pid=34346)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:232: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34346)[0m   broker_item.send(close_cmd['ctr_info'], close_cmd['data'])
+[2m[36m(train_xt pid=34346)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:07: Finished train job normally.
+[2m[36m(train_xt pid=35153)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:176: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=35153)[0m   broker_item.send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=35153)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=35153)[0m   self.run()
+[2m[36m(train_xt pid=35153)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:178: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=35153)[0m   self.send_broker[broker_id].send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:07: Task: T0         | Train_count:         6 | Steps:      3556 | Elapsed time: 24 seconds
+[2m[36m(train_xt pid=35153)[0m mean_env_step_ms:         4.378546	mean_explore_ms:         1156.5334	mean_inference_ms:        4.071385	mean_loop_time_ms:      251.692017
+[2m[36m(train_xt pid=35153)[0m mean_prepare_data_ms:     1.434871	mean_restore_model_ms:   56.203842	mean_train_time_ms:     381.195341	mean_wait_model_ms:     6624.893943
+[2m[36m(train_xt pid=35153)[0m mean_wait_sample_ms:    3148.89666	step_per_second:             142.0	train_loss:              -16.26903	train_reward_avg:         0.333333
+[2m[36m(train_xt pid=35153)[0m 
+[2m[36m(train_xt pid=34346)[0m sh: 1: kill: No such process
+[2m[36m(train_xt pid=34346)[0m 
+2023-09-12 21:19:08,139	ERROR trial_runner.py:987 -- Trial train_xt_cdc12_00000: Error processing event.
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=34346, ip=192.168.1.128, repr=train_xt)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/trainable.py", line 349, in train
+    result = self.step()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 417, in step
+    self._report_thread_runner_error(block=True)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 589, in _report_thread_runner_error
+    raise e
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+    self._entrypoint()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+    self._status_reporter.get_checkpoint(),
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+    output = fn()
+  File "test_xt_with_tune.py", line 149, in train_xt
+    best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in find_max_th
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+    show_progress_bar=show_progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+    progress_bar=progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in <lambda>
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 146, in fn
+    tune_cost = int(os.environ("tune_cost", '0')) != 0
+TypeError: '_Environ' object is not callable
+[2m[36m(train_xt pid=34346)[0m [W 2023-09-12 21:19:08,098] Trial 0 failed with parameters: {'env_pool_size': 5, 'env_pool_wait_nums': 4, 'infer_size': 5} because of the following error: TypeError("'_Environ' object is not callable").
+[2m[36m(train_xt pid=34346)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=34346)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=34346)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=34346)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in <lambda>
+[2m[36m(train_xt pid=34346)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=34346)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 146, in fn
+[2m[36m(train_xt pid=34346)[0m     tune_cost = int(os.environ("tune_cost", '0')) != 0
+[2m[36m(train_xt pid=34346)[0m TypeError: '_Environ' object is not callable
+[2m[36m(train_xt pid=34346)[0m [W 2023-09-12 21:19:08,100] Trial 0 failed with value None.
+[2m[36m(train_xt pid=34346)[0m 2023-09-12 21:19:08,100	ERROR function_trainable.py:298 -- Runner Thread raised error.
+[2m[36m(train_xt pid=34346)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=34346)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+[2m[36m(train_xt pid=34346)[0m     self._entrypoint()
+[2m[36m(train_xt pid=34346)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+[2m[36m(train_xt pid=34346)[0m     self._status_reporter.get_checkpoint(),
+[2m[36m(train_xt pid=34346)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/util/tracing/tracing_helper.py", line 466, in _resume_span
+[2m[36m(train_xt pid=34346)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(train_xt pid=34346)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+[2m[36m(train_xt pid=34346)[0m     output = fn()
+[2m[36m(train_xt pid=34346)[0m   File "test_xt_with_tune.py", line 149, in train_xt
+[2m[36m(train_xt pid=34346)[0m     best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+[2m[36m(train_xt pid=34346)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in find_max_th
+[2m[36m(train_xt pid=34346)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=34346)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+[2m[36m(train_xt pid=34346)[0m     show_progress_bar=show_progress_bar,
+[2m[36m(train_xt pid=34346)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+[2m[36m(train_xt pid=34346)[0m     progress_bar=progress_bar,
+[2m[36m(train_xt pid=34346)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+[2m[36m(train_xt pid=34346)[0m     frozen_trial = _run_trial(study, func, catch)
+[2m[36m(train_xt pid=34346)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+[2m[36m(train_xt pid=34346)[0m     raise func_err
+[2m[36m(train_xt pid=34346)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=34346)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=34346)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in <lambda>
+[2m[36m(train_xt pid=34346)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=34346)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 146, in fn
+[2m[36m(train_xt pid=34346)[0m     tune_cost = int(os.environ("tune_cost", '0')) != 0
+[2m[36m(train_xt pid=34346)[0m TypeError: '_Environ' object is not callable
+[2m[36m(train_xt pid=34346)[0m /tmp/plasma34486T0: 
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:08: Task: T0         | Train_count:        66 | Steps:     34259 | Elapsed time: 40 seconds
+[2m[36m(train_xt pid=34390)[0m mean_env_step_ms:         3.474939	mean_explore_ms:        952.224169	mean_inference_ms:        3.594619	mean_loop_time_ms:      271.531808
+[2m[36m(train_xt pid=34390)[0m mean_prepare_data_ms:     1.488936	mean_restore_model_ms:   24.294921	mean_train_time_ms:      31.550705	mean_wait_model_ms:     3151.563747
+[2m[36m(train_xt pid=34390)[0m mean_wait_sample_ms:    230.617535	step_per_second:             841.0	train_loss:             213.457718	train_reward_avg:         1.527778
+[2m[36m(train_xt pid=34390)[0m 
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:10: Task: T0         | Train_count:        46 | Steps:     23799 | Elapsed time: 35 seconds
+[2m[36m(train_xt pid=34456)[0m mean_env_step_ms:         3.512244	mean_explore_ms:        961.863518	mean_inference_ms:        3.625851	mean_loop_time_ms:      268.875456
+[2m[36m(train_xt pid=34456)[0m mean_prepare_data_ms:     1.489747	mean_restore_model_ms:    27.27135	mean_train_time_ms:      38.530564	mean_wait_model_ms:     3617.017825
+[2m[36m(train_xt pid=34456)[0m mean_wait_sample_ms:    219.615924	step_per_second:             672.0	train_loss:             -50.245346	train_reward_avg:         1.464286
+[2m[36m(train_xt pid=34456)[0m 
+[2m[36m(train_xt pid=34390)[0m /tmp/plasma34947:   
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:13: Task: T0         | Train_count:        28 | Steps:     14646 | Elapsed time: 30 seconds
+[2m[36m(train_xt pid=35153)[0m mean_env_step_ms:          4.14698	mean_explore_ms:        1106.061608	mean_inference_ms:        4.001506	mean_loop_time_ms:      270.034492
+[2m[36m(train_xt pid=35153)[0m mean_prepare_data_ms:     1.633883	mean_restore_model_ms:   43.521762	mean_train_time_ms:      32.082164	mean_wait_model_ms:     5086.666375
+[2m[36m(train_xt pid=35153)[0m mean_wait_sample_ms:    225.320232	step_per_second:             482.0	train_loss:              55.137711	train_reward_avg:         0.644444
+[2m[36m(train_xt pid=35153)[0m 
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:13: broker status timeout!
+[2m[36m(train_xt pid=34390)[0m /tmp/plasma_share35143:
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:15: Task: T0         | Train_count:        66 | Steps:     34194 | Elapsed time: 40 seconds
+[2m[36m(train_xt pid=34456)[0m mean_env_step_ms:         3.452891	mean_explore_ms:        949.069125	mean_inference_ms:        3.607665	mean_loop_time_ms:      264.808774
+[2m[36m(train_xt pid=34456)[0m mean_prepare_data_ms:     1.571918	mean_restore_model_ms:   23.947699	mean_train_time_ms:      38.811374	mean_wait_model_ms:     3159.249135
+[2m[36m(train_xt pid=34456)[0m mean_wait_sample_ms:    214.209175	step_per_second:             840.0	train_loss:              31.267294	train_reward_avg:         1.405556
+[2m[36m(train_xt pid=34456)[0m 
+[2m[36m(train_xt pid=34390)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:232: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34390)[0m   broker_item.send(close_cmd['ctr_info'], close_cmd['data'])
+[2m[36m(train_xt pid=34390)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:15: Finished train job normally.
+2023-09-12 21:19:16,268	ERROR trial_runner.py:987 -- Trial train_xt_cdc12_00001: Error processing event.
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=34390, ip=192.168.1.128, repr=train_xt)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/trainable.py", line 349, in train
+    result = self.step()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 417, in step
+    self._report_thread_runner_error(block=True)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 589, in _report_thread_runner_error
+    raise e
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+    self._entrypoint()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+    self._status_reporter.get_checkpoint(),
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+    output = fn()
+  File "test_xt_with_tune.py", line 149, in train_xt
+    best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in find_max_th
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+    show_progress_bar=show_progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+    progress_bar=progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in <lambda>
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 146, in fn
+    tune_cost = int(os.environ("tune_cost", '0')) != 0
+TypeError: '_Environ' object is not callable
+[2m[36m(train_xt pid=34390)[0m sh: 1: kill: No such process
+[2m[36m(train_xt pid=34390)[0m 
+[2m[36m(train_xt pid=34390)[0m [W 2023-09-12 21:19:16,251] Trial 1 failed with parameters: {'env_pool_size': 5, 'env_pool_wait_nums': 4, 'infer_size': 5} because of the following error: TypeError("'_Environ' object is not callable").
+[2m[36m(train_xt pid=34390)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=34390)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=34390)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=34390)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in <lambda>
+[2m[36m(train_xt pid=34390)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=34390)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 146, in fn
+[2m[36m(train_xt pid=34390)[0m     tune_cost = int(os.environ("tune_cost", '0')) != 0
+[2m[36m(train_xt pid=34390)[0m TypeError: '_Environ' object is not callable
+[2m[36m(train_xt pid=34390)[0m [W 2023-09-12 21:19:16,252] Trial 1 failed with value None.
+[2m[36m(train_xt pid=34390)[0m 2023-09-12 21:19:16,252	ERROR function_trainable.py:298 -- Runner Thread raised error.
+[2m[36m(train_xt pid=34390)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=34390)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+[2m[36m(train_xt pid=34390)[0m     self._entrypoint()
+[2m[36m(train_xt pid=34390)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+[2m[36m(train_xt pid=34390)[0m     self._status_reporter.get_checkpoint(),
+[2m[36m(train_xt pid=34390)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/util/tracing/tracing_helper.py", line 466, in _resume_span
+[2m[36m(train_xt pid=34390)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(train_xt pid=34390)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+[2m[36m(train_xt pid=34390)[0m     output = fn()
+[2m[36m(train_xt pid=34390)[0m   File "test_xt_with_tune.py", line 149, in train_xt
+[2m[36m(train_xt pid=34390)[0m     best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+[2m[36m(train_xt pid=34390)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in find_max_th
+[2m[36m(train_xt pid=34390)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=34390)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+[2m[36m(train_xt pid=34390)[0m     show_progress_bar=show_progress_bar,
+[2m[36m(train_xt pid=34390)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+[2m[36m(train_xt pid=34390)[0m     progress_bar=progress_bar,
+[2m[36m(train_xt pid=34390)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+[2m[36m(train_xt pid=34390)[0m     frozen_trial = _run_trial(study, func, catch)
+[2m[36m(train_xt pid=34390)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+[2m[36m(train_xt pid=34390)[0m     raise func_err
+[2m[36m(train_xt pid=34390)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=34390)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=34390)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in <lambda>
+[2m[36m(train_xt pid=34390)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=34390)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 146, in fn
+[2m[36m(train_xt pid=34390)[0m     tune_cost = int(os.environ("tune_cost", '0')) != 0
+[2m[36m(train_xt pid=34390)[0m TypeError: '_Environ' object is not callable
+[2m[36m(train_xt pid=34390)[0m /tmp/plasma35143T0: 
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:18: Task: T0         | Train_count:        48 | Steps:     25035 | Elapsed time: 35 seconds
+[2m[36m(train_xt pid=35153)[0m mean_env_step_ms:         3.804418	mean_explore_ms:        1019.527853	mean_inference_ms:         3.76355	mean_loop_time_ms:      249.947262
+[2m[36m(train_xt pid=35153)[0m mean_prepare_data_ms:     1.827049	mean_restore_model_ms:   30.581375	mean_train_time_ms:      30.037832	mean_wait_model_ms:     3522.842447
+[2m[36m(train_xt pid=35153)[0m mean_wait_sample_ms:    210.360885	step_per_second:             707.0	train_loss:              17.407133	train_reward_avg:          1.07619
+[2m[36m(train_xt pid=35153)[0m 
+[2m[36m(train_xt pid=34456)[0m /tmp/plasma35758:   
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:19: broker status timeout!
+[2m[36m(train_xt pid=34456)[0m /tmp/plasma_share36591:
+[2m[36m(train_xt pid=34456)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:232: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=34456)[0m   broker_item.send(close_cmd['ctr_info'], close_cmd['data'])
+[2m[36m(train_xt pid=34456)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:22: Finished train job normally.
+[2m[36m(train_xt pid=34456)[0m sh: 1: kill: No such process
+[2m[36m(train_xt pid=34456)[0m 
+[2m[36m(train_xt pid=34456)[0m [W 2023-09-12 21:19:22,439] Trial 2 failed with parameters: {'env_pool_size': 5, 'env_pool_wait_nums': 4, 'infer_size': 5} because of the following error: TypeError("'_Environ' object is not callable").
+[2m[36m(train_xt pid=34456)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=34456)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=34456)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=34456)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in <lambda>
+[2m[36m(train_xt pid=34456)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=34456)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 146, in fn
+[2m[36m(train_xt pid=34456)[0m     tune_cost = int(os.environ("tune_cost", '0')) != 0
+[2m[36m(train_xt pid=34456)[0m TypeError: '_Environ' object is not callable
+[2m[36m(train_xt pid=34456)[0m [W 2023-09-12 21:19:22,440] Trial 2 failed with value None.
+[2m[36m(train_xt pid=34456)[0m 2023-09-12 21:19:22,440	ERROR function_trainable.py:298 -- Runner Thread raised error.
+[2m[36m(train_xt pid=34456)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=34456)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+[2m[36m(train_xt pid=34456)[0m     self._entrypoint()
+[2m[36m(train_xt pid=34456)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+[2m[36m(train_xt pid=34456)[0m     self._status_reporter.get_checkpoint(),
+[2m[36m(train_xt pid=34456)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/util/tracing/tracing_helper.py", line 466, in _resume_span
+[2m[36m(train_xt pid=34456)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(train_xt pid=34456)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+[2m[36m(train_xt pid=34456)[0m     output = fn()
+[2m[36m(train_xt pid=34456)[0m   File "test_xt_with_tune.py", line 149, in train_xt
+[2m[36m(train_xt pid=34456)[0m     best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+[2m[36m(train_xt pid=34456)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in find_max_th
+[2m[36m(train_xt pid=34456)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=34456)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+[2m[36m(train_xt pid=34456)[0m     show_progress_bar=show_progress_bar,
+[2m[36m(train_xt pid=34456)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+[2m[36m(train_xt pid=34456)[0m     progress_bar=progress_bar,
+[2m[36m(train_xt pid=34456)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+[2m[36m(train_xt pid=34456)[0m     frozen_trial = _run_trial(study, func, catch)
+[2m[36m(train_xt pid=34456)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+[2m[36m(train_xt pid=34456)[0m     raise func_err
+[2m[36m(train_xt pid=34456)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=34456)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=34456)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in <lambda>
+[2m[36m(train_xt pid=34456)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=34456)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 146, in fn
+[2m[36m(train_xt pid=34456)[0m     tune_cost = int(os.environ("tune_cost", '0')) != 0
+[2m[36m(train_xt pid=34456)[0m TypeError: '_Environ' object is not callable
+2023-09-12 21:19:22,569	ERROR trial_runner.py:987 -- Trial train_xt_cdc12_00002: Error processing event.
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=34456, ip=192.168.1.128, repr=train_xt)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/trainable.py", line 349, in train
+    result = self.step()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 417, in step
+    self._report_thread_runner_error(block=True)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 589, in _report_thread_runner_error
+    raise e
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+    self._entrypoint()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+    self._status_reporter.get_checkpoint(),
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+    output = fn()
+  File "test_xt_with_tune.py", line 149, in train_xt
+    best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in find_max_th
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+    show_progress_bar=show_progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+    progress_bar=progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in <lambda>
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 146, in fn
+    tune_cost = int(os.environ("tune_cost", '0')) != 0
+TypeError: '_Environ' object is not callable
+[2m[36m(train_xt pid=34456)[0m /tmp/plasma36591T0: 
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:22: Task: T0         | Train_count:        68 | Steps:     35154 | Elapsed time: 40 seconds
+[2m[36m(train_xt pid=35153)[0m mean_env_step_ms:         3.670416	mean_explore_ms:        989.081757	mean_inference_ms:        3.687617	mean_loop_time_ms:      242.524791
+[2m[36m(train_xt pid=35153)[0m mean_prepare_data_ms:     1.453519	mean_restore_model_ms:   26.764853	mean_train_time_ms:      31.437957	mean_wait_model_ms:     3079.186678
+[2m[36m(train_xt pid=35153)[0m mean_wait_sample_ms:    201.046383	step_per_second:             874.0	train_loss:             -19.155428	train_reward_avg:         1.125926
+[2m[36m(train_xt pid=35153)[0m 
+[2m[36m(train_xt pid=35153)[0m /tmp/plasma37370:   
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:27: broker status timeout!
+[2m[36m(train_xt pid=35153)[0m /tmp/plasma_share38787:
+[2m[36m(train_xt pid=35153)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:232: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=35153)[0m   broker_item.send(close_cmd['ctr_info'], close_cmd['data'])
+[2m[36m(train_xt pid=35153)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 21:19:29: Finished train job normally.
+[2m[36m(train_xt pid=35153)[0m sh: 1: kill: No such process
+[2m[36m(train_xt pid=35153)[0m 
+2023-09-12 21:19:29,764	ERROR trial_runner.py:987 -- Trial train_xt_cdc12_00003: Error processing event.
+ray.exceptions.RayTaskError(TypeError): [36mray::ImplicitFunc.train()[39m (pid=35153, ip=192.168.1.128, repr=train_xt)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/trainable.py", line 349, in train
+    result = self.step()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 417, in step
+    self._report_thread_runner_error(block=True)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 589, in _report_thread_runner_error
+    raise e
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+    self._entrypoint()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+    self._status_reporter.get_checkpoint(),
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+    output = fn()
+  File "test_xt_with_tune.py", line 149, in train_xt
+    best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in find_max_th
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+    show_progress_bar=show_progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+    progress_bar=progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in <lambda>
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 146, in fn
+    tune_cost = int(os.environ("tune_cost", '0')) != 0
+TypeError: '_Environ' object is not callable
+[2m[36m(train_xt pid=35153)[0m /tmp/plasma38787T0: 
+[2m[36m(train_xt pid=35153)[0m [W 2023-09-12 21:19:29,725] Trial 3 failed with parameters: {'env_pool_size': 5, 'env_pool_wait_nums': 4, 'infer_size': 5} because of the following error: TypeError("'_Environ' object is not callable").
+[2m[36m(train_xt pid=35153)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=35153)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=35153)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=35153)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in <lambda>
+[2m[36m(train_xt pid=35153)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=35153)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 146, in fn
+[2m[36m(train_xt pid=35153)[0m     tune_cost = int(os.environ("tune_cost", '0')) != 0
+[2m[36m(train_xt pid=35153)[0m TypeError: '_Environ' object is not callable
+[2m[36m(train_xt pid=35153)[0m [W 2023-09-12 21:19:29,727] Trial 3 failed with value None.
+[2m[36m(train_xt pid=35153)[0m 2023-09-12 21:19:29,727	ERROR function_trainable.py:298 -- Runner Thread raised error.
+[2m[36m(train_xt pid=35153)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=35153)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+[2m[36m(train_xt pid=35153)[0m     self._entrypoint()
+[2m[36m(train_xt pid=35153)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+[2m[36m(train_xt pid=35153)[0m     self._status_reporter.get_checkpoint(),
+[2m[36m(train_xt pid=35153)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/util/tracing/tracing_helper.py", line 466, in _resume_span
+[2m[36m(train_xt pid=35153)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(train_xt pid=35153)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+[2m[36m(train_xt pid=35153)[0m     output = fn()
+[2m[36m(train_xt pid=35153)[0m   File "test_xt_with_tune.py", line 149, in train_xt
+[2m[36m(train_xt pid=35153)[0m     best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+[2m[36m(train_xt pid=35153)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in find_max_th
+[2m[36m(train_xt pid=35153)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=35153)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+[2m[36m(train_xt pid=35153)[0m     show_progress_bar=show_progress_bar,
+[2m[36m(train_xt pid=35153)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+[2m[36m(train_xt pid=35153)[0m     progress_bar=progress_bar,
+[2m[36m(train_xt pid=35153)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+[2m[36m(train_xt pid=35153)[0m     frozen_trial = _run_trial(study, func, catch)
+[2m[36m(train_xt pid=35153)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+[2m[36m(train_xt pid=35153)[0m     raise func_err
+[2m[36m(train_xt pid=35153)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=35153)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=35153)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 162, in <lambda>
+[2m[36m(train_xt pid=35153)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=35153)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 146, in fn
+[2m[36m(train_xt pid=35153)[0m     tune_cost = int(os.environ("tune_cost", '0')) != 0
+[2m[36m(train_xt pid=35153)[0m TypeError: '_Environ' object is not callable
+2023-09-12 21:19:29,879	ERROR tune.py:754 -- Trials did not complete: [train_xt_cdc12_00000, train_xt_cdc12_00001, train_xt_cdc12_00002, train_xt_cdc12_00003]
+2023-09-12 21:19:29,880	INFO tune.py:759 -- Total run time: 86.40 seconds (86.23 seconds for the tuning loop).
+2023-09-12 21:19:29,886	WARNING experiment_analysis.py:628 -- Could not find best trial. Did you pass the correct `metric` parameter?
+
+== Status ==
+Current time: 2023-09-12 21:18:57 (running for 00:00:53.52)
+Memory usage on this node: 25.0/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-12 21:19:02 (running for 00:00:58.52)
+Memory usage on this node: 25.6/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+[2m[36m(train_xt pid=34346)[0m  34491
+[2m[36m(train_xt pid=34346)[0m  35089
+== Status ==
+Current time: 2023-09-12 21:19:07 (running for 00:01:03.53)
+Memory usage on this node: 26.8/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+[2m[36m(train_xt pid=34346)[0m good
+[2m[36m(train_xt pid=34346)[0m log filename ================== /tmp/16945246920763113
+[2m[36m(train_xt pid=34346)[0m step_per_second ============ 878.0
+[2m[36m(train_xt pid=34346)[0m  35097
+[2m[36m(train_xt pid=34390)[0m  35150
+== Status ==
+Current time: 2023-09-12 21:19:13 (running for 00:01:09.61)
+Memory usage on this node: 24.1/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 30.0/80 CPUs, 1.2000000000000002/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (1 ERROR, 3 RUNNING)
+Number of errored trials: 1
++----------------------+--------------+-------------------------------------------------------------------------------------------+
+| Trial name           |   # failures | error file                                                                                |
+|----------------------+--------------+-------------------------------------------------------------------------------------------|
+| train_xt_cdc12_00000 |            1 | /tmp/ray_results/pb2_test4/train_xt_cdc12_00000_0_lr=0.0038_2023-09-12_21-18-03/error.txt |
++----------------------+--------------+-------------------------------------------------------------------------------------------+
+
+[2m[36m(train_xt pid=34390)[0m  36278
+[2m[36m(train_xt pid=34390)[0m good
+[2m[36m(train_xt pid=34390)[0m log filename ================== /tmp/16945246988815055
+[2m[36m(train_xt pid=34390)[0m step_per_second ============ 841.0
+[2m[36m(train_xt pid=34390)[0m  36286
+[2m[36m(train_xt pid=34456)[0m  36758
+[2m[36m(train_xt pid=34456)[0m  37975
+== Status ==
+Current time: 2023-09-12 21:19:21 (running for 00:01:17.74)
+Memory usage on this node: 21.1/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 20.0/80 CPUs, 0.8/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (2 ERROR, 2 RUNNING)
+Number of errored trials: 2
++----------------------+--------------+-------------------------------------------------------------------------------------------+
+| Trial name           |   # failures | error file                                                                                |
+|----------------------+--------------+-------------------------------------------------------------------------------------------|
+| train_xt_cdc12_00000 |            1 | /tmp/ray_results/pb2_test4/train_xt_cdc12_00000_0_lr=0.0038_2023-09-12_21-18-03/error.txt |
+| train_xt_cdc12_00001 |            1 | /tmp/ray_results/pb2_test4/train_xt_cdc12_00001_1_lr=0.0003_2023-09-12_21-18-10/error.txt |
++----------------------+--------------+-------------------------------------------------------------------------------------------+
+
+[2m[36m(train_xt pid=34456)[0m good
+[2m[36m(train_xt pid=34456)[0m log filename ================== /tmp/1694524705560289
+[2m[36m(train_xt pid=34456)[0m step_per_second ============ 840.0
+[2m[36m(train_xt pid=34456)[0m  37983
+[2m[36m(train_xt pid=35153)[0m  38789
+== Status ==
+Current time: 2023-09-12 21:19:27 (running for 00:01:24.04)
+Memory usage on this node: 18.2/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 10.0/80 CPUs, 0.4/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (3 ERROR, 1 RUNNING)
+Number of errored trials: 3
++----------------------+--------------+-------------------------------------------------------------------------------------------+
+| Trial name           |   # failures | error file                                                                                |
+|----------------------+--------------+-------------------------------------------------------------------------------------------|
+| train_xt_cdc12_00000 |            1 | /tmp/ray_results/pb2_test4/train_xt_cdc12_00000_0_lr=0.0038_2023-09-12_21-18-03/error.txt |
+| train_xt_cdc12_00001 |            1 | /tmp/ray_results/pb2_test4/train_xt_cdc12_00001_1_lr=0.0003_2023-09-12_21-18-10/error.txt |
+| train_xt_cdc12_00002 |            1 | /tmp/ray_results/pb2_test4/train_xt_cdc12_00002_2_lr=0.0041_2023-09-12_21-18-17/error.txt |
++----------------------+--------------+-------------------------------------------------------------------------------------------+
+
+[2m[36m(train_xt pid=35153)[0m  40434
+[2m[36m(train_xt pid=35153)[0m good
+[2m[36m(train_xt pid=35153)[0m log filename ================== /tmp/16945247133878348
+[2m[36m(train_xt pid=35153)[0m step_per_second ============ 874.0
+== Status ==
+Current time: 2023-09-12 21:19:29 (running for 00:01:26.23)
+Memory usage on this node: 15.6/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 0/80 CPUs, 0/3 GPUs, 0.0/162.26 GiB heap, 0.0/73.53 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 ERROR)
+Number of errored trials: 4
++----------------------+--------------+-------------------------------------------------------------------------------------------+
+| Trial name           |   # failures | error file                                                                                |
+|----------------------+--------------+-------------------------------------------------------------------------------------------|
+| train_xt_cdc12_00000 |            1 | /tmp/ray_results/pb2_test4/train_xt_cdc12_00000_0_lr=0.0038_2023-09-12_21-18-03/error.txt |
+| train_xt_cdc12_00001 |            1 | /tmp/ray_results/pb2_test4/train_xt_cdc12_00001_1_lr=0.0003_2023-09-12_21-18-10/error.txt |
+| train_xt_cdc12_00002 |            1 | /tmp/ray_results/pb2_test4/train_xt_cdc12_00002_2_lr=0.0041_2023-09-12_21-18-17/error.txt |
+| train_xt_cdc12_00003 |            1 | /tmp/ray_results/pb2_test4/train_xt_cdc12_00003_3_lr=0.0029_2023-09-12_21-18-24/error.txt |
++----------------------+--------------+-------------------------------------------------------------------------------------------+
+
+[2m[36m(train_xt pid=35153)[0m  40441
+Traceback (most recent call last):
+  File "test_xt_with_tune.py", line 269, in <module>
+    best_result = results_grid.get_best_result(metric="mean_accuracy", mode="max")
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/result_grid.py", line 111, in get_best_result
+    raise RuntimeError(error_msg)
+RuntimeError: No best trial found for the given metric: mean_accuracy. This means that no trial has reported this metric, or all values reported for this metric are NaN. To not ignore NaN values, you can set the `filter_nan_and_inf` arg to False.

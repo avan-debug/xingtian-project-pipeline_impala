@@ -1,0 +1,48 @@
+agent_para:
+  agent_config:
+    complete_step: 500000
+    max_steps: 128
+  agent_name: AtariImpalaOpt
+  agent_num: 1
+alg_para:
+  alg_config:
+    BATCH_SIZE: 512
+    prepare_times_per_train: 1
+    save_interval: 5
+    save_model: true
+    train_per_checkpoint: 1
+  alg_name: IMPALAOpt
+benchmark:
+  archive_root: /home/xys/avan/xt_archive
+  id: xt_breakout_impala_opt1
+  log_interval_to_train: 2
+env_num: 2
+env_para:
+  env_info:
+    name: BreakoutNoFrameskip-v4
+    size: 8
+    vector_env_size: 8
+    vision: false
+    wait_num: 8
+  env_name: EnvPool
+  now_time: 1693840076.733406
+gpu: -1
+group_num: 1
+lock: 1
+model_para:
+  actor:
+    action_dim: 4
+    input_dtype: uint8
+    model_config:
+      LR: 0.001
+      grad_norm_clip: 40.0
+      sample_batch_step: 128
+    model_name: ImpalaCnnOpt
+    state_dim:
+    - 84
+    - 84
+    - 4
+    state_mean: 0.0
+    state_std: 255.0
+speedup: 3
+start_core: 10

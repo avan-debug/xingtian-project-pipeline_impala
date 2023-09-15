@@ -1,0 +1,1085 @@
+WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+ test_xt_with_tune.py:52: ExperimentalWarning:BoTorchSampler is experimental (supported from v2.4.0). The interface can change in the future.
+2023-09-11 22:39:40,110	INFO worker.py:1515 -- Started a local Ray instance. View the dashboard at [1m[32mhttp://127.0.0.1:8265 [39m[22m
+2023-09-11 22:39:42,035	WARNING function_trainable.py:620 -- Function checkpointing is disabled. This may result in unexpected behavior when using checkpointing features or certain schedulers. To enable, set the train function arguments to be `func(config, checkpoint_dir=None)`.
+2023-09-11 22:39:42,093	WARNING trial_runner.py:1583 -- You are trying to access _search_alg interface of TrialRunner in TrialScheduler, which is being restricted. If you believe it is reasonable for your scheduler to access this TrialRunner API, please reach out to Ray team on GitHub. A more strict API access pattern would be enforced starting 1.12s.0
+[2m[36m(train_xt pid=57199)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=57199)[0m Instructions for updating:
+[2m[36m(train_xt pid=57199)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=57199)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:39:56: 
+[2m[36m(train_xt pid=57199)[0m **************************************************
+[2m[36m(train_xt pid=57199)[0m  XT start work...
+[2m[36m(train_xt pid=57199)[0m Namespace(config_file='/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_LR_0.002380778_now_time_16944431896504288.yaml', env_num=None, gpu=-1, group_num=None, lock=1, save_to_s3=None, size=None, speedup=None, start_core=None, task='train', verbosity='info', wait_num=None)
+[2m[36m(train_xt pid=57199)[0m **************************************************
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:39:57: init learner with:
+[2m[36m(train_xt pid=57199)[0m {'agent_para': {'agent_config': {'complete_step': 500000,
+[2m[36m(train_xt pid=57199)[0m                               'max_steps': 128},
+[2m[36m(train_xt pid=57199)[0m               'agent_name': 'AtariImpalaOpt',
+[2m[36m(train_xt pid=57199)[0m               'agent_num': 1},
+[2m[36m(train_xt pid=57199)[0m 'alg_para': {'alg_config': {'BATCH_SIZE': 512,
+[2m[36m(train_xt pid=57199)[0m                           'agent_num': 1,
+[2m[36m(train_xt pid=57199)[0m                           'api_type': 'standalone',
+[2m[36m(train_xt pid=57199)[0m                           'env_attr': {'agent_ids': [0],
+[2m[36m(train_xt pid=57199)[0m                                       'api_type': 'standalone',
+[2m[36m(train_xt pid=57199)[0m                                       'episode_limit': 300,
+[2m[36m(train_xt pid=57199)[0m                                       'n_actions': 7,
+[2m[36m(train_xt pid=57199)[0m                                       'n_agents': 2,
+[2m[36m(train_xt pid=57199)[0m                                       'obs_shape': 17,
+[2m[36m(train_xt pid=57199)[0m                                       'state_shape': 27},
+[2m[36m(train_xt pid=57199)[0m                           'instance_num': 2,
+[2m[36m(train_xt pid=57199)[0m                           'prepare_times_per_train': 1,
+[2m[36m(train_xt pid=57199)[0m                           'save_interval': 5,
+[2m[36m(train_xt pid=57199)[0m                           'save_model': True,
+[2m[36m(train_xt pid=57199)[0m                           'train_per_checkpoint': 1},
+[2m[36m(train_xt pid=57199)[0m             'alg_name': 'IMPALAOpt',
+[2m[36m(train_xt pid=57199)[0m             'model_info': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=57199)[0m                                    'input_dtype': 'uint8',
+[2m[36m(train_xt pid=57199)[0m                                    'model_config': {'LR': 0.002380778,
+[2m[36m(train_xt pid=57199)[0m                                                    'action_type': 'Categorical',
+[2m[36m(train_xt pid=57199)[0m                                                    'agent_ids': [0],
+[2m[36m(train_xt pid=57199)[0m                                                    'api_type': 'standalone',
+[2m[36m(train_xt pid=57199)[0m                                                    'episode_limit': 300,
+[2m[36m(train_xt pid=57199)[0m                                                    'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=57199)[0m                                                    'n_actions': 7,
+[2m[36m(train_xt pid=57199)[0m                                                    'n_agents': 2,
+[2m[36m(train_xt pid=57199)[0m                                                    'obs_shape': 17,
+[2m[36m(train_xt pid=57199)[0m                                                    'sample_batch_step': 128,
+[2m[36m(train_xt pid=57199)[0m                                                    'state_shape': 27},
+[2m[36m(train_xt pid=57199)[0m                                    'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=57199)[0m                                    'state_dim': [84,
+[2m[36m(train_xt pid=57199)[0m                                                 84,
+[2m[36m(train_xt pid=57199)[0m                                                 4],
+[2m[36m(train_xt pid=57199)[0m                                    'state_mean': 0.0,
+[2m[36m(train_xt pid=57199)[0m                                    'state_std': 255.0}}},
+[2m[36m(train_xt pid=57199)[0m 'benchmark': {'archive_root': '/home/xys/avan/xt_archive',
+[2m[36m(train_xt pid=57199)[0m              'id': 'ImpalaCnnOpt_LR_0.002380778_now_time_16944431896504288',
+[2m[36m(train_xt pid=57199)[0m              'log_interval_to_train': 2},
+[2m[36m(train_xt pid=57199)[0m 'env_num': 2,
+[2m[36m(train_xt pid=57199)[0m 'env_para': {'env_info': {'name': 'BreakoutNoFrameskip-v4',
+[2m[36m(train_xt pid=57199)[0m                         'size': 8,
+[2m[36m(train_xt pid=57199)[0m                         'vector_env_size': 8,
+[2m[36m(train_xt pid=57199)[0m                         'vision': False,
+[2m[36m(train_xt pid=57199)[0m                         'wait_num': 8},
+[2m[36m(train_xt pid=57199)[0m             'env_name': 'EnvPool',
+[2m[36m(train_xt pid=57199)[0m             'now_time': '16944431896504288'},
+[2m[36m(train_xt pid=57199)[0m 'gpu': -1,
+[2m[36m(train_xt pid=57199)[0m 'group_num': 1,
+[2m[36m(train_xt pid=57199)[0m 'lock': 1,
+[2m[36m(train_xt pid=57199)[0m 'model_para': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=57199)[0m                        'input_dtype': 'uint8',
+[2m[36m(train_xt pid=57199)[0m                        'model_config': {'LR': 0.002380778,
+[2m[36m(train_xt pid=57199)[0m                                        'action_type': 'Categorical',
+[2m[36m(train_xt pid=57199)[0m                                        'agent_ids': [0],
+[2m[36m(train_xt pid=57199)[0m                                        'api_type': 'standalone',
+[2m[36m(train_xt pid=57199)[0m                                        'episode_limit': 300,
+[2m[36m(train_xt pid=57199)[0m                                        'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=57199)[0m                                        'n_actions': 7,
+[2m[36m(train_xt pid=57199)[0m                                        'n_agents': 2,
+[2m[36m(train_xt pid=57199)[0m                                        'obs_shape': 17,
+[2m[36m(train_xt pid=57199)[0m                                        'sample_batch_step': 128,
+[2m[36m(train_xt pid=57199)[0m                                        'state_shape': 27},
+[2m[36m(train_xt pid=57199)[0m                        'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=57199)[0m                        'state_dim': [84,
+[2m[36m(train_xt pid=57199)[0m                                     84,
+[2m[36m(train_xt pid=57199)[0m                                     4],
+[2m[36m(train_xt pid=57199)[0m                        'state_mean': 0.0,
+[2m[36m(train_xt pid=57199)[0m                        'state_std': 255.0}},
+[2m[36m(train_xt pid=57199)[0m 'node_config': [('127.0.0.1',
+[2m[36m(train_xt pid=57199)[0m                'dummy_user',
+[2m[36m(train_xt pid=57199)[0m                'dummy_password')],
+[2m[36m(train_xt pid=57199)[0m 'speedup': 3,
+[2m[36m(train_xt pid=57199)[0m 'start_core': 0}
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:39:57: Init Broker server info:
+[2m[36m(train_xt pid=57199)[0m {'recv': {'port': 23397,
+[2m[36m(train_xt pid=57199)[0m         'type': 'PULL'},
+[2m[36m(train_xt pid=57199)[0m 'send': [{'port': 33607,
+[2m[36m(train_xt pid=57199)[0m         'type': 'PUSH'}]}
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:39:57: start launching Broker with: import xt; from xt import start_broker; start_broker(0, 23397, 33607, '127.0.0.1', 'info')
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:39:57: launch local broker with lib success
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:39:57: **********
+[2m[36m(train_xt pid=57199)[0m workspace:
+[2m[36m(train_xt pid=57199)[0m 	/home/xys/avan/xt_archive/ImpalaCnnOpt_LR_0.002380778_now_time_16944431896504288
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57245)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=57245)[0m Instructions for updating:
+[2m[36m(train_xt pid=57245)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=57199)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=57199)[0m Instructions for updating:
+[2m[36m(train_xt pid=57199)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=57245)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:02: 
+[2m[36m(train_xt pid=57245)[0m **************************************************
+[2m[36m(train_xt pid=57245)[0m  XT start work...
+[2m[36m(train_xt pid=57245)[0m Namespace(config_file='/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_LR_0.004394052_now_time_16944431961947982.yaml', env_num=None, gpu=-1, group_num=None, lock=1, save_to_s3=None, size=None, speedup=None, start_core=None, task='train', verbosity='info', wait_num=None)
+[2m[36m(train_xt pid=57245)[0m **************************************************
+[2m[36m(train_xt pid=57199)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:02: set verbosity in broker: info
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:02: init broker with id-0
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:02: share buf: plasma_store -m 400000000 -s /tmp/plasma_share57340
+[2m[36m(train_xt pid=57199)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=57199)[0m   self.run()
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:03: init explorer with id: 0, buf_path: /tmp/plasma_share57340
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:03: init agent group for: explore
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:03: init learner with:
+[2m[36m(train_xt pid=57245)[0m {'agent_para': {'agent_config': {'complete_step': 500000,
+[2m[36m(train_xt pid=57245)[0m                               'max_steps': 128},
+[2m[36m(train_xt pid=57245)[0m               'agent_name': 'AtariImpalaOpt',
+[2m[36m(train_xt pid=57245)[0m               'agent_num': 1},
+[2m[36m(train_xt pid=57245)[0m 'alg_para': {'alg_config': {'BATCH_SIZE': 512,
+[2m[36m(train_xt pid=57245)[0m                           'agent_num': 1,
+[2m[36m(train_xt pid=57245)[0m                           'api_type': 'standalone',
+[2m[36m(train_xt pid=57245)[0m                           'env_attr': {'agent_ids': [0],
+[2m[36m(train_xt pid=57245)[0m                                       'api_type': 'standalone',
+[2m[36m(train_xt pid=57245)[0m                                       'episode_limit': 300,
+[2m[36m(train_xt pid=57245)[0m                                       'n_actions': 7,
+[2m[36m(train_xt pid=57245)[0m                                       'n_agents': 2,
+[2m[36m(train_xt pid=57245)[0m                                       'obs_shape': 17,
+[2m[36m(train_xt pid=57245)[0m                                       'state_shape': 27},
+[2m[36m(train_xt pid=57245)[0m                           'instance_num': 2,
+[2m[36m(train_xt pid=57245)[0m                           'prepare_times_per_train': 1,
+[2m[36m(train_xt pid=57245)[0m                           'save_interval': 5,
+[2m[36m(train_xt pid=57245)[0m                           'save_model': True,
+[2m[36m(train_xt pid=57245)[0m                           'train_per_checkpoint': 1},
+[2m[36m(train_xt pid=57245)[0m             'alg_name': 'IMPALAOpt',
+[2m[36m(train_xt pid=57245)[0m             'model_info': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=57245)[0m                                    'input_dtype': 'uint8',
+[2m[36m(train_xt pid=57245)[0m                                    'model_config': {'LR': 0.004394052,
+[2m[36m(train_xt pid=57245)[0m                                                    'action_type': 'Categorical',
+[2m[36m(train_xt pid=57245)[0m                                                    'agent_ids': [0],
+[2m[36m(train_xt pid=57245)[0m                                                    'api_type': 'standalone',
+[2m[36m(train_xt pid=57245)[0m                                                    'episode_limit': 300,
+[2m[36m(train_xt pid=57245)[0m                                                    'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=57245)[0m                                                    'n_actions': 7,
+[2m[36m(train_xt pid=57245)[0m                                                    'n_agents': 2,
+[2m[36m(train_xt pid=57245)[0m                                                    'obs_shape': 17,
+[2m[36m(train_xt pid=57245)[0m                                                    'sample_batch_step': 128,
+[2m[36m(train_xt pid=57245)[0m                                                    'state_shape': 27},
+[2m[36m(train_xt pid=57245)[0m                                    'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=57245)[0m                                    'state_dim': [84,
+[2m[36m(train_xt pid=57245)[0m                                                 84,
+[2m[36m(train_xt pid=57245)[0m                                                 4],
+[2m[36m(train_xt pid=57245)[0m                                    'state_mean': 0.0,
+[2m[36m(train_xt pid=57245)[0m                                    'state_std': 255.0}}},
+[2m[36m(train_xt pid=57245)[0m 'benchmark': {'archive_root': '/home/xys/avan/xt_archive',
+[2m[36m(train_xt pid=57245)[0m              'id': 'ImpalaCnnOpt_LR_0.004394052_now_time_16944431961947982',
+[2m[36m(train_xt pid=57245)[0m              'log_interval_to_train': 2},
+[2m[36m(train_xt pid=57245)[0m 'env_num': 2,
+[2m[36m(train_xt pid=57245)[0m 'env_para': {'env_info': {'name': 'BreakoutNoFrameskip-v4',
+[2m[36m(train_xt pid=57245)[0m                         'size': 8,
+[2m[36m(train_xt pid=57245)[0m                         'vector_env_size': 8,
+[2m[36m(train_xt pid=57245)[0m                         'vision': False,
+[2m[36m(train_xt pid=57245)[0m                         'wait_num': 8},
+[2m[36m(train_xt pid=57245)[0m             'env_name': 'EnvPool',
+[2m[36m(train_xt pid=57245)[0m             'now_time': '16944431961947982'},
+[2m[36m(train_xt pid=57245)[0m 'gpu': -1,
+[2m[36m(train_xt pid=57245)[0m 'group_num': 1,
+[2m[36m(train_xt pid=57245)[0m 'lock': 1,
+[2m[36m(train_xt pid=57245)[0m 'model_para': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=57245)[0m                        'input_dtype': 'uint8',
+[2m[36m(train_xt pid=57245)[0m                        'model_config': {'LR': 0.004394052,
+[2m[36m(train_xt pid=57245)[0m                                        'action_type': 'Categorical',
+[2m[36m(train_xt pid=57245)[0m                                        'agent_ids': [0],
+[2m[36m(train_xt pid=57245)[0m                                        'api_type': 'standalone',
+[2m[36m(train_xt pid=57245)[0m                                        'episode_limit': 300,
+[2m[36m(train_xt pid=57245)[0m                                        'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=57245)[0m                                        'n_actions': 7,
+[2m[36m(train_xt pid=57245)[0m                                        'n_agents': 2,
+[2m[36m(train_xt pid=57245)[0m                                        'obs_shape': 17,
+[2m[36m(train_xt pid=57245)[0m                                        'sample_batch_step': 128,
+[2m[36m(train_xt pid=57245)[0m                                        'state_shape': 27},
+[2m[36m(train_xt pid=57245)[0m                        'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=57245)[0m                        'state_dim': [84,
+[2m[36m(train_xt pid=57245)[0m                                     84,
+[2m[36m(train_xt pid=57245)[0m                                     4],
+[2m[36m(train_xt pid=57245)[0m                        'state_mean': 0.0,
+[2m[36m(train_xt pid=57245)[0m                        'state_std': 255.0}},
+[2m[36m(train_xt pid=57245)[0m 'node_config': [('127.0.0.1',
+[2m[36m(train_xt pid=57245)[0m                'dummy_user',
+[2m[36m(train_xt pid=57245)[0m                'dummy_password')],
+[2m[36m(train_xt pid=57245)[0m 'speedup': 3,
+[2m[36m(train_xt pid=57245)[0m 'start_core': 10}
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:03: Init Broker server info:
+[2m[36m(train_xt pid=57245)[0m {'recv': {'port': 26556,
+[2m[36m(train_xt pid=57245)[0m         'type': 'PULL'},
+[2m[36m(train_xt pid=57245)[0m 'send': [{'port': 26886,
+[2m[36m(train_xt pid=57245)[0m         'type': 'PUSH'}]}
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:03: start launching Broker with: import xt; from xt import start_broker; start_broker(0, 26556, 26886, '127.0.0.1', 'info')
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:03: launch local broker with lib success
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:03: **********
+[2m[36m(train_xt pid=57245)[0m workspace:
+[2m[36m(train_xt pid=57245)[0m 	/home/xys/avan/xt_archive/ImpalaCnnOpt_LR_0.004394052_now_time_16944431961947982
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:04: explorer-0 start with sync interval-1
+[2m[36m(train_xt pid=57245)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=57245)[0m Instructions for updating:
+[2m[36m(train_xt pid=57245)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:06: speedup(3): binding env 0 to CPU 0
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:06: init explorer with id: 1, buf_path: /tmp/plasma_share57340
+[2m[36m(train_xt pid=57306)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=57306)[0m Instructions for updating:
+[2m[36m(train_xt pid=57306)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:08: explorer-1 start with sync interval-1
+[2m[36m(train_xt pid=57245)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:09: set verbosity in broker: info
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:09: init broker with id-0
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:09: share buf: plasma_store -m 400000000 -s /tmp/plasma_share57993
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:09: speedup(3): binding env 1 to CPU 1
+[2m[36m(train_xt pid=57245)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=57245)[0m   self.run()
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:09: init explorer with id: 0, buf_path: /tmp/plasma_share57993
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:09: init agent group for: explore
+[2m[36m(train_xt pid=57306)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:09: 
+[2m[36m(train_xt pid=57306)[0m **************************************************
+[2m[36m(train_xt pid=57306)[0m  XT start work...
+[2m[36m(train_xt pid=57306)[0m Namespace(config_file='/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_LR_0.004390325_now_time_16944432029133081.yaml', env_num=None, gpu=-1, group_num=None, lock=1, save_to_s3=None, size=None, speedup=None, start_core=None, task='train', verbosity='info', wait_num=None)
+[2m[36m(train_xt pid=57306)[0m **************************************************
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:10: init learner with:
+[2m[36m(train_xt pid=57306)[0m {'agent_para': {'agent_config': {'complete_step': 500000,
+[2m[36m(train_xt pid=57306)[0m                               'max_steps': 128},
+[2m[36m(train_xt pid=57306)[0m               'agent_name': 'AtariImpalaOpt',
+[2m[36m(train_xt pid=57306)[0m               'agent_num': 1},
+[2m[36m(train_xt pid=57306)[0m 'alg_para': {'alg_config': {'BATCH_SIZE': 512,
+[2m[36m(train_xt pid=57306)[0m                           'agent_num': 1,
+[2m[36m(train_xt pid=57306)[0m                           'api_type': 'standalone',
+[2m[36m(train_xt pid=57306)[0m                           'env_attr': {'agent_ids': [0],
+[2m[36m(train_xt pid=57306)[0m                                       'api_type': 'standalone',
+[2m[36m(train_xt pid=57306)[0m                                       'episode_limit': 300,
+[2m[36m(train_xt pid=57306)[0m                                       'n_actions': 7,
+[2m[36m(train_xt pid=57306)[0m                                       'n_agents': 2,
+[2m[36m(train_xt pid=57306)[0m                                       'obs_shape': 17,
+[2m[36m(train_xt pid=57306)[0m                                       'state_shape': 27},
+[2m[36m(train_xt pid=57306)[0m                           'instance_num': 2,
+[2m[36m(train_xt pid=57306)[0m                           'prepare_times_per_train': 1,
+[2m[36m(train_xt pid=57306)[0m                           'save_interval': 5,
+[2m[36m(train_xt pid=57306)[0m                           'save_model': True,
+[2m[36m(train_xt pid=57306)[0m                           'train_per_checkpoint': 1},
+[2m[36m(train_xt pid=57306)[0m             'alg_name': 'IMPALAOpt',
+[2m[36m(train_xt pid=57306)[0m             'model_info': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=57306)[0m                                    'input_dtype': 'uint8',
+[2m[36m(train_xt pid=57306)[0m                                    'model_config': {'LR': 0.004390325,
+[2m[36m(train_xt pid=57306)[0m                                                    'action_type': 'Categorical',
+[2m[36m(train_xt pid=57306)[0m                                                    'agent_ids': [0],
+[2m[36m(train_xt pid=57306)[0m                                                    'api_type': 'standalone',
+[2m[36m(train_xt pid=57306)[0m                                                    'episode_limit': 300,
+[2m[36m(train_xt pid=57306)[0m                                                    'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=57306)[0m                                                    'n_actions': 7,
+[2m[36m(train_xt pid=57306)[0m                                                    'n_agents': 2,
+[2m[36m(train_xt pid=57306)[0m                                                    'obs_shape': 17,
+[2m[36m(train_xt pid=57306)[0m                                                    'sample_batch_step': 128,
+[2m[36m(train_xt pid=57306)[0m                                                    'state_shape': 27},
+[2m[36m(train_xt pid=57306)[0m                                    'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=57306)[0m                                    'state_dim': [84,
+[2m[36m(train_xt pid=57306)[0m                                                 84,
+[2m[36m(train_xt pid=57306)[0m                                                 4],
+[2m[36m(train_xt pid=57306)[0m                                    'state_mean': 0.0,
+[2m[36m(train_xt pid=57306)[0m                                    'state_std': 255.0}}},
+[2m[36m(train_xt pid=57306)[0m 'benchmark': {'archive_root': '/home/xys/avan/xt_archive',
+[2m[36m(train_xt pid=57306)[0m              'id': 'ImpalaCnnOpt_LR_0.004390325_now_time_16944432029133081',
+[2m[36m(train_xt pid=57306)[0m              'log_interval_to_train': 2},
+[2m[36m(train_xt pid=57306)[0m 'env_num': 2,
+[2m[36m(train_xt pid=57306)[0m 'env_para': {'env_info': {'name': 'BreakoutNoFrameskip-v4',
+[2m[36m(train_xt pid=57306)[0m                         'size': 8,
+[2m[36m(train_xt pid=57306)[0m                         'vector_env_size': 8,
+[2m[36m(train_xt pid=57306)[0m                         'vision': False,
+[2m[36m(train_xt pid=57306)[0m                         'wait_num': 8},
+[2m[36m(train_xt pid=57306)[0m             'env_name': 'EnvPool',
+[2m[36m(train_xt pid=57306)[0m             'now_time': '16944432029133081'},
+[2m[36m(train_xt pid=57306)[0m 'gpu': -1,
+[2m[36m(train_xt pid=57306)[0m 'group_num': 1,
+[2m[36m(train_xt pid=57306)[0m 'lock': 1,
+[2m[36m(train_xt pid=57306)[0m 'model_para': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=57306)[0m                        'input_dtype': 'uint8',
+[2m[36m(train_xt pid=57306)[0m                        'model_config': {'LR': 0.004390325,
+[2m[36m(train_xt pid=57306)[0m                                        'action_type': 'Categorical',
+[2m[36m(train_xt pid=57306)[0m                                        'agent_ids': [0],
+[2m[36m(train_xt pid=57306)[0m                                        'api_type': 'standalone',
+[2m[36m(train_xt pid=57306)[0m                                        'episode_limit': 300,
+[2m[36m(train_xt pid=57306)[0m                                        'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=57306)[0m                                        'n_actions': 7,
+[2m[36m(train_xt pid=57306)[0m                                        'n_agents': 2,
+[2m[36m(train_xt pid=57306)[0m                                        'obs_shape': 17,
+[2m[36m(train_xt pid=57306)[0m                                        'sample_batch_step': 128,
+[2m[36m(train_xt pid=57306)[0m                                        'state_shape': 27},
+[2m[36m(train_xt pid=57306)[0m                        'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=57306)[0m                        'state_dim': [84,
+[2m[36m(train_xt pid=57306)[0m                                     84,
+[2m[36m(train_xt pid=57306)[0m                                     4],
+[2m[36m(train_xt pid=57306)[0m                        'state_mean': 0.0,
+[2m[36m(train_xt pid=57306)[0m                        'state_std': 255.0}},
+[2m[36m(train_xt pid=57306)[0m 'node_config': [('127.0.0.1',
+[2m[36m(train_xt pid=57306)[0m                'dummy_user',
+[2m[36m(train_xt pid=57306)[0m                'dummy_password')],
+[2m[36m(train_xt pid=57306)[0m 'speedup': 3,
+[2m[36m(train_xt pid=57306)[0m 'start_core': 20}
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:10: Init Broker server info:
+[2m[36m(train_xt pid=57306)[0m {'recv': {'port': 23154,
+[2m[36m(train_xt pid=57306)[0m         'type': 'PULL'},
+[2m[36m(train_xt pid=57306)[0m 'send': [{'port': 23288,
+[2m[36m(train_xt pid=57306)[0m         'type': 'PUSH'}]}
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:10: start launching Broker with: import xt; from xt import start_broker; start_broker(0, 23154, 23288, '127.0.0.1', 'info')
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:10: launch local broker with lib success
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:10: **********
+[2m[36m(train_xt pid=57306)[0m workspace:
+[2m[36m(train_xt pid=57306)[0m 	/home/xys/avan/xt_archive/ImpalaCnnOpt_LR_0.004390325_now_time_16944432029133081
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:11: explorer-0 start with sync interval-1
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:12: speedup(3): binding env 0 to CPU 10
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:12: init explorer with id: 1, buf_path: /tmp/plasma_share57993
+[2m[36m(train_xt pid=57199)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:176: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=57199)[0m   broker_item.send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=57199)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=57199)[0m   self.run()
+[2m[36m(train_xt pid=57199)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:178: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=57199)[0m   self.send_broker[broker_id].send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:13: Task: T0         | Train_count:         0 | Steps:       637 | Elapsed time: 13 seconds
+[2m[36m(train_xt pid=57199)[0m mean_env_step_ms:         2.826508	mean_explore_ms:        1063.058019	mean_inference_ms:        4.583079	mean_loop_time_ms:             nan
+[2m[36m(train_xt pid=57199)[0m mean_prepare_data_ms:     2.789736	mean_restore_model_ms:   48.557997	mean_train_time_ms:            nan	mean_wait_model_ms:     2926.030278
+[2m[36m(train_xt pid=57199)[0m mean_wait_sample_ms:    11037.602663	step_per_second:              47.0	train_loss:              93.064896	train_reward_avg:              0.0
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57306)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=57306)[0m Instructions for updating:
+[2m[36m(train_xt pid=57306)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:14: explorer-1 start with sync interval-1
+[2m[36m(train_xt pid=58774)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=58774)[0m Instructions for updating:
+[2m[36m(train_xt pid=58774)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:15: speedup(3): binding env 1 to CPU 11
+[2m[36m(train_xt pid=57306)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:16: set verbosity in broker: info
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:16: init broker with id-0
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:16: share buf: plasma_store -m 400000000 -s /tmp/plasma_share59525
+[2m[36m(train_xt pid=57306)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=57306)[0m   self.run()
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:17: init explorer with id: 0, buf_path: /tmp/plasma_share59525
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:17: init agent group for: explore
+[2m[36m(train_xt pid=58774)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:17: 
+[2m[36m(train_xt pid=58774)[0m **************************************************
+[2m[36m(train_xt pid=58774)[0m  XT start work...
+[2m[36m(train_xt pid=58774)[0m Namespace(config_file='/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_LR_0.000107095_now_time_16944432108296432.yaml', env_num=None, gpu=-1, group_num=None, lock=1, save_to_s3=None, size=None, speedup=None, start_core=None, task='train', verbosity='info', wait_num=None)
+[2m[36m(train_xt pid=58774)[0m **************************************************
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:18: init learner with:
+[2m[36m(train_xt pid=58774)[0m {'agent_para': {'agent_config': {'complete_step': 500000,
+[2m[36m(train_xt pid=58774)[0m                               'max_steps': 128},
+[2m[36m(train_xt pid=58774)[0m               'agent_name': 'AtariImpalaOpt',
+[2m[36m(train_xt pid=58774)[0m               'agent_num': 1},
+[2m[36m(train_xt pid=58774)[0m 'alg_para': {'alg_config': {'BATCH_SIZE': 512,
+[2m[36m(train_xt pid=58774)[0m                           'agent_num': 1,
+[2m[36m(train_xt pid=58774)[0m                           'api_type': 'standalone',
+[2m[36m(train_xt pid=58774)[0m                           'env_attr': {'agent_ids': [0],
+[2m[36m(train_xt pid=58774)[0m                                       'api_type': 'standalone',
+[2m[36m(train_xt pid=58774)[0m                                       'episode_limit': 300,
+[2m[36m(train_xt pid=58774)[0m                                       'n_actions': 7,
+[2m[36m(train_xt pid=58774)[0m                                       'n_agents': 2,
+[2m[36m(train_xt pid=58774)[0m                                       'obs_shape': 17,
+[2m[36m(train_xt pid=58774)[0m                                       'state_shape': 27},
+[2m[36m(train_xt pid=58774)[0m                           'instance_num': 2,
+[2m[36m(train_xt pid=58774)[0m                           'prepare_times_per_train': 1,
+[2m[36m(train_xt pid=58774)[0m                           'save_interval': 5,
+[2m[36m(train_xt pid=58774)[0m                           'save_model': True,
+[2m[36m(train_xt pid=58774)[0m                           'train_per_checkpoint': 1},
+[2m[36m(train_xt pid=58774)[0m             'alg_name': 'IMPALAOpt',
+[2m[36m(train_xt pid=58774)[0m             'model_info': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=58774)[0m                                    'input_dtype': 'uint8',
+[2m[36m(train_xt pid=58774)[0m                                    'model_config': {'LR': 0.000107095,
+[2m[36m(train_xt pid=58774)[0m                                                    'action_type': 'Categorical',
+[2m[36m(train_xt pid=58774)[0m                                                    'agent_ids': [0],
+[2m[36m(train_xt pid=58774)[0m                                                    'api_type': 'standalone',
+[2m[36m(train_xt pid=58774)[0m                                                    'episode_limit': 300,
+[2m[36m(train_xt pid=58774)[0m                                                    'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=58774)[0m                                                    'n_actions': 7,
+[2m[36m(train_xt pid=58774)[0m                                                    'n_agents': 2,
+[2m[36m(train_xt pid=58774)[0m                                                    'obs_shape': 17,
+[2m[36m(train_xt pid=58774)[0m                                                    'sample_batch_step': 128,
+[2m[36m(train_xt pid=58774)[0m                                                    'state_shape': 27},
+[2m[36m(train_xt pid=58774)[0m                                    'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=58774)[0m                                    'state_dim': [84,
+[2m[36m(train_xt pid=58774)[0m                                                 84,
+[2m[36m(train_xt pid=58774)[0m                                                 4],
+[2m[36m(train_xt pid=58774)[0m                                    'state_mean': 0.0,
+[2m[36m(train_xt pid=58774)[0m                                    'state_std': 255.0}}},
+[2m[36m(train_xt pid=58774)[0m 'benchmark': {'archive_root': '/home/xys/avan/xt_archive',
+[2m[36m(train_xt pid=58774)[0m              'id': 'ImpalaCnnOpt_LR_0.000107095_now_time_16944432108296432',
+[2m[36m(train_xt pid=58774)[0m              'log_interval_to_train': 2},
+[2m[36m(train_xt pid=58774)[0m 'env_num': 2,
+[2m[36m(train_xt pid=58774)[0m 'env_para': {'env_info': {'name': 'BreakoutNoFrameskip-v4',
+[2m[36m(train_xt pid=58774)[0m                         'size': 8,
+[2m[36m(train_xt pid=58774)[0m                         'vector_env_size': 8,
+[2m[36m(train_xt pid=58774)[0m                         'vision': False,
+[2m[36m(train_xt pid=58774)[0m                         'wait_num': 8},
+[2m[36m(train_xt pid=58774)[0m             'env_name': 'EnvPool',
+[2m[36m(train_xt pid=58774)[0m             'now_time': '16944432108296432'},
+[2m[36m(train_xt pid=58774)[0m 'gpu': -1,
+[2m[36m(train_xt pid=58774)[0m 'group_num': 1,
+[2m[36m(train_xt pid=58774)[0m 'lock': 1,
+[2m[36m(train_xt pid=58774)[0m 'model_para': {'actor': {'action_dim': 4,
+[2m[36m(train_xt pid=58774)[0m                        'input_dtype': 'uint8',
+[2m[36m(train_xt pid=58774)[0m                        'model_config': {'LR': 0.000107095,
+[2m[36m(train_xt pid=58774)[0m                                        'action_type': 'Categorical',
+[2m[36m(train_xt pid=58774)[0m                                        'agent_ids': [0],
+[2m[36m(train_xt pid=58774)[0m                                        'api_type': 'standalone',
+[2m[36m(train_xt pid=58774)[0m                                        'episode_limit': 300,
+[2m[36m(train_xt pid=58774)[0m                                        'grad_norm_clip': 40.0,
+[2m[36m(train_xt pid=58774)[0m                                        'n_actions': 7,
+[2m[36m(train_xt pid=58774)[0m                                        'n_agents': 2,
+[2m[36m(train_xt pid=58774)[0m                                        'obs_shape': 17,
+[2m[36m(train_xt pid=58774)[0m                                        'sample_batch_step': 128,
+[2m[36m(train_xt pid=58774)[0m                                        'state_shape': 27},
+[2m[36m(train_xt pid=58774)[0m                        'model_name': 'ImpalaCnnOpt',
+[2m[36m(train_xt pid=58774)[0m                        'state_dim': [84,
+[2m[36m(train_xt pid=58774)[0m                                     84,
+[2m[36m(train_xt pid=58774)[0m                                     4],
+[2m[36m(train_xt pid=58774)[0m                        'state_mean': 0.0,
+[2m[36m(train_xt pid=58774)[0m                        'state_std': 255.0}},
+[2m[36m(train_xt pid=58774)[0m 'node_config': [('127.0.0.1',
+[2m[36m(train_xt pid=58774)[0m                'dummy_user',
+[2m[36m(train_xt pid=58774)[0m                'dummy_password')],
+[2m[36m(train_xt pid=58774)[0m 'speedup': 3,
+[2m[36m(train_xt pid=58774)[0m 'start_core': 30}
+[2m[36m(train_xt pid=58774)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:18: Init Broker server info:
+[2m[36m(train_xt pid=58774)[0m {'recv': {'port': 20977,
+[2m[36m(train_xt pid=58774)[0m         'type': 'PULL'},
+[2m[36m(train_xt pid=58774)[0m 'send': [{'port': 37533,
+[2m[36m(train_xt pid=58774)[0m         'type': 'PUSH'}]}
+[2m[36m(train_xt pid=58774)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:18: start launching Broker with: import xt; from xt import start_broker; start_broker(0, 20977, 37533, '127.0.0.1', 'info')
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:18: launch local broker with lib success
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:18: explorer-0 start with sync interval-1
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:18: **********
+[2m[36m(train_xt pid=58774)[0m workspace:
+[2m[36m(train_xt pid=58774)[0m 	/home/xys/avan/xt_archive/ImpalaCnnOpt_LR_0.000107095_now_time_16944432108296432
+[2m[36m(train_xt pid=58774)[0m 
+[2m[36m(train_xt pid=57245)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:176: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=57245)[0m   broker_item.send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=57245)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=57245)[0m   self.run()
+[2m[36m(train_xt pid=57245)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:178: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=57245)[0m   self.send_broker[broker_id].send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:19: Task: T0         | Train_count:         0 | Steps:      1021 | Elapsed time: 13 seconds
+[2m[36m(train_xt pid=57245)[0m mean_env_step_ms:         4.128956	mean_explore_ms:        1286.863804	mean_inference_ms:        4.976396	mean_loop_time_ms:             nan
+[2m[36m(train_xt pid=57245)[0m mean_prepare_data_ms:     2.359152	mean_restore_model_ms:   49.664855	mean_train_time_ms:            nan	mean_wait_model_ms:     2903.641224
+[2m[36m(train_xt pid=57245)[0m mean_wait_sample_ms:    11386.106253	step_per_second:              74.0	train_loss:              20.421001	train_reward_avg:              0.0
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:20: speedup(3): binding env 0 to CPU 20
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:20: init explorer with id: 1, buf_path: /tmp/plasma_share59525
+[2m[36m(train_xt pid=58774)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=58774)[0m Instructions for updating:
+[2m[36m(train_xt pid=58774)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:22: explorer-1 start with sync interval-1
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:22: Task: T0         | Train_count:        10 | Steps:     11124 | Elapsed time: 22 seconds
+[2m[36m(train_xt pid=57199)[0m mean_env_step_ms:         2.826508	mean_explore_ms:        1063.058019	mean_inference_ms:        4.583079	mean_loop_time_ms:      924.091911
+[2m[36m(train_xt pid=57199)[0m mean_prepare_data_ms:     2.798276	mean_restore_model_ms:   48.557997	mean_train_time_ms:     257.565152	mean_wait_model_ms:     2926.030278
+[2m[36m(train_xt pid=57199)[0m mean_wait_sample_ms:    1775.346626	step_per_second:             492.0	train_loss:              44.290169	train_reward_avg:              0.0
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:23: speedup(3): binding env 1 to CPU 21
+[2m[36m(train_xt pid=58774)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:25: set verbosity in broker: info
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:25: init broker with id-0
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:25: share buf: plasma_store -m 400000000 -s /tmp/plasma_share60703
+[2m[36m(train_xt pid=58774)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=58774)[0m   self.run()
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:25: init explorer with id: 0, buf_path: /tmp/plasma_share60703
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:25: init agent group for: explore
+[2m[36m(train_xt pid=57306)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:176: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=57306)[0m   broker_item.send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=57306)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=57306)[0m   self.run()
+[2m[36m(train_xt pid=57306)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:178: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=57306)[0m   self.send_broker[broker_id].send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:27: Task: T0         | Train_count:         0 | Steps:       765 | Elapsed time: 14 seconds
+[2m[36m(train_xt pid=57306)[0m mean_env_step_ms:         3.580159	mean_explore_ms:        1179.972768	mean_inference_ms:        4.718198	mean_loop_time_ms:             nan
+[2m[36m(train_xt pid=57306)[0m mean_prepare_data_ms:     2.873182	mean_restore_model_ms:   54.626703	mean_train_time_ms:            nan	mean_wait_model_ms:     2826.652646
+[2m[36m(train_xt pid=57306)[0m mean_wait_sample_ms:    11708.340406	step_per_second:              54.0	train_loss:              58.119015	train_reward_avg:              0.0
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:27: explorer-0 start with sync interval-1
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:28: speedup(3): binding env 0 to CPU 30
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:28: Task: T0         | Train_count:        10 | Steps:     11065 | Elapsed time: 22 seconds
+[2m[36m(train_xt pid=57245)[0m mean_env_step_ms:         4.128956	mean_explore_ms:        1286.863804	mean_inference_ms:        4.976396	mean_loop_time_ms:      916.129756
+[2m[36m(train_xt pid=57245)[0m mean_prepare_data_ms:     3.131303	mean_restore_model_ms:   49.664855	mean_train_time_ms:      253.58005	mean_wait_model_ms:     2903.641224
+[2m[36m(train_xt pid=57245)[0m mean_wait_sample_ms:    1800.712846	step_per_second:             484.0	train_loss:               50.05442	train_reward_avg:              0.0
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:28: init explorer with id: 1, buf_path: /tmp/plasma_share60703
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:30: explorer-1 start with sync interval-1
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:31: speedup(3): binding env 1 to CPU 31
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:32: Task: T0         | Train_count:        20 | Steps:     21392 | Elapsed time: 32 seconds
+[2m[36m(train_xt pid=57199)[0m mean_env_step_ms:         3.323194	mean_explore_ms:        1071.627498	mean_inference_ms:        4.469894	mean_loop_time_ms:       956.31057
+[2m[36m(train_xt pid=57199)[0m mean_prepare_data_ms:     2.609825	mean_restore_model_ms:    26.63213	mean_train_time_ms:      64.433956	mean_wait_model_ms:     1908.568442
+[2m[36m(train_xt pid=57199)[0m mean_wait_sample_ms:    881.021523	step_per_second:             658.0	train_loss:              14.010645	train_reward_avg:             0.75
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=58774)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:176: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=58774)[0m   broker_item.send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=58774)[0m /home/tank/miniconda3/envs/openmmlab/lib/python3.7/threading.py:926: FutureWarning: 'pyarrow.deserialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=58774)[0m   self.run()
+[2m[36m(train_xt pid=58774)[0m /home/xys/xingtian-test/xingtian-project-pipeline_impala/xt/framework/broker.py:178: FutureWarning: 'pyarrow.serialize' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+[2m[36m(train_xt pid=58774)[0m   self.send_broker[broker_id].send(recv_data['ctr_info'], recv_data['data'])
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:36: Task: T0         | Train_count:         0 | Steps:       893 | Elapsed time: 14 seconds
+[2m[36m(train_xt pid=58774)[0m mean_env_step_ms:          3.91203	mean_explore_ms:        1292.992711	mean_inference_ms:        5.020558	mean_loop_time_ms:             nan
+[2m[36m(train_xt pid=58774)[0m mean_prepare_data_ms:     3.212929	mean_restore_model_ms:   56.726813	mean_train_time_ms:            nan	mean_wait_model_ms:     2649.946332
+[2m[36m(train_xt pid=58774)[0m mean_wait_sample_ms:    12075.320959	step_per_second:              61.0	train_loss:             112.065048	train_reward_avg:              0.0
+[2m[36m(train_xt pid=58774)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:36: Task: T0         | Train_count:        10 | Steps:     11136 | Elapsed time: 23 seconds
+[2m[36m(train_xt pid=57306)[0m mean_env_step_ms:         3.580159	mean_explore_ms:        1179.972768	mean_inference_ms:        4.718198	mean_loop_time_ms:      933.434963
+[2m[36m(train_xt pid=57306)[0m mean_prepare_data_ms:     3.274701	mean_restore_model_ms:   54.626703	mean_train_time_ms:     267.098058	mean_wait_model_ms:     2826.652646
+[2m[36m(train_xt pid=57306)[0m mean_wait_sample_ms:    1839.631514	step_per_second:             475.0	train_loss:              14.001437	train_reward_avg:              0.0
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:38: Task: T0         | Train_count:        20 | Steps:     21472 | Elapsed time: 33 seconds
+[2m[36m(train_xt pid=57245)[0m mean_env_step_ms:         4.230441	mean_explore_ms:        1233.148515	mean_inference_ms:        4.762749	mean_loop_time_ms:      968.361151
+[2m[36m(train_xt pid=57245)[0m mean_prepare_data_ms:     3.060448	mean_restore_model_ms:   28.361559	mean_train_time_ms:      61.922967	mean_wait_model_ms:     1819.55719
+[2m[36m(train_xt pid=57245)[0m mean_wait_sample_ms:    892.977059	step_per_second:             650.0	train_loss:              74.622009	train_reward_avg:           0.8125
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:42: Task: T0         | Train_count:        30 | Steps:     31554 | Elapsed time: 42 seconds
+[2m[36m(train_xt pid=57199)[0m mean_env_step_ms:         3.558009	mean_explore_ms:        1095.625281	mean_inference_ms:        4.524757	mean_loop_time_ms:      1008.945107
+[2m[36m(train_xt pid=57199)[0m mean_prepare_data_ms:     2.507901	mean_restore_model_ms:   20.130038	mean_train_time_ms:      67.384017	mean_wait_model_ms:     1554.555535
+[2m[36m(train_xt pid=57199)[0m mean_wait_sample_ms:    932.321119	step_per_second:             737.0	train_loss:             105.207115	train_reward_avg:           0.9375
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:46: Task: T0         | Train_count:        20 | Steps:     21215 | Elapsed time: 33 seconds
+[2m[36m(train_xt pid=57306)[0m mean_env_step_ms:         3.659749	mean_explore_ms:        1146.613717	mean_inference_ms:        4.706072	mean_loop_time_ms:      954.236388
+[2m[36m(train_xt pid=57306)[0m mean_prepare_data_ms:     3.067899	mean_restore_model_ms:   29.487908	mean_train_time_ms:      67.857862	mean_wait_model_ms:     1807.267785
+[2m[36m(train_xt pid=57306)[0m mean_wait_sample_ms:    873.226428	step_per_second:             639.0	train_loss:              64.483093	train_reward_avg:          1.03125
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:46: Task: T0         | Train_count:        10 | Steps:     11212 | Elapsed time: 24 seconds
+[2m[36m(train_xt pid=58774)[0m mean_env_step_ms:          3.91203	mean_explore_ms:        1292.992711	mean_inference_ms:        5.020558	mean_loop_time_ms:      1034.622002
+[2m[36m(train_xt pid=58774)[0m mean_prepare_data_ms:      2.83432	mean_restore_model_ms:   56.726813	mean_train_time_ms:     271.913008	mean_wait_model_ms:     2649.946332== Status ==
+Current time: 2023-09-11 22:39:49 (running for 00:00:07.56)
+Memory usage on this node: 25.5/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 10.0/80 CPUs, 0.4/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (3 PENDING, 1 RUNNING)
+
+
+[2m[36m(train_xt pid=57199)[0m {'lr': 0.0023807784824674567, 'checkpoint_interval': 1}
+[2m[36m(train_xt pid=57199)[0m trail id ================= 0b1a6_00000
+[2m[36m(train_xt pid=57199)[0m ray tune xt log  ================= /tmp/test_xt_with_tune16944431896504288.log
+== Status ==
+Current time: 2023-09-11 22:39:56 (running for 00:00:14.11)
+Memory usage on this node: 26.1/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 20.0/80 CPUs, 0.8/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (2 PENDING, 2 RUNNING)
+
+
+[2m[36m(train_xt pid=57245)[0m {'lr': 0.0043940517701123805, 'checkpoint_interval': 1}
+[2m[36m(train_xt pid=57245)[0m trail id ================= 0b1a6_00001
+[2m[36m(train_xt pid=57245)[0m ray tune xt log  ================= /tmp/test_xt_with_tune16944431961947982.log
+[2m[36m(train_xt pid=57199)[0m start_core ======================================== 0
+[2m[36m(train_xt pid=57199)[0m plasma_store -m 1000000000 -s /tmp/plasma57254
+[2m[36m(train_xt pid=57199)[0m self.time_record_filename ============= /tmp/16944431896504288
+== Status ==
+Current time: 2023-09-11 22:40:02 (running for 00:00:20.83)
+Memory usage on this node: 27.6/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 30.0/80 CPUs, 1.2000000000000002/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (1 PENDING, 3 RUNNING)
+
+
+[2m[36m(train_xt pid=57306)[0m {'lr': 0.00439032538267659, 'checkpoint_interval': 1}
+[2m[36m(train_xt pid=57306)[0m trail id ================= 0b1a6_00002
+[2m[36m(train_xt pid=57306)[0m ray tune xt log  ================= /tmp/test_xt_with_tune16944432029133081.log
+[2m[36m(train_xt pid=57199)[0m plasma_store -m 100000000 -s /tmp/plasma57340T0
+[2m[36m(train_xt pid=57245)[0m start_core ======================================== 10
+[2m[36m(train_xt pid=57245)[0m plasma_store -m 1000000000 -s /tmp/plasma57341
+[2m[36m(train_xt pid=57245)[0m self.time_record_filename ============= /tmp/16944431961947982
+[2m[36m(train_xt pid=57245)[0m plasma_store -m 100000000 -s /tmp/plasma57993T0
+[2m[36m(train_xt pid=57306)[0m start_core ======================================== 20
+== Status ==
+Current time: 2023-09-11 22:40:10 (running for 00:00:28.74)
+Memory usage on this node: 30.0/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+[2m[36m(train_xt pid=58774)[0m {'lr': 0.00010709455913133248, 'checkpoint_interval': 1}
+[2m[36m(train_xt pid=58774)[0m trail id ================= 0b1a6_00003
+[2m[36m(train_xt pid=58774)[0m ray tune xt log  ================= /tmp/test_xt_with_tune16944432108296432.log
+[2m[36m(train_xt pid=57306)[0m plasma_store -m 1000000000 -s /tmp/plasma58607
+[2m[36m(train_xt pid=57306)[0m self.time_record_filename ============= /tmp/16944432029133081
+== Status ==
+Current time: 2023-09-11 22:40:15 (running for 00:00:33.75)
+Memory usage on this node: 32.1/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+[2m[36m(train_xt pid=57306)[0m plasma_store -m 100000000 -s /tmp/plasma59525T0
+[2m[36m(train_xt pid=58774)[0m start_core ======================================== 30
+[2m[36m(train_xt pid=58774)[0m plasma_store -m 1000000000 -s /tmp/plasma59974
+[2m[36m(train_xt pid=58774)[0m self.time_record_filename ============= /tmp/16944432108296432
+== Status ==
+Current time: 2023-09-11 22:40:20 (running for 00:00:38.75)
+Memory usage on this node: 34.2/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+[2m[36m(train_xt pid=58774)[0m plasma_store -m 100000000 -s /tmp/plasma60703T0
+== Status ==
+Current time: 2023-09-11 22:40:25 (running for 00:00:43.76)
+Memory usage on this node: 35.7/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:40:30 (running for 00:00:48.76)
+Memory usage on this node: 36.5/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:40:35 (running for 00:00:53.77)
+Memory usage on this node: 37.7/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:40:40 (running for 00:00:58.77)
+Memory usage on this node: 38.0/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:40:45 (running for 00:01:03.78)
+Memory usage on this node: 38.1/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:40:50 (running for 00:01:08.78)
+Memory usage on this node: 38.2/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:40:55 (running for 00:01:13.79)
+Memory usage on this node: 38.3/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:41:00 (running for 00:01:18.79)
+Memory usage on this node: 38.3/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:41:05 (running for 00:01:23.80)
+Memory usage on this node: 38.3/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:41:10 (running for 00:01:28.80)
+Memory usage on this node: 38.4/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+[2m[36m(train_xt pid=58774)[0m mean_wait_sample_ms:    1964.208299	step_per_second:             450.0	train_loss:             172.428894	train_reward_avg:              0.0
+[2m[36m(train_xt pid=58774)[0m 
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:51: Task: T0         | Train_count:        32 | Steps:     33667 | Elapsed time: 45 seconds
+[2m[36m(train_xt pid=57245)[0m mean_env_step_ms:          4.31474	mean_explore_ms:        1233.859658	mean_inference_ms:        4.791342	mean_loop_time_ms:      1045.520699
+[2m[36m(train_xt pid=57245)[0m mean_prepare_data_ms:     3.171909	mean_restore_model_ms:   21.070798	mean_train_time_ms:      66.850591	mean_wait_model_ms:     1526.885192
+[2m[36m(train_xt pid=57245)[0m mean_wait_sample_ms:     966.15572	step_per_second:             735.0	train_loss:             -73.834862	train_reward_avg:         1.145833
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:52: Task: T0         | Train_count:        40 | Steps:     41872 | Elapsed time: 52 seconds
+[2m[36m(train_xt pid=57199)[0m mean_env_step_ms:         3.676641	mean_explore_ms:        1104.469674	mean_inference_ms:        4.508442	mean_loop_time_ms:      1017.098808
+[2m[36m(train_xt pid=57199)[0m mean_prepare_data_ms:     2.759862	mean_restore_model_ms:   17.946073	mean_train_time_ms:      68.763053	mean_wait_model_ms:     1451.216868
+[2m[36m(train_xt pid=57199)[0m mean_wait_sample_ms:    938.598239	step_per_second:             792.0	train_loss:              -0.890098	train_reward_avg:         0.946429
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:56: Task: T0         | Train_count:        20 | Steps:     21494 | Elapsed time: 34 seconds
+[2m[36m(train_xt pid=58774)[0m mean_env_step_ms:          4.04005	mean_explore_ms:        1229.169905	mean_inference_ms:        4.825573	mean_loop_time_ms:      1011.964774
+[2m[36m(train_xt pid=58774)[0m mean_prepare_data_ms:     2.626145	mean_restore_model_ms:   31.316876	mean_train_time_ms:       68.94424	mean_wait_model_ms:     1742.188931
+[2m[36m(train_xt pid=58774)[0m mean_wait_sample_ms:    928.261411	step_per_second:             618.0	train_loss:             103.235382	train_reward_avg:          0.65625
+[2m[36m(train_xt pid=58774)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:40:56: Task: T0         | Train_count:        30 | Steps:     31684 | Elapsed time: 42 seconds
+[2m[36m(train_xt pid=57306)[0m mean_env_step_ms:         3.776583	mean_explore_ms:        1140.422185	mean_inference_ms:        4.644725	mean_loop_time_ms:      973.492885
+[2m[36m(train_xt pid=57306)[0m mean_prepare_data_ms:     3.178108	mean_restore_model_ms:   21.350145	mean_train_time_ms:      70.977557	mean_wait_model_ms:     1496.422489
+[2m[36m(train_xt pid=57306)[0m mean_wait_sample_ms:    890.638947	step_per_second:             738.0	train_loss:              45.519997	train_reward_avg:         1.208333
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:01: Task: T0         | Train_count:        42 | Steps:     43993 | Elapsed time: 55 seconds
+[2m[36m(train_xt pid=57245)[0m mean_env_step_ms:         4.394237	mean_explore_ms:        1238.549292	mean_inference_ms:        4.805641	mean_loop_time_ms:      1043.357134
+[2m[36m(train_xt pid=57245)[0m mean_prepare_data_ms:     3.173721	mean_restore_model_ms:   17.647266	mean_train_time_ms:      65.445626	mean_wait_model_ms:     1348.03614
+[2m[36m(train_xt pid=57245)[0m mean_wait_sample_ms:    965.706146	step_per_second:             786.0	train_loss:              11.363581	train_reward_avg:           1.3125
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:02: Task: T0         | Train_count:        50 | Steps:     52176 | Elapsed time: 1 minutes, 2 seconds
+[2m[36m(train_xt pid=57199)[0m mean_env_step_ms:          3.73878	mean_explore_ms:        1108.817846	mean_inference_ms:        4.502164	mean_loop_time_ms:      996.390009
+[2m[36m(train_xt pid=57199)[0m mean_prepare_data_ms:     2.900529	mean_restore_model_ms:   16.337365	mean_train_time_ms:      66.148961	mean_wait_model_ms:     1385.779381
+[2m[36m(train_xt pid=57199)[0m mean_wait_sample_ms:     919.69161	step_per_second:             832.0	train_loss:             -55.533501	train_reward_avg:          0.96875
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:05: Task: T0         | Train_count:        40 | Steps:     41934 | Elapsed time: 52 seconds
+[2m[36m(train_xt pid=57306)[0m mean_env_step_ms:         3.776583	mean_explore_ms:        1140.422185	mean_inference_ms:        4.644725	mean_loop_time_ms:      957.021868
+[2m[36m(train_xt pid=57306)[0m mean_prepare_data_ms:     3.358734	mean_restore_model_ms:   21.350145	mean_train_time_ms:       72.36594	mean_wait_model_ms:     1496.422489
+[2m[36m(train_xt pid=57306)[0m mean_wait_sample_ms:    872.521842	step_per_second:             801.0	train_loss:              -1.100819	train_reward_avg:         1.208333
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:05: Task: T0         | Train_count:        30 | Steps:     31720 | Elapsed time: 44 seconds
+[2m[36m(train_xt pid=58774)[0m mean_env_step_ms:         4.071106	mean_explore_ms:        1213.450472	mean_inference_ms:        4.823419	mean_loop_time_ms:      977.521253
+[2m[36m(train_xt pid=58774)[0m mean_prepare_data_ms:     2.742767	mean_restore_model_ms:   22.620797	mean_train_time_ms:      72.162199	mean_wait_model_ms:     1406.178792
+[2m[36m(train_xt pid=58774)[0m mean_wait_sample_ms:    893.929505	step_per_second:             714.0	train_loss:              16.081112	train_reward_avg:         0.958333
+[2m[36m(train_xt pid=58774)[0m 
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:11: Task: T0         | Train_count:        52 | Steps:     54186 | Elapsed time: 1 minutes, 5 seconds
+[2m[36m(train_xt pid=57245)[0m mean_env_step_ms:         4.394237	mean_explore_ms:        1238.549292	mean_inference_ms:        4.805641	mean_loop_time_ms:      995.457721
+[2m[36m(train_xt pid=57245)[0m mean_prepare_data_ms:     3.027666	mean_restore_model_ms:   17.647266	mean_train_time_ms:      64.576888	mean_wait_model_ms:     1348.03614
+[2m[36m(train_xt pid=57245)[0m mean_wait_sample_ms:    920.701075	step_per_second:             825.0	train_loss:              17.348412	train_reward_avg:           1.3125
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:12: Task: T0         | Train_count:        60 | Steps:     62347 | Elapsed time: 1 minutes, 12 seconds
+[2m[36m(train_xt pid=57199)[0m mean_env_step_ms:         3.877436	mean_explore_ms:        1114.630222	mean_inference_ms:        4.439463	mean_loop_time_ms:       984.76001
+[2m[36m(train_xt pid=57199)[0m mean_prepare_data_ms:     2.972722	mean_restore_model_ms:   14.335561	mean_train_time_ms:      63.812804	mean_wait_model_ms:     1277.376771
+[2m[36m(train_xt pid=57199)[0m mean_wait_sample_ms:    910.306549	step_per_second:             859.0	train_loss:              31.867052	train_reward_avg:             1.05
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:15: Task: T0         | Train_count:        50 | Steps:     52033 | Elapsed time: 1 minutes, 2 seconds
+[2m[36m(train_xt pid=57306)[0m mean_env_step_ms:         3.849894	mean_explore_ms:        1139.467955	mean_inference_ms:        4.615935	mean_loop_time_ms:       957.50314
+[2m[36m(train_xt pid=57306)[0m mean_prepare_data_ms:     3.013766	mean_restore_model_ms:   17.128766	mean_train_time_ms:      71.768367	mean_wait_model_ms:     1310.825706
+[2m[36m(train_xt pid=57306)[0m mean_wait_sample_ms:    874.049962	step_per_second:             838.0	train_loss:             -28.081076	train_reward_avg:           1.4375
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:15: Task: T0         | Train_count:        40 | Steps:     41973 | Elapsed time: 53 seconds
+[2m[36m(train_xt pid=58774)[0m mean_env_step_ms:         4.071106	mean_explore_ms:        1213.450472	mean_inference_ms:        4.823419	mean_loop_time_ms:      954.894137
+[2m[36m(train_xt pid=58774)[0m mean_prepare_data_ms:      2.79032	mean_restore_model_ms:   22.620797	mean_train_time_ms:      72.134161	mean_wait_model_ms:     1406.178792
+[2m[36m(train_xt pid=58774)[0m mean_wait_sample_ms:    871.546245	step_per_second:             779.0	train_loss:               3.792536	train_reward_avg:         0.958333
+[2m[36m(train_xt pid=58774)[0m 
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:21: Task: T0         | Train_count:        62 | Steps:     64399 | Elapsed time: 1 minutes, 15 seconds
+[2m[36m(train_xt pid=57245)[0m mean_env_step_ms:         4.418295	mean_explore_ms:        1227.917409	mean_inference_ms:         4.73626	mean_loop_time_ms:      970.040357
+[2m[36m(train_xt pid=57245)[0m mean_prepare_data_ms:     2.834284	mean_restore_model_ms:   15.057397	mean_train_time_ms:      65.953267	mean_wait_model_ms:     1226.692867
+[2m[36m(train_xt pid=57245)[0m mean_wait_sample_ms:    893.740618	step_per_second:             855.0	train_loss:              44.743965	train_reward_avg:              1.4
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:21: Task: T0         | Train_count:        70 | Steps:     72702 | Elapsed time: 1 minutes, 21 seconds
+[2m[36m(train_xt pid=57199)[0m mean_env_step_ms:         3.915505	mean_explore_ms:        1111.212393	mean_inference_ms:        4.395383	mean_loop_time_ms:      958.079171
+[2m[36m(train_xt pid=57199)[0m mean_prepare_data_ms:      3.12891	mean_restore_model_ms:   12.685657	mean_train_time_ms:      64.262903	mean_wait_model_ms:     1197.371046
+[2m[36m(train_xt pid=57199)[0m mean_wait_sample_ms:    883.438301	step_per_second:             888.0	train_loss:             -76.799957	train_reward_avg:            1.125
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:24: Task: T0         | Train_count:        60 | Steps:     62307 | Elapsed time: 1 minutes, 11 seconds
+[2m[36m(train_xt pid=57306)[0m mean_env_step_ms:         3.897371	mean_explore_ms:        1137.474942	mean_inference_ms:        4.587864	mean_loop_time_ms:      964.138222
+[2m[36m(train_xt pid=57306)[0m mean_prepare_data_ms:      2.66875	mean_restore_model_ms:   14.547133	mean_train_time_ms:      67.899442	mean_wait_model_ms:     1214.220619
+[2m[36m(train_xt pid=57306)[0m mean_wait_sample_ms:    885.479462	step_per_second:             870.0	train_loss:              31.308277	train_reward_avg:              1.5
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:25: Task: T0         | Train_count:        50 | Steps:     52146 | Elapsed time: 1 minutes, 3 seconds
+[2m[36m(train_xt pid=58774)[0m mean_env_step_ms:         4.060115	mean_explore_ms:        1185.260624	mean_inference_ms:        4.696086	mean_loop_time_ms:      949.706995
+[2m[36m(train_xt pid=58774)[0m mean_prepare_data_ms:     2.623653	mean_restore_model_ms:   19.033313	mean_train_time_ms:      71.617067	mean_wait_model_ms:     1260.121346
+[2m[36m(train_xt pid=58774)[0m mean_wait_sample_ms:    866.806102	step_per_second:             822.0	train_loss:              -2.132369	train_reward_avg:            1.125
+[2m[36m(train_xt pid=58774)[0m 
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:30: Task: T0         | Train_count:        80 | Steps:     82846 | Elapsed time: 1 minutes, 30 seconds
+[2m[36m(train_xt pid=57199)[0m mean_env_step_ms:         3.915505	mean_explore_ms:        1111.212393	mean_inference_ms:        4.395383	mean_loop_time_ms:      917.601573
+[2m[36m(train_xt pid=57199)[0m mean_prepare_data_ms:     2.968276	mean_restore_model_ms:   12.685657	mean_train_time_ms:       64.03259	mean_wait_model_ms:     1197.371046
+[2m[36m(train_xt pid=57199)[0m mean_wait_sample_ms:    843.334746	step_per_second:             911.0	train_loss:             -42.733448	train_reward_avg:            1.125
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:30: Task: T0         | Train_count:        72 | Steps:     74657 | Elapsed time: 1 minutes, 24 seconds
+[2m[36m(train_xt pid=57245)[0m mean_env_step_ms:         4.287074	mean_explore_ms:        1201.356292	mean_inference_ms:        4.685708	mean_loop_time_ms:      955.531752
+[2m[36m(train_xt pid=57245)[0m mean_prepare_data_ms:     3.032029	mean_restore_model_ms:   13.356666	mean_train_time_ms:      64.568758	mean_wait_model_ms:     1154.649655
+[2m[36m(train_xt pid=57245)[0m mean_wait_sample_ms:    880.204296	step_per_second:             880.0	train_loss:             -28.183311	train_reward_avg:              1.5
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:34: Task: T0         | Train_count:        70 | Steps:     72630 | Elapsed time: 1 minutes, 21 seconds
+[2m[36m(train_xt pid=57306)[0m mean_env_step_ms:         3.911431	mean_explore_ms:        1131.566942	mean_inference_ms:        4.548336	mean_loop_time_ms:      955.929279
+[2m[36m(train_xt pid=57306)[0m mean_prepare_data_ms:     2.571201	mean_restore_model_ms:    13.37868	mean_train_time_ms:      68.217552	mean_wait_model_ms:     1142.423709
+[2m[36m(train_xt pid=57306)[0m mean_wait_sample_ms:    877.203119	step_per_second:             894.0	train_loss:               8.678904	train_reward_avg:            1.625
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:34: Task: T0         | Train_count:        60 | Steps:     62221 | Elapsed time: 1 minutes, 13 seconds
+[2m[36m(train_xt pid=58774)[0m mean_env_step_ms:         4.152576	mean_explore_ms:        1193.707657	mean_inference_ms:        4.707252	mean_loop_time_ms:      962.534964
+[2m[36m(train_xt pid=58774)[0m mean_prepare_data_ms:     2.667975	mean_restore_model_ms:   17.499447	mean_train_time_ms:      69.118392	mean_wait_model_ms:     1166.412807
+[2m[36m(train_xt pid=58774)[0m mean_wait_sample_ms:    882.507563	step_per_second:             851.0	train_loss:              59.853577	train_reward_avg:           1.1625
+[2m[36m(train_xt pid=58774)[0m 
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:39: Task: T0         | Train_count:        90 | Steps:     93099 | Elapsed time: 1 minutes, 40 seconds
+[2m[36m(train_xt pid=57199)[0m mean_env_step_ms:         3.901031	mean_explore_ms:        1103.880082	mean_inference_ms:        4.364525	mean_loop_time_ms:      910.024524
+[2m[36m(train_xt pid=57199)[0m mean_prepare_data_ms:     2.917957	mean_restore_model_ms:   11.481796	mean_train_time_ms:      62.971246	mean_wait_model_ms:     1140.524183
+[2m[36m(train_xt pid=57199)[0m mean_wait_sample_ms:     837.08781	step_per_second:             930.0	train_loss:             -40.644192	train_reward_avg:         1.223214
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:39: Task: T0         | Train_count:        82 | Steps:     84839 | Elapsed time: 1 minutes, 33 seconds
+[2m[36m(train_xt pid=57245)[0m mean_env_step_ms:         4.287074	mean_explore_ms:        1201.356292	mean_inference_ms:        4.685708	mean_loop_time_ms:      933.052564
+[2m[36m(train_xt pid=57245)[0m mean_prepare_data_ms:     3.240132	mean_restore_model_ms:   13.356666	mean_train_time_ms:       66.44522	mean_wait_model_ms:     1154.649655
+[2m[36m(train_xt pid=57245)[0m mean_wait_sample_ms:    855.870962	step_per_second:             902.0	train_loss:              26.249067	train_reward_avg:              1.5
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:43: Task: T0         | Train_count:        70 | Steps:     72458 | Elapsed time: 1 minutes, 22 seconds
+[2m[36m(train_xt pid=58774)[0m mean_env_step_ms:         4.155379	mean_explore_ms:        1181.423724	mean_inference_ms:        4.642675	mean_loop_time_ms:      960.952175
+[2m[36m(train_xt pid=58774)[0m mean_prepare_data_ms:     2.696919	mean_restore_model_ms:   15.383303	mean_train_time_ms:      73.853755	mean_wait_model_ms:     1102.051179
+[2m[36m(train_xt pid=58774)[0m mean_wait_sample_ms:    873.100543	step_per_second:             876.0	train_loss:             -11.531239	train_reward_avg:         1.208333
+[2m[36m(train_xt pid=58774)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:45: Task: T0         | Train_count:        82 | Steps:     84924 | Elapsed time: 1 minutes, 32 seconds
+[2m[36m(train_xt pid=57306)[0m mean_env_step_ms:         3.856029	mean_explore_ms:        1120.095381	mean_inference_ms:        4.524251	mean_loop_time_ms:       943.25726
+[2m[36m(train_xt pid=57306)[0m mean_prepare_data_ms:     2.991033	mean_restore_model_ms:   12.672094	mean_train_time_ms:      73.356056	mean_wait_model_ms:     1118.28804
+[2m[36m(train_xt pid=57306)[0m mean_wait_sample_ms:    857.954288	step_per_second:             919.0	train_loss:              22.707005	train_reward_avg:         1.663462
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:48: Task: T0         | Train_count:       100 | Steps:    103391 | Elapsed time: 1 minutes, 49 seconds
+[2m[36m(train_xt pid=57199)[0m mean_env_step_ms:         3.914366	mean_explore_ms:        1103.194699	mean_inference_ms:        4.356149	mean_loop_time_ms:      920.355523
+[2m[36m(train_xt pid=57199)[0m mean_prepare_data_ms:      3.01199	mean_restore_model_ms:   10.638341	mean_train_time_ms:      60.885084	mean_wait_model_ms:     1098.015293
+[2m[36m(train_xt pid=57199)[0m mean_wait_sample_ms:    849.433756	step_per_second:             946.0	train_loss:             -21.652903	train_reward_avg:          1.28125
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:49: Task: T0         | Train_count:        92 | Steps:     94944 | Elapsed time: 1 minutes, 43 seconds
+[2m[36m(train_xt pid=57245)[0m mean_env_step_ms:         4.303102	mean_explore_ms:        1197.684152	mean_inference_ms:        4.657506	mean_loop_time_ms:      927.575648
+[2m[36m(train_xt pid=57245)[0m mean_prepare_data_ms:      3.02372	mean_restore_model_ms:   12.113963	mean_train_time_ms:      65.016782	mean_wait_model_ms:     1102.602618
+[2m[36m(train_xt pid=57245)[0m mean_wait_sample_ms:    852.307081	step_per_second:             918.0	train_loss:              10.723354	train_reward_avg:         1.544643
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:53: Task: T0         | Train_count:        80 | Steps:     82863 | Elapsed time: 1 minutes, 32 seconds
+[2m[36m(train_xt pid=58774)[0m mean_env_step_ms:         4.155379	mean_explore_ms:        1181.423724	mean_inference_ms:        4.642675	mean_loop_time_ms:      945.627606
+[2m[36m(train_xt pid=58774)[0m mean_prepare_data_ms:     2.781296	mean_restore_model_ms:   15.383303	mean_train_time_ms:      74.382234	mean_wait_model_ms:     1102.051179
+[2m[36m(train_xt pid=58774)[0m mean_wait_sample_ms:    856.821275	step_per_second:             900.0	train_loss:              53.838081	train_reward_avg:         1.208333
+[2m[36m(train_xt pid=58774)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:55: Task: T0         | Train_count:        92 | Steps:     95153 | Elapsed time: 1 minutes, 41 seconds
+[2m[36m(train_xt pid=57306)[0m mean_env_step_ms:         3.836595	mean_explore_ms:        1115.545034	mean_inference_ms:        4.515203	mean_loop_time_ms:      937.847078
+[2m[36m(train_xt pid=57306)[0m mean_prepare_data_ms:     3.204155	mean_restore_model_ms:   12.049266	mean_train_time_ms:      72.650075	mean_wait_model_ms:      1093.2749
+[2m[36m(train_xt pid=57306)[0m mean_wait_sample_ms:    851.784408	step_per_second:             934.0	train_loss:              10.368558	train_reward_avg:         1.758929
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:58: Task: T0         | Train_count:       110 | Steps:    113611 | Elapsed time: 1 minutes, 58 seconds
+[2m[36m(train_xt pid=57199)[0m mean_env_step_ms:         3.914366	mean_explore_ms:        1103.194699	mean_inference_ms:        4.356149	mean_loop_time_ms:      932.796526
+[2m[36m(train_xt pid=57199)[0m mean_prepare_data_ms:     2.781236	mean_restore_model_ms:   10.638341	mean_train_time_ms:      59.191179	mean_wait_model_ms:     1098.015293
+[2m[36m(train_xt pid=57199)[0m mean_wait_sample_ms:    863.728118	step_per_second:             957.0	train_loss:             -44.753948	train_reward_avg:          1.28125
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:41:58: Task: T0         | Train_count:       102 | Steps:    105350 | Elapsed time: 1 minutes, 52 seconds
+[2m[36m(train_xt pid=57245)[0m mean_env_step_ms:         4.317806	mean_explore_ms:        1194.983527	mean_inference_ms:        4.635219	mean_loop_time_ms:      942.547846
+[2m[36m(train_xt pid=57245)[0m mean_prepare_data_ms:     2.932847	mean_restore_model_ms:   11.175752	mean_train_time_ms:       65.07895	mean_wait_model_ms:     1053.668156
+[2m[36m(train_xt pid=57245)[0m mean_wait_sample_ms:     867.17906	step_per_second:             933.0	train_loss:              80.041367	train_reward_avg:         1.578125
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:42:02: Task: T0         | Train_count:        90 | Steps:     93092 | Elapsed time: 1 minutes, 41 seconds
+[2m[36m(train_xt pid=58774)[0m mean_env_step_ms:         4.109618	mean_explore_ms:        1170.661483	mean_inference_ms:         4.62624	mean_loop_time_ms:      933.523679
+[2m[36m(train_xt pid=58774)[0m mean_prepare_data_ms:     2.722359	mean_restore_model_ms:   13.862252	mean_train_time_ms:      68.495595	mean_wait_model_ms:     1050.261191
+[2m[36m(train_xt pid=58774)[0m mean_wait_sample_ms:    853.958738	step_per_second:             919.0	train_loss:             -65.077324	train_reward_avg:         1.321429
+[2m[36m(train_xt pid=58774)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:42:04: Task: T0         | Train_count:       102 | Steps:    105169 | Elapsed time: 1 minutes, 51 seconds
+[2m[36m(train_xt pid=57306)[0m mean_env_step_ms:         3.837432	mean_explore_ms:        1113.763854	mean_inference_ms:        4.513838	mean_loop_time_ms:      937.541831
+[2m[36m(train_xt pid=57306)[0m mean_prepare_data_ms:     3.106439	mean_restore_model_ms:   11.117637	mean_train_time_ms:      72.037971	mean_wait_model_ms:     1052.884281
+[2m[36m(train_xt pid=57306)[0m mean_wait_sample_ms:    852.923071	step_per_second:             946.0	train_loss:             111.231216	train_reward_avg:         1.757812
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:42:08: Task: T0         | Train_count:       120 | Steps:    123739 | Elapsed time: 2 minutes, 8 seconds
+[2m[36m(train_xt pid=57199)[0m mean_env_step_ms:         3.894181	mean_explore_ms:        1099.624621	mean_inference_ms:        4.355814	mean_loop_time_ms:      947.980332
+[2m[36m(train_xt pid=57199)[0m mean_prepare_data_ms:     2.737212	mean_restore_model_ms:    9.940359	mean_train_time_ms:      60.373211	mean_wait_model_ms:     1062.173618
+[2m[36m(train_xt pid=57199)[0m mean_wait_sample_ms:    878.013492	step_per_second:             965.0	train_loss:             -43.220299	train_reward_avg:         1.395833
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:42:08: Task: T0         | Train_count:       112 | Steps:    115689 | Elapsed time: 2 minutes, 2 seconds
+[2m[36m(train_xt pid=57245)[0m mean_env_step_ms:         4.269876	mean_explore_ms:        1188.564354	mean_inference_ms:        4.640883	mean_loop_time_ms:      947.286201
+[2m[36m(train_xt pid=57245)[0m mean_prepare_data_ms:     2.995324	mean_restore_model_ms:   10.483027	mean_train_time_ms:      71.000409	mean_wait_model_ms:     1022.051493
+[2m[36m(train_xt pid=57245)[0m mean_wait_sample_ms:    866.029406	step_per_second:             946.0	train_loss:              -4.923926	train_reward_avg:         1.611111
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:42:12: Task: T0         | Train_count:       100 | Steps:    103314 | Elapsed time: 1 minutes, 50 seconds
+[2m[36m(train_xt pid=58774)[0m mean_env_step_ms:         4.088516	mean_explore_ms:        1165.459111	mean_inference_ms:        4.622518	mean_loop_time_ms:      928.742957
+[2m[36m(train_xt pid=58774)[0m mean_prepare_data_ms:     2.686214	mean_restore_model_ms:   13.665125	mean_train_time_ms:       71.68932	mean_wait_model_ms:     1009.485856
+[2m[36m(train_xt pid=58774)[0m mean_wait_sample_ms:    846.181786	step_per_second:             934.0	train_loss:             108.868263	train_reward_avg:         1.429688
+[2m[36m(train_xt pid=58774)[0m 
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:42:13: Task: T0         | Train_count:       112 | Steps:    115478 | Elapsed time: 2 minutes, 0 seconds
+[2m[36m(train_xt pid=57306)[0m mean_env_step_ms:         3.854488	mean_explore_ms:        1115.41246	mean_inference_ms:        4.518136	mean_loop_time_ms:      929.240394
+[2m[36m(train_xt pid=57306)[0m mean_prepare_data_ms:     2.976596	mean_restore_model_ms:   10.342505	mean_train_time_ms:      73.977852	mean_wait_model_ms:     1022.10923
+[2m[36m(train_xt pid=57306)[0m mean_wait_sample_ms:    843.869019	step_per_second:             959.0	train_loss:              26.058546	train_reward_avg:         1.902778
+[2m[36m(train_xt pid=57306)[0m 
+[2m[36m(train_xt pid=57199)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:42:17: Task: T0         | Train_count:       130 | Steps:    134006 | Elapsed time: 2 minutes, 17 seconds
+[2m[36m(train_xt pid=57199)[0m mean_env_step_ms:         3.877094	mean_explore_ms:        1097.765923	mean_inference_ms:         4.36265	mean_loop_time_ms:      953.379643
+[2m[36m(train_xt pid=57199)[0m mean_prepare_data_ms:     2.665401	mean_restore_model_ms:    9.416544	mean_train_time_ms:      62.984383	mean_wait_model_ms:     1033.552766
+[2m[36m(train_xt pid=57199)[0m mean_wait_sample_ms:    880.802333	step_per_second:             972.0	train_loss:              14.588784	train_reward_avg:          1.48125
+[2m[36m(train_xt pid=57199)[0m 
+[2m[36m(train_xt pid=57245)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:42:17: Task: T0         | Train_count:       122 | Steps:    125753 | Elapsed time: 2 minutes, 11 seconds
+[2m[36m(train_xt pid=57245)[0m mean_env_step_ms:         4.269876	mean_explore_ms:        1188.564354	mean_inference_ms:        4.640883	mean_loop_time_ms:      952.424324
+[2m[36m(train_xt pid=57245)[0m mean_prepare_data_ms:     3.006279	mean_restore_model_ms:   10.483027	mean_train_time_ms:      71.705139	mean_wait_model_ms:     1022.051493
+[2m[36m(train_xt pid=57245)[0m mean_wait_sample_ms:    870.355117	step_per_second:             953.0	train_loss:             -25.561094	train_reward_avg:         1.611111
+[2m[36m(train_xt pid=57245)[0m 
+[2m[36m(train_xt pid=58774)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:42:21: Task: T0         | Train_count:       110 | Steps:    113451 | Elapsed time: 2 minutes, 0 seconds
+[2m[36m(train_xt pid=58774)[0m mean_env_step_ms:         4.088516	mean_explore_ms:        1165.459111	mean_inference_ms:        4.622518	mean_loop_time_ms:      945.973575
+[2m[36m(train_xt pid=58774)[0m mean_prepare_data_ms:     2.682352	mean_restore_model_ms:   13.665125	mean_train_time_ms:      72.408295	mean_wait_model_ms:     1009.485856
+[2m[36m(train_xt pid=58774)[0m mean_wait_sample_ms:    862.685287	step_per_second:             943.0	train_loss:             -19.164013	train_reward_avg:         1.429688
+[2m[36m(train_xt pid=58774)[0m 
+2023-09-11 22:42:21,962	WARNING tune.py:687 -- Stop signal received (e.g. via SIGINT/Ctrl+C), ending Ray Tune run. This will try to checkpoint the experiment state one last time. Press CTRL+C (or send SIGINT/SIGKILL/SIGTERM) to skip. 
+
+== Status ==
+Current time: 2023-09-11 22:41:15 (running for 00:01:33.81)
+Memory usage on this node: 38.4/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:41:20 (running for 00:01:38.81)
+Memory usage on this node: 38.4/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:41:25 (running for 00:01:43.82)
+Memory usage on this node: 38.4/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:41:30 (running for 00:01:48.82)
+Memory usage on this node: 38.4/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:41:35 (running for 00:01:53.83)
+Memory usage on this node: 38.4/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:41:40 (running for 00:01:58.83)
+Memory usage on this node: 38.5/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:41:45 (running for 00:02:03.84)
+Memory usage on this node: 38.5/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:41:50 (running for 00:02:08.84)
+Memory usage on this node: 38.5/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:41:55 (running for 00:02:13.85)
+Memory usage on this node: 38.5/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:42:00 (running for 00:02:18.85)
+Memory usage on this node: 38.5/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:42:05 (running for 00:02:23.86)
+Memory usage on this node: 38.5/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:42:10 (running for 00:02:28.86)
+Memory usage on this node: 38.4/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:42:15 (running for 00:02:33.87)
+Memory usage on this node: 38.5/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-11 22:42:20 (running for 00:02:38.87)
+Memory usage on this node: 38.4/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/153.85 GiB heap, 0.0/69.93 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+Traceback (most recent call last):
+  File "test_xt_with_tune.py", line 257, in <module>
+    "checkpoint_interval": 1,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/tuner.py", line 234, in fit
+    return self._local_tuner.fit()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/impl/tuner_internal.py", line 283, in fit
+    analysis = self._fit_internal(trainable, param_space)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/impl/tuner_internal.py", line 381, in _fit_internal
+    **args,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/tune.py", line 722, in run
+    runner.step()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/execution/trial_runner.py", line 879, in step
+    self._wait_and_handle_event(next_trial)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/execution/trial_runner.py", line 823, in _wait_and_handle_event
+    self._live_trials, next_trial is not None
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/execution/ray_trial_executor.py", line 953, in get_next_executor_event
+    futures_to_wait, num_returns=1, timeout=self._get_next_event_wait
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_private/client_mode_hook.py", line 105, in wrapper
+    return func(*args, **kwargs)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_private/worker.py", line 2471, in wait
+    fetch_local,
+  File "python/ray/_raylet.pyx", line 1414, in ray._raylet.CoreWorker.wait
+  File "python/ray/_raylet.pyx", line 173, in ray._raylet.check_status
+KeyboardInterrupt
+[2m[36m(train_xt pid=57306)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 11 22:42:22: Task: T0         | Train_count:       122 | Steps:    125805 | Elapsed time: 2 minutes, 9 seconds
+[2m[36m(train_xt pid=57306)[0m mean_env_step_ms:         3.854488	mean_explore_ms:        1115.41246	mean_inference_ms:        4.518136	mean_loop_time_ms:      930.344355
+[2m[36m(train_xt pid=57306)[0m mean_prepare_data_ms:      2.88049	mean_restore_model_ms:   10.342505	mean_train_time_ms:      72.363615	mean_wait_model_ms:     1022.10923
+[2m[36m(train_xt pid=57306)[0m mean_wait_sample_ms:    846.377707	step_per_second:             969.0	train_loss:              -26.24678	train_reward_avg:         1.902778
+[2m[36m(train_xt pid=57306)[0m 
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_private/client_mode_hook.py", line 105, in wrapper
+    return func(*args, **kwargs)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_private/worker.py", line 1592, in shutdown
+    global_worker.core_worker.shutdown()
+KeyboardInterrupt

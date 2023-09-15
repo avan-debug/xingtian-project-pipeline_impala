@@ -1,0 +1,3 @@
+[console_scripts]
+xt_main = xt.main:main
+

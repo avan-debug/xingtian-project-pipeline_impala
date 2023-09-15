@@ -1,0 +1,598 @@
+WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+ test_xt_with_tune.py:59: ExperimentalWarning:BoTorchSampler is experimental (supported from v2.4.0). The interface can change in the future.
+2023-09-12 11:17:28,442	INFO worker.py:1515 -- Started a local Ray instance. View the dashboard at [1m[32mhttp://127.0.0.1:8265 [39m[22m
+2023-09-12 11:17:30,570	WARNING function_trainable.py:620 -- Function checkpointing is disabled. This may result in unexpected behavior when using checkpointing features or certain schedulers. To enable, set the train function arguments to be `func(config, checkpoint_dir=None)`.
+2023-09-12 11:17:30,632	WARNING trial_runner.py:1583 -- You are trying to access _search_alg interface of TrialRunner in TrialScheduler, which is being restricted. If you believe it is reasonable for your scheduler to access this TrialRunner API, please reach out to Ray team on GitHub. A more strict API access pattern would be enforced starting 1.12s.0
+[2m[36m(train_xt pid=70791)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=70791)[0m Instructions for updating:
+[2m[36m(train_xt pid=70791)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=70791)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=70791)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 11:17:45: 
+[2m[36m(train_xt pid=70791)[0m **************************************************
+[2m[36m(train_xt pid=70791)[0m  XT start work...
+[2m[36m(train_xt pid=70791)[0m Namespace(config_file='/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_16944886595174572.yaml', save_to_s3=None, task='train', verbosity='info')
+[2m[36m(train_xt pid=70791)[0m **************************************************
+[2m[36m(train_xt pid=70791)[0m ERROR [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 11:17:45: module EnvPool not found: 'EnvPool'
+[2m[36m(train_xt pid=70791)[0m ERROR [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 11:17:45: 'EnvPool'
+[2m[36m(train_xt pid=70791)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=70791)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/train.py", line 128, in start_train
+[2m[36m(train_xt pid=70791)[0m     return _makeup_learner(config_info, data_url, verbosity)
+[2m[36m(train_xt pid=70791)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/train.py", line 48, in _makeup_learner
+[2m[36m(train_xt pid=70791)[0m     config_info = patch_alg_within_config(config_info.copy(), node_type="node_config")
+[2m[36m(train_xt pid=70791)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/framework/learner.py", line 511, in patch_alg_within_config
+[2m[36m(train_xt pid=70791)[0m     env = env_builder(**config["env_para"])
+[2m[36m(train_xt pid=70791)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/environment/__init__.py", line 23, in env_builder
+[2m[36m(train_xt pid=70791)[0m     return Registers.env[env_name](env_info, **kwargs)
+[2m[36m(train_xt pid=70791)[0m   File "/root/multi_xt/raw_xt/xingtian/zeus/common/util/register.py", line 56, in __getitem__
+[2m[36m(train_xt pid=70791)[0m     raise exc
+[2m[36m(train_xt pid=70791)[0m   File "/root/multi_xt/raw_xt/xingtian/zeus/common/util/register.py", line 50, in __getitem__
+[2m[36m(train_xt pid=70791)[0m     return self._dict[key]
+[2m[36m(train_xt pid=70791)[0m KeyError: 'EnvPool'
+[2m[36m(train_xt pid=70791)[0m sh: 1: kill: No such process
+[2m[36m(train_xt pid=70791)[0m 
+[2m[36m(train_xt pid=70791)[0m [W 2023-09-12 11:17:46,525] Trial 0 failed with parameters: {'env_pool_size': 6, 'env_pool_wait_nums': 5} because of the following error: FileNotFoundError(2, 'No such file or directory').
+[2m[36m(train_xt pid=70791)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=70791)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=70791)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=70791)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in <lambda>
+[2m[36m(train_xt pid=70791)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=70791)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 134, in fn
+[2m[36m(train_xt pid=70791)[0m     step_per_second = get_throughput([filename])
+[2m[36m(train_xt pid=70791)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 40, in get_throughput
+[2m[36m(train_xt pid=70791)[0m     with open(file, "r") as f:
+[2m[36m(train_xt pid=70791)[0m FileNotFoundError: [Errno 2] No such file or directory: '/tmp/16944886595174572'
+[2m[36m(train_xt pid=70791)[0m [W 2023-09-12 11:17:46,526] Trial 0 failed with value None.
+[2m[36m(train_xt pid=70791)[0m 2023-09-12 11:17:46,527	ERROR function_trainable.py:298 -- Runner Thread raised error.
+[2m[36m(train_xt pid=70791)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=70791)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+[2m[36m(train_xt pid=70791)[0m     self._entrypoint()
+[2m[36m(train_xt pid=70791)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+[2m[36m(train_xt pid=70791)[0m     self._status_reporter.get_checkpoint(),
+[2m[36m(train_xt pid=70791)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/util/tracing/tracing_helper.py", line 466, in _resume_span
+[2m[36m(train_xt pid=70791)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(train_xt pid=70791)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+[2m[36m(train_xt pid=70791)[0m     output = fn()
+[2m[36m(train_xt pid=70791)[0m   File "test_xt_with_tune.py", line 153, in train_xt
+[2m[36m(train_xt pid=70791)[0m     best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+[2m[36m(train_xt pid=70791)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in find_max_th
+[2m[36m(train_xt pid=70791)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=70791)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+[2m[36m(train_xt pid=70791)[0m     show_progress_bar=show_progress_bar,
+[2m[36m(train_xt pid=70791)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+[2m[36m(train_xt pid=70791)[0m     progress_bar=progress_bar,
+[2m[36m(train_xt pid=70791)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+[2m[36m(train_xt pid=70791)[0m     frozen_trial = _run_trial(study, func, catch)
+[2m[36m(train_xt pid=70791)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+[2m[36m(train_xt pid=70791)[0m     raise func_err
+[2m[36m(train_xt pid=70791)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=70791)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=70791)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in <lambda>
+[2m[36m(train_xt pid=70791)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=70791)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 134, in fn
+[2m[36m(train_xt pid=70791)[0m     step_per_second = get_throughput([filename])
+[2m[36m(train_xt pid=70791)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 40, in get_throughput
+[2m[36m(train_xt pid=70791)[0m     with open(file, "r") as f:
+[2m[36m(train_xt pid=70791)[0m FileNotFoundError: [Errno 2] No such file or directory: '/tmp/16944886595174572'
+[2m[36m(train_xt pid=70835)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=70835)[0m Instructions for updating:
+[2m[36m(train_xt pid=70835)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=70835)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=70835)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 11:17:51: 
+[2m[36m(train_xt pid=70835)[0m **************************************************
+[2m[36m(train_xt pid=70835)[0m  XT start work...
+[2m[36m(train_xt pid=70835)[0m Namespace(config_file='/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_16944886661029744.yaml', save_to_s3=None, task='train', verbosity='info')
+[2m[36m(train_xt pid=70835)[0m **************************************************
+[2m[36m(train_xt pid=70835)[0m ERROR [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 11:17:51: module EnvPool not found: 'EnvPool'
+[2m[36m(train_xt pid=70835)[0m ERROR [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 11:17:51: 'EnvPool'
+[2m[36m(train_xt pid=70835)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=70835)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/train.py", line 128, in start_train
+[2m[36m(train_xt pid=70835)[0m     return _makeup_learner(config_info, data_url, verbosity)
+[2m[36m(train_xt pid=70835)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/train.py", line 48, in _makeup_learner
+[2m[36m(train_xt pid=70835)[0m     config_info = patch_alg_within_config(config_info.copy(), node_type="node_config")
+[2m[36m(train_xt pid=70835)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/framework/learner.py", line 511, in patch_alg_within_config
+[2m[36m(train_xt pid=70835)[0m     env = env_builder(**config["env_para"])
+[2m[36m(train_xt pid=70835)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/environment/__init__.py", line 23, in env_builder
+[2m[36m(train_xt pid=70835)[0m     return Registers.env[env_name](env_info, **kwargs)
+[2m[36m(train_xt pid=70835)[0m   File "/root/multi_xt/raw_xt/xingtian/zeus/common/util/register.py", line 56, in __getitem__
+[2m[36m(train_xt pid=70835)[0m     raise exc
+[2m[36m(train_xt pid=70835)[0m   File "/root/multi_xt/raw_xt/xingtian/zeus/common/util/register.py", line 50, in __getitem__
+[2m[36m(train_xt pid=70835)[0m     return self._dict[key]
+[2m[36m(train_xt pid=70835)[0m KeyError: 'EnvPool'
+[2m[36m(train_xt pid=70835)[0m sh: 1: kill: No such process
+[2m[36m(train_xt pid=70835)[0m 
+[2m[36m(train_xt pid=70835)[0m [W 2023-09-12 11:17:53,163] Trial 1 failed with parameters: {'env_pool_size': 6, 'env_pool_wait_nums': 5} because of the following error: FileNotFoundError(2, 'No such file or directory').
+[2m[36m(train_xt pid=70835)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=70835)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=70835)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=70835)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in <lambda>
+[2m[36m(train_xt pid=70835)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=70835)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 134, in fn
+[2m[36m(train_xt pid=70835)[0m     step_per_second = get_throughput([filename])
+[2m[36m(train_xt pid=70835)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 40, in get_throughput
+[2m[36m(train_xt pid=70835)[0m     with open(file, "r") as f:
+[2m[36m(train_xt pid=70835)[0m FileNotFoundError: [Errno 2] No such file or directory: '/tmp/16944886661029744'
+[2m[36m(train_xt pid=70835)[0m [W 2023-09-12 11:17:53,165] Trial 1 failed with value None.
+[2m[36m(train_xt pid=70835)[0m 2023-09-12 11:17:53,165	ERROR function_trainable.py:298 -- Runner Thread raised error.
+[2m[36m(train_xt pid=70835)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=70835)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+[2m[36m(train_xt pid=70835)[0m     self._entrypoint()
+[2m[36m(train_xt pid=70835)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+[2m[36m(train_xt pid=70835)[0m     self._status_reporter.get_checkpoint(),
+[2m[36m(train_xt pid=70835)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/util/tracing/tracing_helper.py", line 466, in _resume_span
+[2m[36m(train_xt pid=70835)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(train_xt pid=70835)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+[2m[36m(train_xt pid=70835)[0m     output = fn()
+[2m[36m(train_xt pid=70835)[0m   File "test_xt_with_tune.py", line 153, in train_xt
+[2m[36m(train_xt pid=70835)[0m     best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+[2m[36m(train_xt pid=70835)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in find_max_th
+[2m[36m(train_xt pid=70835)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=70835)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+[2m[36m(train_xt pid=70835)[0m     show_progress_bar=show_progress_bar,
+[2m[36m(train_xt pid=70835)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+[2m[36m(train_xt pid=70835)[0m     progress_bar=progress_bar,
+[2m[36m(train_xt pid=70835)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+[2m[36m(train_xt pid=70835)[0m     frozen_trial = _run_trial(study, func, catch)
+[2m[36m(train_xt pid=70835)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+[2m[36m(train_xt pid=70835)[0m     raise func_err
+[2m[36m(train_xt pid=70835)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=70835)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=70835)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in <lambda>
+[2m[36m(train_xt pid=70835)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=70835)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 134, in fn
+[2m[36m(train_xt pid=70835)[0m     step_per_second = get_throughput([filename])
+[2m[36m(train_xt pid=70835)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 40, in get_throughput
+[2m[36m(train_xt pid=70835)[0m     with open(file, "r") as f:
+[2m[36m(train_xt pid=70835)[0m FileNotFoundError: [Errno 2] No such file or directory: '/tmp/16944886661029744'
+[2m[36m(train_xt pid=70899)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=70899)[0m Instructions for updating:
+[2m[36m(train_xt pid=70899)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=70899)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=70899)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 11:17:58: 
+[2m[36m(train_xt pid=70899)[0m **************************************************
+[2m[36m(train_xt pid=70899)[0m  XT start work...
+[2m[36m(train_xt pid=70899)[0m Namespace(config_file='/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_16944886724761026.yaml', save_to_s3=None, task='train', verbosity='info')
+[2m[36m(train_xt pid=70899)[0m **************************************************
+[2m[36m(train_xt pid=70899)[0m ERROR [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 11:17:58: module EnvPool not found: 'EnvPool'
+[2m[36m(train_xt pid=70899)[0m ERROR [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 11:17:58: 'EnvPool'
+[2m[36m(train_xt pid=70899)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=70899)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/train.py", line 128, in start_train
+[2m[36m(train_xt pid=70899)[0m     return _makeup_learner(config_info, data_url, verbosity)
+[2m[36m(train_xt pid=70899)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/train.py", line 48, in _makeup_learner
+[2m[36m(train_xt pid=70899)[0m     config_info = patch_alg_within_config(config_info.copy(), node_type="node_config")
+[2m[36m(train_xt pid=70899)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/framework/learner.py", line 511, in patch_alg_within_config
+[2m[36m(train_xt pid=70899)[0m     env = env_builder(**config["env_para"])
+[2m[36m(train_xt pid=70899)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/environment/__init__.py", line 23, in env_builder
+[2m[36m(train_xt pid=70899)[0m     return Registers.env[env_name](env_info, **kwargs)
+[2m[36m(train_xt pid=70899)[0m   File "/root/multi_xt/raw_xt/xingtian/zeus/common/util/register.py", line 56, in __getitem__
+[2m[36m(train_xt pid=70899)[0m     raise exc
+[2m[36m(train_xt pid=70899)[0m   File "/root/multi_xt/raw_xt/xingtian/zeus/common/util/register.py", line 50, in __getitem__
+[2m[36m(train_xt pid=70899)[0m     return self._dict[key]
+[2m[36m(train_xt pid=70899)[0m KeyError: 'EnvPool'
+2023-09-12 11:17:59,065	ERROR trial_runner.py:987 -- Trial train_xt_e8763_00001: Error processing event.
+ray.exceptions.RayTaskError(FileNotFoundError): [36mray::ImplicitFunc.train()[39m (pid=70835, ip=192.168.1.128, repr=train_xt)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/trainable.py", line 349, in train
+    result = self.step()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 417, in step
+    self._report_thread_runner_error(block=True)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 589, in _report_thread_runner_error
+    raise e
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+    self._entrypoint()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+    self._status_reporter.get_checkpoint(),
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+    output = fn()
+  File "test_xt_with_tune.py", line 153, in train_xt
+    best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in find_max_th
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+    show_progress_bar=show_progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+    progress_bar=progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in <lambda>
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 134, in fn
+    step_per_second = get_throughput([filename])
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 40, in get_throughput
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/16944886661029744'
+2023-09-12 11:17:59,083	ERROR trial_runner.py:987 -- Trial train_xt_e8763_00000: Error processing event.
+ray.exceptions.RayTaskError(FileNotFoundError): [36mray::ImplicitFunc.train()[39m (pid=70791, ip=192.168.1.128, repr=train_xt)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/trainable.py", line 349, in train
+    result = self.step()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 417, in step
+    self._report_thread_runner_error(block=True)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 589, in _report_thread_runner_error
+    raise e
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+    self._entrypoint()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+    self._status_reporter.get_checkpoint(),
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+    output = fn()
+  File "test_xt_with_tune.py", line 153, in train_xt
+    best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in find_max_th
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+    show_progress_bar=show_progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+    progress_bar=progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in <lambda>
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 134, in fn
+    step_per_second = get_throughput([filename])
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 40, in get_throughput
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/16944886595174572'
+[2m[36m(train_xt pid=70899)[0m sh: 1: kill: No such process
+[2m[36m(train_xt pid=70899)[0m 
+2023-09-12 11:17:59,308	ERROR trial_runner.py:987 -- Trial train_xt_e8763_00002: Error processing event.
+ray.exceptions.RayTaskError(FileNotFoundError): [36mray::ImplicitFunc.train()[39m (pid=70899, ip=192.168.1.128, repr=train_xt)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/trainable.py", line 349, in train
+    result = self.step()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 417, in step
+    self._report_thread_runner_error(block=True)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 589, in _report_thread_runner_error
+    raise e
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+    self._entrypoint()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+    self._status_reporter.get_checkpoint(),
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+    output = fn()
+  File "test_xt_with_tune.py", line 153, in train_xt
+    best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in find_max_th
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+    show_progress_bar=show_progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+    progress_bar=progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in <lambda>
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 134, in fn
+    step_per_second = get_throughput([filename])
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 40, in get_throughput
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/16944886724761026'
+[2m[36m(train_xt pid=70899)[0m [W 2023-09-12 11:17:59,274] Trial 2 failed with parameters: {'env_pool_size': 6, 'env_pool_wait_nums': 5} because of the following error: FileNotFoundError(2, 'No such file or directory').
+[2m[36m(train_xt pid=70899)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=70899)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=70899)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=70899)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in <lambda>
+[2m[36m(train_xt pid=70899)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=70899)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 134, in fn
+[2m[36m(train_xt pid=70899)[0m     step_per_second = get_throughput([filename])
+[2m[36m(train_xt pid=70899)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 40, in get_throughput
+[2m[36m(train_xt pid=70899)[0m     with open(file, "r") as f:
+[2m[36m(train_xt pid=70899)[0m FileNotFoundError: [Errno 2] No such file or directory: '/tmp/16944886724761026'
+[2m[36m(train_xt pid=70899)[0m [W 2023-09-12 11:17:59,275] Trial 2 failed with value None.
+[2m[36m(train_xt pid=70899)[0m 2023-09-12 11:17:59,275	ERROR function_trainable.py:298 -- Runner Thread raised error.
+[2m[36m(train_xt pid=70899)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=70899)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+[2m[36m(train_xt pid=70899)[0m     self._entrypoint()
+[2m[36m(train_xt pid=70899)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+[2m[36m(train_xt pid=70899)[0m     self._status_reporter.get_checkpoint(),
+[2m[36m(train_xt pid=70899)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/util/tracing/tracing_helper.py", line 466, in _resume_span
+[2m[36m(train_xt pid=70899)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(train_xt pid=70899)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+[2m[36m(train_xt pid=70899)[0m     output = fn()
+[2m[36m(train_xt pid=70899)[0m   File "test_xt_with_tune.py", line 153, in train_xt
+[2m[36m(train_xt pid=70899)[0m     best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+[2m[36m(train_xt pid=70899)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in find_max_th
+[2m[36m(train_xt pid=70899)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=70899)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+[2m[36m(train_xt pid=70899)[0m     show_progress_bar=show_progress_bar,
+[2m[36m(train_xt pid=70899)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+[2m[36m(train_xt pid=70899)[0m     progress_bar=progress_bar,
+[2m[36m(train_xt pid=70899)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+[2m[36m(train_xt pid=70899)[0m     frozen_trial = _run_trial(study, func, catch)
+[2m[36m(train_xt pid=70899)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+[2m[36m(train_xt pid=70899)[0m     raise func_err
+[2m[36m(train_xt pid=70899)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=70899)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=70899)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in <lambda>
+[2m[36m(train_xt pid=70899)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=70899)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 134, in fn
+[2m[36m(train_xt pid=70899)[0m     step_per_second = get_throughput([filename])
+[2m[36m(train_xt pid=70899)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 40, in get_throughput
+[2m[36m(train_xt pid=70899)[0m     with open(file, "r") as f:
+[2m[36m(train_xt pid=70899)[0m FileNotFoundError: [Errno 2] No such file or directory: '/tmp/16944886724761026'
+[2m[36m(train_xt pid=70993)[0m WARNING:tensorflow:From /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/tensorflow/python/compat/v2_compat.py:96: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+[2m[36m(train_xt pid=70993)[0m Instructions for updating:
+[2m[36m(train_xt pid=70993)[0m non-resource variables are not supported in the long term
+[2m[36m(train_xt pid=70993)[0m WARNING: Logging before flag parsing goes to stderr.
+[2m[36m(train_xt pid=70993)[0m INFO [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 11:18:06: 
+[2m[36m(train_xt pid=70993)[0m **************************************************
+[2m[36m(train_xt pid=70993)[0m  XT start work...
+[2m[36m(train_xt pid=70993)[0m Namespace(config_file='/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_1694488680450473.yaml', save_to_s3=None, task='train', verbosity='info')
+[2m[36m(train_xt pid=70993)[0m **************************************************
+[2m[36m(train_xt pid=70993)[0m ERROR [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 11:18:06: module EnvPool not found: 'EnvPool'
+[2m[36m(train_xt pid=70993)[0m ERROR [tank-ProLiant-DL580-Gen9 192.168.1.128] Sep 12 11:18:06: 'EnvPool'
+[2m[36m(train_xt pid=70993)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=70993)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/train.py", line 128, in start_train
+[2m[36m(train_xt pid=70993)[0m     return _makeup_learner(config_info, data_url, verbosity)
+[2m[36m(train_xt pid=70993)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/train.py", line 48, in _makeup_learner
+[2m[36m(train_xt pid=70993)[0m     config_info = patch_alg_within_config(config_info.copy(), node_type="node_config")
+[2m[36m(train_xt pid=70993)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/framework/learner.py", line 511, in patch_alg_within_config
+[2m[36m(train_xt pid=70993)[0m     env = env_builder(**config["env_para"])
+[2m[36m(train_xt pid=70993)[0m   File "/root/multi_xt/raw_xt/xingtian/xt/environment/__init__.py", line 23, in env_builder
+[2m[36m(train_xt pid=70993)[0m     return Registers.env[env_name](env_info, **kwargs)
+[2m[36m(train_xt pid=70993)[0m   File "/root/multi_xt/raw_xt/xingtian/zeus/common/util/register.py", line 56, in __getitem__
+[2m[36m(train_xt pid=70993)[0m     raise exc
+[2m[36m(train_xt pid=70993)[0m   File "/root/multi_xt/raw_xt/xingtian/zeus/common/util/register.py", line 50, in __getitem__
+[2m[36m(train_xt pid=70993)[0m     return self._dict[key]
+[2m[36m(train_xt pid=70993)[0m KeyError: 'EnvPool'
+2023-09-12 11:18:07,320	WARNING tune.py:687 -- Stop signal received (e.g. via SIGINT/Ctrl+C), ending Ray Tune run. This will try to checkpoint the experiment state one last time. Press CTRL+C (or send SIGINT/SIGKILL/SIGTERM) to skip. 
+2023-09-12 11:18:07,367	ERROR trial_runner.py:987 -- Trial train_xt_e8763_00003: Error processing event.
+ray.exceptions.RayTaskError(FileNotFoundError): [36mray::ImplicitFunc.train()[39m (pid=70993, ip=192.168.1.128, repr=train_xt)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/trainable.py", line 349, in train
+    result = self.step()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 417, in step
+    self._report_thread_runner_error(block=True)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 589, in _report_thread_runner_error
+    raise e
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+    self._entrypoint()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+    self._status_reporter.get_checkpoint(),
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+    output = fn()
+  File "test_xt_with_tune.py", line 153, in train_xt
+    best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in find_max_th
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+    show_progress_bar=show_progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+    progress_bar=progress_bar,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in <lambda>
+    study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 134, in fn
+    step_per_second = get_throughput([filename])
+  File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 40, in get_throughput
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/1694488680450473'
+tune_system ================== True
+with_samper ================== True
+== Status ==
+Current time: 2023-09-12 11:17:38 (running for 00:00:07.53)
+Memory usage on this node: 14.8/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 10.0/80 CPUs, 0.4/3 GPUs, 0.0/161.58 GiB heap, 0.0/73.24 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (3 PENDING, 1 RUNNING)
+
+
+[2m[36m(train_xt pid=70791)[0m {'lr': 0.0013288577644642772, 'checkpoint_interval': 1}
+[2m[36m(train_xt pid=70791)[0m trail id ================= e8763_00000
+[2m[36m(train_xt pid=70791)[0m =================tune_system=========================
+[2m[36m(train_xt pid=70791)[0m =================with_samper=========================
+[2m[36m(train_xt pid=70791)[0m =======================env_pool_size======================6
+[2m[36m(train_xt pid=70791)[0m =======================env_pool_wait_nums======================5
+[2m[36m(train_xt pid=70791)[0m get max throughput start_core============================= 0
+[2m[36m(train_xt pid=70791)[0m yaml_filepath ================== /home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_16944886595174572.yaml
+[2m[36m(train_xt pid=70791)[0m run_log ======================== /tmp/test_opt_bys16944886595174572.log
+== Status ==
+Current time: 2023-09-12 11:17:44 (running for 00:00:14.09)
+Memory usage on this node: 15.3/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 20.0/80 CPUs, 0.8/3 GPUs, 0.0/161.58 GiB heap, 0.0/73.24 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (2 PENDING, 2 RUNNING)
+
+
+[2m[36m(train_xt pid=70835)[0m {'lr': 0.0027942460394988545, 'checkpoint_interval': 1}
+[2m[36m(train_xt pid=70835)[0m trail id ================= e8763_00001
+[2m[36m(train_xt pid=70835)[0m =================tune_system=========================
+[2m[36m(train_xt pid=70835)[0m =================with_samper=========================
+[2m[36m(train_xt pid=70835)[0m =======================env_pool_size======================6
+[2m[36m(train_xt pid=70835)[0m =======================env_pool_wait_nums======================5
+[2m[36m(train_xt pid=70835)[0m get max throughput start_core============================= 10
+[2m[36m(train_xt pid=70835)[0m yaml_filepath ================== /home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_16944886661029744.yaml
+[2m[36m(train_xt pid=70835)[0m run_log ======================== /tmp/test_opt_bys16944886661029744.log
+[2m[36m(train_xt pid=70791)[0m good
+[2m[36m(train_xt pid=70791)[0m log filename ================== /tmp/16944886595174572
+== Status ==
+Current time: 2023-09-12 11:17:51 (running for 00:00:20.49)
+Memory usage on this node: 15.5/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 30.0/80 CPUs, 1.2000000000000002/3 GPUs, 0.0/161.58 GiB heap, 0.0/73.24 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (1 PENDING, 3 RUNNING)
+
+
+[2m[36m(train_xt pid=70899)[0m {'lr': 0.000579631285676688, 'checkpoint_interval': 1}
+[2m[36m(train_xt pid=70899)[0m trail id ================= e8763_00002
+[2m[36m(train_xt pid=70899)[0m =================tune_system=========================
+[2m[36m(train_xt pid=70899)[0m =================with_samper=========================
+[2m[36m(train_xt pid=70899)[0m =======================env_pool_size======================6
+[2m[36m(train_xt pid=70899)[0m =======================env_pool_wait_nums======================5
+[2m[36m(train_xt pid=70899)[0m get max throughput start_core============================= 20
+[2m[36m(train_xt pid=70899)[0m yaml_filepath ================== /home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_16944886724761026.yaml
+[2m[36m(train_xt pid=70899)[0m run_log ======================== /tmp/test_opt_bys16944886724761026.log
+[2m[36m(train_xt pid=70835)[0m good
+[2m[36m(train_xt pid=70835)[0m log filename ================== /tmp/16944886661029744
+== Status ==
+Current time: 2023-09-12 11:17:59 (running for 00:00:28.44)
+Memory usage on this node: 15.7/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 40.0/80 CPUs, 1.6/3 GPUs, 0.0/161.58 GiB heap, 0.0/73.24 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 RUNNING)
+
+
+== Status ==
+Current time: 2023-09-12 11:17:59 (running for 00:00:28.45)
+Memory usage on this node: 15.7/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 30.0/80 CPUs, 1.2000000000000002/3 GPUs, 0.0/161.58 GiB heap, 0.0/73.24 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (1 ERROR, 3 RUNNING)
+Number of errored trials: 1
++----------------------+--------------+-------------------------------------------------------------------------------------------+
+| Trial name           |   # failures | error file                                                                                |
+|----------------------+--------------+-------------------------------------------------------------------------------------------|
+| train_xt_e8763_00001 |            1 | /tmp/ray_results/pb2_test4/train_xt_e8763_00001_1_lr=0.0028_2023-09-12_11-17-38/error.txt |
++----------------------+--------------+-------------------------------------------------------------------------------------------+
+
+[2m[36m(train_xt pid=70993)[0m {'lr': 0.004195972077605993, 'checkpoint_interval': 1}
+[2m[36m(train_xt pid=70993)[0m trail id ================= e8763_00003
+[2m[36m(train_xt pid=70993)[0m =================tune_system=========================
+[2m[36m(train_xt pid=70993)[0m =================with_samper=========================
+[2m[36m(train_xt pid=70899)[0m good
+[2m[36m(train_xt pid=70899)[0m log filename ================== /tmp/16944886724761026
+[2m[36m(train_xt pid=70993)[0m =======================env_pool_size======================6
+[2m[36m(train_xt pid=70993)[0m =======================env_pool_wait_nums======================5
+[2m[36m(train_xt pid=70993)[0m get max throughput start_core============================= 30
+[2m[36m(train_xt pid=70993)[0m yaml_filepath ================== /home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/train_yaml/train_yaml_imopt/train_yaml_testImpalaCnnOpt_now_time_1694488680450473.yaml
+[2m[36m(train_xt pid=70993)[0m run_log ======================== /tmp/test_opt_bys1694488680450473.log
+== Status ==
+Current time: 2023-09-12 11:18:04 (running for 00:00:33.69)
+Memory usage on this node: 14.8/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 10.0/80 CPUs, 0.4/3 GPUs, 0.0/161.58 GiB heap, 0.0/73.24 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (3 ERROR, 1 RUNNING)
+Number of errored trials: 3
++----------------------+--------------+-------------------------------------------------------------------------------------------+
+| Trial name           |   # failures | error file                                                                                |
+|----------------------+--------------+-------------------------------------------------------------------------------------------|
+| train_xt_e8763_00000 |            1 | /tmp/ray_results/pb2_test4/train_xt_e8763_00000_0_lr=0.0013_2023-09-12_11-17-30/error.txt |
+| train_xt_e8763_00001 |            1 | /tmp/ray_results/pb2_test4/train_xt_e8763_00001_1_lr=0.0028_2023-09-12_11-17-38/error.txt |
+| train_xt_e8763_00002 |            1 | /tmp/ray_results/pb2_test4/train_xt_e8763_00002_2_lr=0.0006_2023-09-12_11-17-44/error.txt |
++----------------------+--------------+-------------------------------------------------------------------------------------------+
+
+== Status ==
+Current time: 2023-09-12 11:18:07 (running for 00:00:36.75)
+Memory usage on this node: 14.5/251.8 GiB
+PopulationBasedTraining: 0 checkpoints, 0 perturbs
+Resources requested: 0/80 CPUs, 0/3 GPUs, 0.0/161.58 GiB heap, 0.0/73.24 GiB objects (0.0/1.0 accelerator_type:X)
+Result logdir: /tmp/ray_results/pb2_test4
+Number of trials: 4/4 (4 ERROR)
+Number of errored trials: 4
++----------------------+--------------+-------------------------------------------------------------------------------------------+
+| Trial name           |   # failures | error file                                                                                |
+|----------------------+--------------+-------------------------------------------------------------------------------------------|
+| train_xt_e8763_00000 |            1 | /tmp/ray_results/pb2_test4/train_xt_e8763_00000_0_lr=0.0013_2023-09-12_11-17-30/error.txt |
+| train_xt_e8763_00001 |            1 | /tmp/ray_results/pb2_test4/train_xt_e8763_00001_1_lr=0.0028_2023-09-12_11-17-38/error.txt |
+| train_xt_e8763_00002 |            1 | /tmp/ray_results/pb2_test4/train_xt_e8763_00002_2_lr=0.0006_2023-09-12_11-17-44/error.txt |
+| train_xt_e8763_00003 |            1 | /tmp/ray_results/pb2_test4/train_xt_e8763_00003_3_lr=0.0042_2023-09-12_11-17-51/error.txt |
++----------------------+--------------+-------------------------------------------------------------------------------------------+
+[2m[36m(train_xt pid=70993)[0m sh: 1: kill: No such process
+[2m[36m(train_xt pid=70993)[0m 
+[2m[36m(train_xt pid=70993)[0m [W 2023-09-12 11:18:07,346] Trial 3 failed with parameters: {'env_pool_size': 6, 'env_pool_wait_nums': 5} because of the following error: FileNotFoundError(2, 'No such file or directory').
+[2m[36m(train_xt pid=70993)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=70993)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=70993)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=70993)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in <lambda>
+[2m[36m(train_xt pid=70993)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=70993)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 134, in fn
+[2m[36m(train_xt pid=70993)[0m     step_per_second = get_throughput([filename])
+[2m[36m(train_xt pid=70993)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 40, in get_throughput
+[2m[36m(train_xt pid=70993)[0m     with open(file, "r") as f:
+[2m[36m(train_xt pid=70993)[0m FileNotFoundError: [Errno 2] No such file or directory: '/tmp/1694488680450473'
+[2m[36m(train_xt pid=70993)[0m [W 2023-09-12 11:18:07,347] Trial 3 failed with value None.
+[2m[36m(train_xt pid=70993)[0m 2023-09-12 11:18:07,347	ERROR function_trainable.py:298 -- Runner Thread raised error.
+[2m[36m(train_xt pid=70993)[0m Traceback (most recent call last):
+[2m[36m(train_xt pid=70993)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 289, in run
+[2m[36m(train_xt pid=70993)[0m     self._entrypoint()
+[2m[36m(train_xt pid=70993)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 365, in entrypoint
+[2m[36m(train_xt pid=70993)[0m     self._status_reporter.get_checkpoint(),
+[2m[36m(train_xt pid=70993)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/util/tracing/tracing_helper.py", line 466, in _resume_span
+[2m[36m(train_xt pid=70993)[0m     return method(self, *_args, **_kwargs)
+[2m[36m(train_xt pid=70993)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/trainable/function_trainable.py", line 684, in _trainable_func
+[2m[36m(train_xt pid=70993)[0m     output = fn()
+[2m[36m(train_xt pid=70993)[0m   File "test_xt_with_tune.py", line 153, in train_xt
+[2m[36m(train_xt pid=70993)[0m     best_param = find_max_th(yaml_file_path, study, n_trials, start_core, with_samper)
+[2m[36m(train_xt pid=70993)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in find_max_th
+[2m[36m(train_xt pid=70993)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=70993)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/study.py", line 451, in optimize
+[2m[36m(train_xt pid=70993)[0m     show_progress_bar=show_progress_bar,
+[2m[36m(train_xt pid=70993)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 76, in _optimize
+[2m[36m(train_xt pid=70993)[0m     progress_bar=progress_bar,
+[2m[36m(train_xt pid=70993)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+[2m[36m(train_xt pid=70993)[0m     frozen_trial = _run_trial(study, func, catch)
+[2m[36m(train_xt pid=70993)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+[2m[36m(train_xt pid=70993)[0m     raise func_err
+[2m[36m(train_xt pid=70993)[0m   File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+[2m[36m(train_xt pid=70993)[0m     value_or_values = func(trial)
+[2m[36m(train_xt pid=70993)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 158, in <lambda>
+[2m[36m(train_xt pid=70993)[0m     study.optimize(lambda trial: fn(trial, start_core, with_samper), n_trials=n_trials)
+[2m[36m(train_xt pid=70993)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 134, in fn
+[2m[36m(train_xt pid=70993)[0m     step_per_second = get_throughput([filename])
+[2m[36m(train_xt pid=70993)[0m   File "/home/xys/xingtian-test/xingtian-project-pipeline_impala/tests/avan/test_resources/test_optuna_bys.py", line 40, in get_throughput
+[2m[36m(train_xt pid=70993)[0m     with open(file, "r") as f:
+[2m[36m(train_xt pid=70993)[0m FileNotFoundError: [Errno 2] No such file or directory: '/tmp/1694488680450473'
+
+[2m[36m(train_xt pid=70993)[0m good
+[2m[36m(train_xt pid=70993)[0m log filename ================== /tmp/1694488680450473
+Traceback (most recent call last):
+  File "test_xt_with_tune.py", line 266, in <module>
+    results_grid = tuner.fit()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/tuner.py", line 234, in fit
+    return self._local_tuner.fit()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/impl/tuner_internal.py", line 283, in fit
+    analysis = self._fit_internal(trainable, param_space)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/impl/tuner_internal.py", line 381, in _fit_internal
+    **args,
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/tune.py", line 743, in run
+    runner.cleanup()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/execution/trial_runner.py", line 1474, in cleanup
+    self.cleanup_trials()
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/execution/trial_runner.py", line 1470, in cleanup_trials
+    self.trial_executor.cleanup(self.get_trials())
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/execution/ray_trial_executor.py", line 852, in cleanup
+    self._pg_manager.cleanup_existing_pg(block=True)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/tune/execution/placement_groups.py", line 427, in cleanup_existing_pg
+    time.sleep(0.1)
+KeyboardInterrupt
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_private/client_mode_hook.py", line 105, in wrapper
+    return func(*args, **kwargs)
+  File "/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_private/worker.py", line 1580, in shutdown
+    time.sleep(0.5)
+KeyboardInterrupt
+[2023-09-12 11:18:08,992 E 67594 67594] logging.cc:104: Stack trace: 
+ /home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_raylet.so(+0xc5de7a) [0x7f52de821e7a] ray::operator<<()
+/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_raylet.so(+0xc60658) [0x7f52de824658] ray::TerminateHandler()
+/home/tank/miniconda3/envs/openmmlab/bin/../lib/libstdc++.so.6(+0xb135a) [0x7f52dda6135a] __cxxabiv1::__terminate()
+/home/tank/miniconda3/envs/openmmlab/bin/../lib/libstdc++.so.6(+0xb13c5) [0x7f52dda613c5]
+/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_raylet.so(+0x5f87c4) [0x7f52de1bc7c4]
+/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_raylet.so(+0x4e954a) [0x7f52de0ad54a] std::_Sp_counted_base<>::_M_release()
+/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_raylet.so(_ZN3ray4core21CoreWorkerProcessImplD1Ev+0x101) [0x7f52de1d8321] ray::core::CoreWorkerProcessImpl::~CoreWorkerProcessImpl()
+/home/tank/miniconda3/envs/openmmlab/lib/python3.7/site-packages/ray/_raylet.so(_ZN3ray4core17CoreWorkerProcess12HandleAtExitEv+0x29) [0x7f52de1d84f9] ray::core::CoreWorkerProcess::HandleAtExit()
+/lib/x86_64-linux-gnu/libc.so.6(+0x430f1) [0x7f52e0e770f1]
+/lib/x86_64-linux-gnu/libc.so.6(+0x431ea) [0x7f52e0e771ea]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xee) [0x7f52e0e55b9e] __libc_start_main
+pbt(+0x1d803a) [0x559214c8e03a]
+
